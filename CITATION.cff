@@ -23,7 +23,7 @@ preferred-citation:
     given-names: "Himabindu"
   - family-names: "Singh"
     given-names: "Sameer"
-  journal: "ArXiv e-prints"
+  journal: "arXiv"
   archivePrefix: "arXiv"
   eprint: "2207.04154"
   title: "TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues"

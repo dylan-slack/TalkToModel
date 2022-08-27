@@ -51,7 +51,7 @@ Please [read our paper](https://arxiv.org/abs/2207.04154) for more motivation an
 
 ### Scope
 
-TalkToModel supports *tabular* models and datasets. For example, you could use the system to chat with a random forrest trained on a loan prediction task but not BERT trained on a sentiment analysis task, in the system's current form.
+TalkToModel supports *tabular* models and datasets. For example, you could use the system to chat with a random forest trained on a loan prediction task but not BERT trained on a sentiment analysis task, in the system's current form.
 
 ## Installation
 

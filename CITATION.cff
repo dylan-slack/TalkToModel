@@ -24,6 +24,6 @@ preferred-citation:
   - family-names: "Singh"
     given-names: "Sameer"
   doi: "2207.04154"
-  journal: "arXiv"
+  booktitle: "arXiv" 
   title: "TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues"
   year: 2022

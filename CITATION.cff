@@ -1,6 +1,29 @@
-@article{ttm,
-  author = {Dylan Slack and Satyapriya Krishna and Himabindu Lakkaraju and Sameer Singh},
-  journal = {arXiv},
-  title = {{TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues}},
-  year = {2022}
-}
+cff-version: 1.2.0
+message: "If you use this research, please cite it as below."
+authors:
+- family-names: "Slack"
+  given-names: "Dylan"
+- family-names: "Krishna"
+  given-names: "Satyapriya"
+- family-names: "Lakkaraju"
+  given-names: "Himabindu"
+- family-names: "Singh"
+  given-names: "Sameer"
+title: "TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues"
+date-released: 2022-08-27
+url: "https://github.com/dylan-slack/TalkToModel"
+preferred-citation:
+  type: inproceedings
+  authors:
+  - family-names: "Slack"
+    given-names: "Dylan"
+  - family-names: "Krishna"
+    given-names: "Satyapriya"
+  - family-names: "Lakkaraju"
+    given-names: "Himabindu"
+  - family-names: "Singh"
+    given-names: "Sameer"
+  doi: "2207.04154"
+  journal: "arXiv"
+  title: "TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues"
+  year: 2022

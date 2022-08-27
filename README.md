@@ -5,11 +5,11 @@
 
 Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) repo! The goal of this project is to enable anyone to understand a machine learning model through a natural language conversation.
 
-<div style="text-align: center;">
+<p align="center">
 <img src="static/images/ren.png" alt="drawing" width="250"/>
 &nbsp;&nbsp;&nbsp;
 <img src="static/images/output.gif" alt="drawing" width="318"/>
-</div>
+</p>
 
 ## Quick Links
 
@@ -199,5 +199,9 @@ Cite us 🫶
  year = {2022}
  }
 ```
+
+## Contact 
+
+You can reach out to [dslack@uci.edu](dslack@uci.edu) with any questions.
 
 

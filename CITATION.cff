@@ -1,6 +1,5 @@
-@inproceedings{ttm:arXiv,  
- author = {Dylan Slack and Satyapriya Krishna and Himabindu Lakkaraju and Sameer Singh},  
- title = {TalkToModel: Understanding Machine Learning Models With Open-Ended Dialogues},  
- booktitle = {arXiv},  
- year = {2022}
- }
+@inproceedings{ttm:arXiv,
+  author = {Dylan Slack and Satyapriya Krishna and Himabindu Lakkaraju and Sameer Singh},
+  journal = {arXiv},
+  year = {2022}
+}

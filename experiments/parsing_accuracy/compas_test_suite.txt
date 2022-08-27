@@ -1,0 +1,437 @@
+What are the reasons on people older than twenty can try to commit a crime?
+filter age greater than 20 and explain features [E]
+
+What can be the reasons people older than twenty years might commit a crime?
+filter age greater than 20 and explain features [E]
+
+How do you determine whether people older than 20 are likely to commit crimes?
+filter age greater than 20 and explain features [E]
+
+What explanation can you give why humans older than 20 commit crimes? 
+filter age greater than 20 and explain features [E]
+
+I would like to see your reasoning for why you propose that humans over the age of 20 are more likely to commit crimes.
+filter age greater than 20 and explain features [E]
+
+What is the percentage that people who have committed felony crimes in the past will commit another crime?
+filter felony true and likelihood [E]
+
+What are the 3 most important features for the model's predictions in the data?
+important topk 3 [E]
+
+What are the three most important features for the model's according to the data predictions?  
+important topk 3 [E]
+
+What are the three most vital features for the model's predictions in the data?
+important topk 3 [E]
+
+What is the reasoning behind the model predicting data point 100 and how could this be altered?
+filter id 100 and explain features and explain cfe [E]
+
+Why did the model predict data point 100, and what can be done to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Can you tell me why the model predicted data point 100, and what things can be done to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Can you explain why the model predicted data point 100, and tell me what you can do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Could you describe why the model predicted data point #100 and also tell me what you can do to change that?
+filter id 100 and explain features and explain cfe [E]
+
+Is the number of prior crimes the person has committed less important than age?
+important numberofpriorcrimes and important age [E]
+
+Is age a more important aspect than the number of prior crimes the person has committed?
+important age and important numberofpriorcrimes [E]
+
+If age were decreased by 5 years for people who have committed 1 crime in the past, how would the predictions change?
+filter numberofpriorcrimes equal to 1 and change age decrease 5 and predict [E]
+
+What would the number of predictions be if age were decreased by 5 years for people who have committed 1 crime in the past?
+filter numberofpriorcrimes equal to 1 and change age decrease 5 and predict [E]
+
+For people who have committed 1 crime in the past, how would the predictions change if age were decreased by 5 years?
+filter numberofpriorcrimes equal to 1 and change age decrease 5 and predict [E]
+
+If the age of those who have committed 1 crime in the past had their age reduced by 5, how would the predictions change?
+filter numberofpriorcrimes equal to 1 and change age decrease 5 and predict [E]
+
+In your opinion if the age decreased by 5 years for people who have committed 1 crime in the past, how would the predictions change?
+filter numberofpriorcrimes equal to 1 and change age decrease 5 and predict [E]
+
+What's the number of black individuals in the data?
+filter black true and countdata [E]
+
+What number of people in the data are black?
+filter black true and countdata [E]
+
+How do the features interact for the model's predictions across all the instances in the data?
+interact [E]
+
+How exactly do the features interact for the model's predictions across all the instances in the data?
+interact [E]
+
+How do the features interact for the model's predictions across all the instances in the data, exactly?
+interact [E]
+
+How likely is it that a person who commits a misdemeanor crime will commit another crime?
+filter misdemeanor true and likelihood [E]
+
+What is the likelihood that people with misdemeanors will commit another crime?
+filter misdemeanor true and likelihood [E]
+
+Is it likely that someone with a misdemeanor will commit a future crime?
+filter misdemeanor true and likelihood [E]
+
+What are the chances that someone with a misdemeanor crime commits another crime?
+filter misdemeanor true and likelihood [E]
+
+How likely are people with misdemeanor crimes to recommit a crime?
+filter misdemeanor true and likelihood [E]
+
+For those who are under 25 and have a past criminal record, how likely are they to commit another crime?
+filter age less than 25 or filter numberofpriorcrimes greater equal than 1 and likelihood [E]
+
+What are the five most important features for the model's predictions on those who have committed felonies?
+filter felony true and important topk 5 [E]
+
+Show me the data for people older than 20 and after, could you show me the predictions on this data?
+filter age greater than 20 and show and predict [E]
+
+Show me the data for those people older than 20 and after, could you show me the predictions on this data?
+filter age greater than 20 and show and predict [E]
+
+Show me the data for those that are older than 20 and after, could you show me the predictions on this data?
+filter age greater than 20 and show and predict [E]
+
+Please provide data for people over 20.  Then, could you indicate the projections related to this data?
+filter age greater than 20 and show and predict [E]
+
+Can you show me the data for people over 20, and then show me your predictions?
+filter age greater than 20 and show and predict [E]
+
+Can you show me your data and predictions for people older than 20?
+filter age greater than 20 and show and predict [E]
+
+What are the odds that a person with the id number of 33 in the data would commit a crime if they were 5 years younger?
+filter id 33 and change age decrease 5 and likelihood [E]
+
+How likely is it that if the person with the id number of 33 in the data were 5 years younger that they would commit a crime?
+filter id 33 and change age decrease 5 and likelihood [E]
+
+imagine ID number 33 is five years younger; how likely would they be to commit a crime?
+filter id 33 and change age decrease 5 and likelihood [E]
+
+How likely would it be for the human with ID number 33 to commit a crime if they had been 5 years younger?
+filter id 33 and change age decrease 5 and likelihood [E]
+
+What top 3 indicators or methods can be used to predict lessening prison terms by 10 months?
+change monthsinjail decrease 10 and important topk 3 [E]
+
+what are top 3 most vital features you use for prediction for people if they were to decrease their prison terms by 10 months?
+change monthsinjail decrease 10 and important topk 3 [E]
+
+what are top 3 most important aspects you use for prediction for people if they were to decrease their prison terms by 10 months?
+change monthsinjail decrease 10 and important topk 3 [E]
+
+What the 3 top features for predicting whether a person will decrease their prison terms by 10 months?
+change monthsinjail decrease 10 and important topk 3 [E]
+
+How does the model make predictions for men?
+filter man true and explain features [E]
+
+How does the model go about making predictions for men?
+filter man true and explain features [E]
+
+What rational does the model use to predict men?
+filter man true and explain features [E]
+
+When predicting men, what rational does the model use?
+filter man true and explain features [E]
+
+What is the reasoning behind the model's prediction of the ladies in the data?
+filter woman true and explain features [E]
+
+Explain the model's reasoning for performing predictions on the women in the data.
+filter woman true and explain features [E]
+
+What is the model's methodology for making predictions on the women in the data?
+filter woman true and explain features [E]
+
+What is the model's methodology for giving predictions on the women in the data?
+filter woman true and explain features [E]
+
+How would it be if they were twenty years older?
+change age set 20 and previousoperation [E]
+
+What about if they were twenty years older?
+change age set 20 and previousoperation [E]
+
+And if they were twenty years older, then what?
+change age set 20 and previousoperation [E]
+
+What about if they were 20 years older?
+change age set 20 and previousoperation [E]
+
+What if they were older than twenty years?
+change age set 20 and previousoperation [E]
+
+What changes if they are 20 years older?
+change age set 20 and previousoperation [E]
+
+What are the odds of that group of individuals committing crimes?
+previousfilter and likelihood [E]
+
+What are the chances of that group of people committing crimes?
+previousfilter and likelihood [E]
+
+Whats the probability these people will commit crimes?
+previousfilter and likelihood [E]
+
+What is the possibility of criminal activities among that group?
+previousfilter and likelihood [E]
+
+Could you show me data for people who are black?
+filter black true and show [E]
+
+Can you show me some data for people who are black?
+filter black true and show [E]
+
+Could you show me some data for those who are black?
+filter black true and show [E]
+
+Can you tell about the errors the model makes?
+mistake sample [E]
+
+Can you demonstrate some mistakes the model makes on predicting people with 3 or more priors?
+filter numberofpriorcrimes greater equal than 3 and mistake sample [E]
+
+Can you demonstrate some errors the model makes on predicting people with 3 or more priors?
+filter numberofpriorcrimes greater equal than 3 and mistake sample [E]
+
+Can you show me some common errors the model makes on predicting people with 3 or more priors?
+filter numberofpriorcrimes greater equal than 3 and mistake sample [E]
+
+Can you tell me what mistakes the model made predicting people with at least 3 priors?
+filter numberofpriorcrimes greater equal than 3 and mistake sample [E]
+
+What typical mistakes does the model make?
+mistake typical [E]
+
+What routine mistakes does the model make?
+mistake typical [E]
+
+Typically, what mistakes does the model make?
+mistake typical [E]
+
+What mistakes does the model typically make?
+mistake typical [E]
+
+What are some common mistakes the model makes?
+mistake typical [E]
+
+Will you show me some common mistakes made by the model?
+mistake typical [E]
+
+What kind of errors does the model make?
+mistake typical [E]
+
+Are there similar patterns in the model errors in predicting repeat offending felons?
+filter felony true and mistake typical [E]
+
+What is the accuracy of the model's predictions about whether men will recommit crimes?
+filter man true and score accuracy [E]
+
+For predictions about whether men will recommit crimes, what is the model's accuracy?
+filter man true and score accuracy [E]
+
+How accurately does the model predict whether men will recommit crimes?
+filter man true and score accuracy [E]
+
+How correct is the model at predicting whether men will recommit crimes?
+filter man true and score accuracy [E]
+
+How exact is the model at predicting if men will recommit crimes?
+filter man true and score accuracy [E]
+
+How accurate is the model at predicting whether men with recommit crimes?
+filter man true and score accuracy [E]
+
+What is the accuracy of the model predicting female criminals becoming a repeat offender?
+filter man true and score accuracy [E]
+
+What level of accuracy does the model have when predicting if women will recommit crimes?
+filter man true and score accuracy [E]
+
+When predicting women with felonies will commit crimes, what are some mistakes the model makes?
+filter woman true and filter felony true and score accuracy [E]
+
+Can you show me some mistakes the model makes when predicting women with felonies will commit crimes?
+filter woman true and filter felony true and score accuracy [E]
+
+What are typical mistakes of the model when predicting if women with felonies will commit crimes?
+filter woman true and filter felony true and score accuracy [E]
+
+What has the model gotten wrong when predicting if women felons will commit crimes?
+filter woman true and filter felony true and score accuracy [E]
+
+In this model, is the data accurate?
+previousfilter and score accuracy [E]
+
+What's the likelihood they will commit crimes in the future?
+previousfilter and likelihood [E]
+
+Let me see the labels in the data.
+label [E]
+
+What are the data labels?
+label [E]
+
+Will you please show me the labels in the data?
+label [E]
+
+do you predict data point number 21 accurately?
+filter id 21 and mistake sample [E]
+
+do you predict the data point number 21 correctly?
+filter id 21 and mistake sample [E]
+
+how would you characterize the common errors made by the model on men older than 21?
+filter man true and filter age greater than 21 and mistake typical [E]
+
+how would you characterize the mistakes made by the model on males older than 21?
+filter man true and filter age greater than 21 and mistake typical [E]
+
+What does the model predict on data point number 21 and is the model correct on this?
+filter id 21 and predict and mistake sample [E]
+
+What does the model predict on data point number 21 and is the model at all accurate?
+filter id 21 and predict and mistake sample [E]
+
+In regards to what the model predicts about data point 21, how accurate are they?
+filter id 21 and predict and mistake sample [E]
+
+WHat are the labels for men under 45 years of age?
+filter man true and filter age less than 45 and label [E]
+
+there are 45 males are grater than labels
+filter man true and filter age less than 45 and label [E]
+
+What are the labels for boys younger than 45?
+filter man true and filter age less than 45 and label [E]
+
+How accurate are your predictions for whether people might commit crimes?
+score accuracy [E]
+
+How accurate are you at predicting whether people with commit crimes?
+score accuracy [E]
+
+How accurate are you at predicting whether people who have stayed less than 3 months in jail will in the future, go on to commit crimes?
+filter monthsinjail less than 3 and score accuracy [E]
+
+What would be your accuracy of predicting whether a person who spent less than 3 months in jail will commit crimes?
+filter monthsinjail less than 3 and score accuracy [E]
+
+How accurate is your estimation of whether people who have stayed less than 3 months in jail will commit crimes?
+filter monthsinjail less than 3 and score accuracy [E]
+
+how would the accuracy of the model differ if people were 3 years older?
+change age increase 3 and score accuracy [E]
+
+Would the model's accuracy change at all if people were 3 years older?
+change age increase 3 and score accuracy [E]
+
+What are some examples in the data of people who committed misdemeanor crimes?
+filter misdemeanor true and show [E]
+
+Can you show me the instances in the data for people who committed misdemeanor crimes?
+filter misdemeanor true and show [E]
+
+Show me some places in the data for people who committed misdemeanor crimes
+filter misdemeanor true and show [E]
+
+What is the model's logic for predicting men in the data and is it correct?
+filter man true and explain features and score accuracy [E]
+
+What is the model's methodology for predicting men in the data and is it correct?
+filter man true and explain features and score accuracy [E]
+
+What is the reason the model predicts men the way that it does? Is it accurate?
+filter man true and explain features and score accuracy [E]
+
+How likely would would a person with 2 fewer priors be to commit crimes, according to the data?
+change numberofpriorcrimes decrease 2 and likelihood [E]
+
+if people in the data had 2 fewer priors, how likely would they be commit future crimes?
+change numberofpriorcrimes decrease 2 and likelihood [E]
+
+if those in the data had 2 fewer priors, how likely would they be commit crimes?
+change numberofpriorcrimes decrease 2 and likelihood [E]
+
+What is the likelihood that people without past felonies commit crimes again?
+filter felony false and likelihood [E]
+
+For people with 3 or more prior crimes on their record, what common mistakes does the model make about them?
+filter numberofpriorcrimes greater equal than 3 and mistake typical [E]
+
+If a person commits and is convicted of 10 or more crimes, will they commit more in the future?
+filter numberofpriorcrimes greater than 10 and likelihood [E]
+
+In your opinion, will previous convicts commit further crimes if they have more than 10 crimes in the books?
+filter numberofpriorcrimes greater than 10 and likelihood [E]
+
+What is the likelihood, in your opinion, that convicts with 10 or more crimes in the books will commit further crimes?
+filter numberofpriorcrimes greater than 10 and likelihood [E]
+
+Do you think that convicts with 10 or more crimes in the books will go on to commit further crimes?
+filter numberofpriorcrimes greater than 10 and likelihood [E]
+
+For those who never committed any felonies, what is the likelihood they'd commit another crime?
+change felony false and likelihood [E]
+
+Among those in the data who don't have any felonies, what are the odds they commit another crime?
+change felony false and likelihood [E]
+
+What made those people likely to commit crimes?
+previousfilter and likelihood [E]
+
+Is convict 89 going to return to crime?
+filter id 89 and predict [E]
+
+If convict 69 didn't commit a felony, would you believe they would commit another crime?
+filter id 69 and change felony false and predict [E]
+
+In your opinion, would convict number 69 commit another crime if they had not committed a felony in the past?
+filter id 69 and change felony false and predict [E]
+
+Would convict 69 commit another crime if they didn't commit a felony in the past?
+filter id 69 and change felony false and predict [E]
+
+If convict 69 wasn't a felon, do you think he'd commit another crime?
+filter id 69 and change felony false and predict [E]
+
+What are common inaccuracies you've made concerning whether female convicts will be repeat offenders?
+filter woman true and mistake typical [E]
+
+What are some frequent mistakes you've made when predicting if female convicts will be repeat offenders?
+filter woman true and mistake typical [E]
+
+When figuring out if women convicts will offend again, what are some common mistakes you've made?
+filter woman true and mistake typical [E]
+
+When a person with 1 prior crime and younger than 45, how likely will they be in committing a future crime?
+filter age less than 45 and filter numberofpriorcrimes greater equal than 1 and likelihood [E]
+
+How likely is it that people under 45 with one or more priors will become repeat offenders?
+filter age less than 45 and filter numberofpriorcrimes greater equal than 1 and likelihood [E]
+
+What is the likelihood that someone younger than 45 with at least 1 past crime will commit crimes again?
+filter age less than 45 and filter numberofpriorcrimes greater equal than 1 and likelihood [E]
+
+For people younger than 45 and with at least 1 prior crime, what is the likelihood they commit crimes again?
+filter age less than 45 and filter numberofpriorcrimes greater equal than 1 and likelihood [E]
+
+For black 18 year olds, how often are your predictions whether they will commit future crimes correct?
+filter age equal to 18 and filter black true and score accuracy [E]

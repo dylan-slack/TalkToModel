@@ -1,0 +1,47 @@
+User: What are the feature interactions on the model's predictions on instances with {cat_features} equal to {cat_values}?
+Parsed: filter {cat_features} {cat_values} and interact [E]
+
+User: Could you show feature interactions for {cat_features} equal to {cat_values}?
+Parsed: filter {cat_features} {cat_values} and interact [E]
+
+User: How do the features interact for the model's predictions on data where {num_features} not less than {num_values}?
+Parsed: filter {num_features} greater equal than {num_values} and interact [E]
+
+User: For instance {cat_features} equal to {cat_values} run feature interactions!
+Parsed: filter {cat_features} {cat_values} and interact [E]
+
+User: How do the features interact with each other on data with {num_features} equal to {num_values} or greater as true?
+Parsed: filter {num_features} greater equal than {num_values} and interact [E]
+
+User: What are the feature interactions for predicting {cat_features} that have {num_values} {num_features}?
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and interact [E]
+
+User: Are there any secondary effects between the features for the model's predictions on instances that have a {cat_features} or that have more than {num_values} {num_features}?
+Parsed: filter {cat_features} true or filter {num_features} greater than {num_values} and interact [E]
+
+User: Tell me the feature interactions for instances that have more than {num_values} {num_features} or are {cat_features}?
+Parsed: filter {num_features} greater than {num_values} or filter {cat_features} true and interact [E]
+
+User: What are the secondary feature interactions for instances that have a {cat_features} or that have exactly {num_values} {num_features}?
+Parsed: filter {cat_features} true or filter {num_features} equal to {num_values} and interact [E]
+
+User: Explain feature interactions for instances that have a {cat_features} or that have exactly {num_values} {num_features}?
+Parsed: filter {cat_features} true or filter {num_features} equal to {num_values} and interact [E]
+
+User: In what ways do features interact with each other for the model's predictions on instances that have a {cat_features} or that do not have {num_values} {num_features}?
+Parsed: filter {cat_features} true or filter {num_features} not equal to {num_values} and interact [E]
+
+User: What are the feature interactions for the model's predictions on the data?
+Parsed: interact [E]
+
+User: how do the features interact with each other for the model's predictions on the data?
+Parsed: interact [E]
+
+User: are there any significant interactions for the model's predictions on all the data?
+Parsed: interact [E]
+
+User: what are the feature interactions effects for the model's predictions
+Parsed: interact [E]
+
+User: what are the feature interaction effects for people with {num_features} over {num_values}?
+Parsed: filter {num_features} greater than {num_values} and interact [E]

@@ -1,0 +1,89 @@
+User: How would the model's predictions change if {num_features} were decreased by {num_values} on all the training data?
+Parsed: predict and change {num_features} decrease {num_values} and predict [E]
+
+User: How would the prediction probabilities differ for people with {num_features} greater than {num_values} if {num_features} was {num_values}?
+Parsed: filter {num_features} greater than {num_values} and likelihood and change {num_features} set {num_values} and likelihood [E]
+
+User: Would people with {num_values} {num_features} be less {class_names} if they had {num_values} less {num_features}?
+Parsed: filter {num_features} equal to {num_values} and likelihood and change {num_features} decrease {num_values} and likelihood [E]
+
+User: Would people with {num_values} {num_features} be less {class_names} if they had {num_values} greater {num_features}?
+Parsed: filter {num_features} equal to {num_values} and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: Would people with a {num_values} of {num_features} be less {class_names} if {num_features} were decreased by {num_values}?
+Parsed: filter {num_features} equal to {num_values} and likelihood and change {num_features} decrease {num_values} and likelihood [E]
+
+User: Would people with {num_values} {num_features} be more {class_names} if they had {num_values} greater {num_features}?
+Parsed: filter {num_features} equal to {num_values} and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: Would people with more than {num_values} {num_features} be more likely to be predicted {class_names} if they had {num_values} greater {num_features}?
+Parsed: filter {num_features} equal to {num_values} and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: For people with {num_values} {num_features}, if {num_features} were to decrease by {num_values}, in which ways would the predictions change?
+Parsed: filter {num_features} equal to {num_values} and predict and change {num_features} decrease {num_values} and predict [E]
+
+User: For people with {num_values} less than {num_features}, if {num_features} were increased by {num_values}, in which ways would the predictions change?
+Parsed: filter {num_features} less than {num_values} and predict and change {num_features} increase {num_values} and predict [E]
+
+User: How would the predictions change on the data if {num_features} is reduced by {num_values}?
+Parsed: predict and change {num_features} decreased {num_values} and predict [E]
+
+User: show me the data of people with {num_features} greater than {num_values}. show me the predictions on this data
+Parsed: filter {num_features} greater than {num_values} and show and predict [E]
+
+User: data of {num_features} less than {num_values}. then predictions
+Parsed: filter {num_features} less than {num_values} and show and predict [E]
+
+User: prediction of data where {num_features} greater than {num_values} followed by showing the data itself
+Parsed: filter {num_features} less than {num_values} and predict and show [E]
+
+User: (1) Why did the model predict and (2) how would you change the prediction of id 35?
+Parsed: filter id 35 and explain features and explain cfe [E]
+
+User: Why was data 52 predicted and how could you change this?
+Parsed: filter id 52 and explain features and explain cfe [E]
+
+User: Is {num_features} more important than {num_features}?
+Parsed: important {num_features} and important {num_features} [E]
+
+User: Is {num_features} less important than {num_features}?
+Parsed: important {num_features} and important {num_features} [E]
+
+User: What are the predictions for those with a {num_features} of {num_values}?
+Parsed: filter {num_features} equal to {num_values} and predict [E]
+
+User: for those with a {num_features} of {num_values} would the predictions change if {num_features} is decreased by {num_values}?
+Parsed: filter {num_features} equal to {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: for people with a {num_features} of {num_values} would the predictions change if {num_features} is increased by {num_values}?
+Parsed: filter {num_features} equal to {num_values} and change {num_features} increased {num_values} and predict [E]
+
+User: if {num_features} were increased by {num_values}, tell me about the importance of {num_features} and {num_values}
+Parsed: change {num_features} increase {num_values} and important {num_features} and important {num_values} [E]
+
+User: if {num_features} were decrease by {num_values}, tell me about the importance of {num_features} and {num_values}
+Parsed: change {num_features} decrease {num_values} and important {num_features} and important {num_values} [E]
+
+User: how would the importances compare if {num_features} is {num_values} of {num_features} and {num_features}?
+Parsed: change {num_features} set {num_values} and important {num_features} and important {num_features} [E]
+
+User: For people with a {num_features} over {num_values} is {num_features} less important than {num_features}?
+Parsed: filter {num_features} greater than {num_values} and important {num_features} and important {num_features} [E]
+
+User: If we were to increase {num_features} by {num_values}, how would the feature importances for {num_features} and {num_values} compare?
+Parsed: change {num_features} increase {num_values} and important {num_features} and important {num_features} [E]
+
+User: For people with a {num_features} over {num_values} is {num_features} less important than {num_features}
+Parsed: filter {num_features} greater than {num_values} and important {num_features} and important {num_features} [E]
+
+User: For individuals with a {num_features} less than {num_values} is {num_features} less important than {num_features}
+Parsed: filter {num_features} less than {num_values} and important {num_features} and important {num_features} [E]
+
+User: If we were to increase {num_features} by {num_values}, how would the importance of {num_features} and {num_features} compare?
+Parsed: change {num_features} increase {num_values} and important {num_features} and important {num_features} [E]
+
+User: If {num_features} were set to {num_values} and {num_features} were increased by {num_values}, would {num_features} be less important than {num_features}?
+Parsed: change {num_features} set {num_values} and change {num_features} increase {num_values} and important {num_features} and important {num_features} [E]
+
+User: Let's say that {num_features} were {num_values} greater. How would the feature importances for {num_features} and {num_features} compare?
+Parsed: change {num_features} increase {num_values} and important {num_features} and important {num_features} [E]

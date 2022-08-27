@@ -1,0 +1,21 @@
+#######################
+# Global Config
+#######################
+
+# Model + dataset configuration specific file
+GlobalArgs.config = "./configs/derm-config.gin"
+
+# Set the base url to host the demo, if needed
+GlobalArgs.baseurl = "/"
+
+# Logging Settings: will log messages, reactions, and message
+# suggestions to a aws dynamo db, if setup
+
+# Load db as argument to log_dialogue_input function
+# Don't modify this
+log_dialogue_input.dynamodb_table = @load_dynamo_db()
+
+# logging settings
+load_dynamo_db.key_filepath = None
+load_dynamo_db.region_name = None
+load_dynamo_db.table_name = None

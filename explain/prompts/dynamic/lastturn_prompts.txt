@@ -1,0 +1,365 @@
+User: What are the explanations?
+Parsed: previousfilter and explain feature importance [E]
+
+User: What are the predictions?
+Parsed: previousfilter and predict [E]
+
+User: What is the probability of this prediction?
+Parsed: previousfilter and likelihood [E]
+
+User: what is the probability of this prediction
+Parsed: previousfilter and likelihood [E]
+
+User: probability of this prediction
+Parsed: previousfilter and likelihood [E]
+
+User: What are the predictions and explanations?
+Parsed: previousfilter and predict and explain feature importance[E]
+
+User: Interesting... Why does the model predict this data?
+Parsed: previousfilter and explain features [E]
+
+User: Also, why does the model predict them?
+Parsed: previousfilter and explain features [E]
+
+User: Why do you predict this instance?
+Parsed: previousfilter and explain features [E]
+
+User: What is the probability of this instance being predicted {class_names}
+Parsed: previousfilter and likelihood [E]
+
+User: How likely is it that the model predicts this instance as {class_names}
+Parsed: previousfilter and likelihood [E]
+
+User: probability of this instance getting predicted "{class_names}"
+Parsed: previousfilter and likelihood [E]
+
+User: Why do you predict these instances?
+Parsed: previousfilter and explain features [E]
+
+User: Why could you possibly predict this instance in this manner?
+Parsed: previousfilter and explain features [E]
+
+User: What about {cat_features}?
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: Could you do the same for instances that are not {cat_features}?
+Parsed: filter {cat_features} false and previousoperation [E]
+
+User: What about for those who do not have {cat_features}?
+Parsed: filter {cat_features} false and previousoperation [E]
+
+User: Please run the same on all the {cat_features}
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: What about {cat_features}?
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: What about 2299
+Parsed: filter id 2299 and previousoperation [E]
+
+User: How about 52156
+Parsed: filter id 52156 and previousoperation [E]
+
+User: Now do it for 1451
+Parsed: filter id 1451 and previousoperation [E]
+
+User: Could you show me the same for {cat_features}?
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: How about for {cat_features} who have more than {num_features} greater than {num_values}?
+Parsed: filter {cat_features} true and filter {num_features} greater than {num_values} and previousoperation [E]
+
+User: For the previous instances, in addition to {cat_features}, why does the model predict them?
+Parsed: previousfilter or filter {cat_features} true and explain features [E]
+
+User: Excluding {cat_features} from that data, what are the model's predictions?
+Parsed: previousfilter and filter {cat_features} false and predict [E]
+
+User: Excluding {cat_features}, what are the model's predictions?
+Parsed: previousfilter and filter {cat_features} true and predict [E]
+
+User: For the previous instances that are not {cat_features}, what are the model's predictions?
+Parsed: previousfilter and filter {cat_features} false and predict [E]
+
+User: Including {num_features} less than {num_values} into the prior data, what are the model's predictions?
+Parsed: previousfilter or filter {num_features} less than {num_values} and predict [E]
+
+User: With the addition of {num_features} equal to {num_values}, why does the model do these predictions?
+Parsed: previousfilter or filter {num_features} equal to {num_values} and explain features [E]
+
+User: Adding in {num_features} not equal to {num_values}, what are the model's predictions?
+Parsed: previousfilter or filter {num_features} not equal to {num_values} and predict [E]
+
+User: Excluding {num_features} greater than or equal to {num_values}, what are the model's predictions?
+Parsed: previousfilter and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: What would I need to do to change this prediction?
+Parsed: previousfilter and explain cfe [E]
+
+User: How could I change this prediction?
+Parsed: previousfilter and explain cfe [E]
+
+User: What could I do to get a different prediction?
+Parsed: previousfilter and explain cfe [E]
+
+User: How could I get a better outcome?
+Parsed: previousfilter and explain cfe [E]
+
+User: What needs to happen for this to change?
+Parsed: previousfilter and explain cfe [E]
+
+User: Could you illustrate what one needs to change to get a better outcome?
+Parsed: previousfilter and explain cfe [E]
+
+User: For these instances, what would the predictions be if you increase {num_features} by 12?
+Parsed: previousfilter and change {num_features} increase 12 and predict [E]
+
+User: For those instances, what would the model's rationale be if you increase {num_features} by 55?
+Parsed: previousfilter and change {num_features} increase 55 and explain features [E]
+
+User: How would this change if you decreased {num_features} by 10?
+Parsed: previousfilter and change {num_features} decrease 10 and previousoperation [E]
+
+User: What would happen if you set {cat_features} to {cat_values} and {num_features} to {num_values}?
+Parsed: previousfilter and change {cat_features} {cat_values} and change {num_features} set {num_values} and previousoperation [E]
+
+User: But what if {cat_features} was {cat_values}?
+Parsed: previousfilter and change {cat_features} {cat_values} and previousoperation [E]
+
+User: If you increased {num_features} by 515, what would happen?
+Parsed: previousfilter and change {num_features} increase 515 and previousoperation [E]
+
+User: What would happen if these instances were not {cat_features}?
+Parsed: previousfilter and change {cat_features} false [E]
+
+User: How likely are these instances to recieve the outcome {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: What is the likelihood of them getting scored {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: How likely is it these instances are predicted as {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: What is the probability these instances get predicted as {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: What is the probability of the previous data getting predicted as {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: What would happen if you set {num_features} to {num_values} for instance id 115?
+Parsed: filter id 115 and change {num_features} set {num_values} and previousoperation [E]
+
+User: How likely would it be for these instances to be predicted {class_names} if {cat_features} were set to {cat_values}?
+Parsed: previousfilter and change {cat_features} {cat_values} and likelihood [E]
+
+User: what if they had {num_values} less {num_features}
+Parsed: previousfilter and change {num_features} decrease {num_values} and previousoperation [E]
+
+User: what if these people had {num_values} more {num_features}
+Parsed: previousfilter and change {num_features} increase {num_values} and previousoperation [E]
+
+User: what about if they had {num_values} less {num_features}
+Parsed: previousfilter and change {num_features} decrease {num_values} and previousoperation [E]
+
+User: decrease {num_features} by {num_values} and show me the results
+Parsed: previousfilter and change {num_features} decrease {num_values} and previousoperation [E]
+
+User: what is the prediction for this data point?
+Parsed: previousfilter and predict [E]
+
+User: what's the prediction for this instance
+Parsed: previousfilter and predict [E]
+
+User: what is the likelihood they're predicted {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: what's the probability they get the predictions of {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: what's the odds they are {class_names}?
+Parsed: previousfilter and likelihood [E]
+
+User: {class_names} is how likely for them?
+Parsed: previousfilter and likelihood [E]
+
+User: what are the labels?
+Parsed: previousfilter and labels [E]
+
+User: how about their labels?
+Parsed: previousfilter and labels [E]
+
+User: now, could you show me the ground truth labels for this data?
+Parsed: previousfilter and labels [E]
+
+User: 22
+Parsed: filter id 22 and previousoperation [E]
+
+User: 38232
+Parsed: filter id 38232 and previousoperation [E]
+
+User: what about for people with {num_features} over {num_values}
+Parsed: filter {num_features} greater than {num_values} and previousoperation [E]
+
+User: why?
+Parsed: previousfilter and explain features [E]
+
+User: how about {filter_text}
+Parsed: {filter_parse} and previousoperation [E]
+
+User: but what was your rationale for this prediction
+Parsed: previousfilter and explain features [E]
+
+User: but what was your rationale for this prediction?
+Parsed: previousfilter and explain features [E]
+
+User: yet, how did you arrive at this prediction
+Parsed: previousfilter and explain features [E]
+
+User: how about the prediction probabilities
+Parsed: previousfilter and likelihood [E]
+
+User: prediction probabilities for that data
+Parsed: previousfilter and likelihood [E]
+
+User: what's the most important feature for this prediction
+Parsed: previousfilter and important topk 1 [E]
+
+User: what are the top 3 important features for these predictions?
+Parsed: previousfilter and important topk 3 [E]
+
+User: does the model predict this instance correctly?
+Parsed: previousfilter and mistake sample [E]
+
+User: does the model predict these instances correctly?
+Parsed: previousfilter and mistake sample [E]
+
+User: do you predict this correctly?
+Parsed: previousfilter and mistake sample [E]
+
+User: is this prediction correct?
+Parsed: previousfilter and mistake sample [E]
+
+User: is this data predicted correctly?
+Parsed: previousfilter and mistake sample [E]
+
+User: what's the gold label for this instance?
+Parsed: previousfilter and label [E]
+
+User: what's the ground truth label for this instance?
+Parsed: previousfilter and label [E]
+
+User: tell me the ground truth label for this instance
+Parsed: previousfilter and label [E]
+
+User: what's groundtruth for that data
+Parsed: previousfilter and label [E]
+
+User: what's the true label
+Parsed: previousfilter and label [E]
+
+User: what's the underlying label
+Parsed: previousfilter and label [E]
+
+User: what does the model predict?
+Parsed: previousfilter and predict [E]
+
+User: what are the predictions for this data point
+Parsed: previousfilter and predict [E]
+
+User: what mistakes do you typically make on this data?
+Parsed: previousfilter and mistake typical [E]
+
+User: what types of errors do you make here?
+Parsed: previousfilter and mistake typical [E]
+
+User: please characterize your errors
+Parsed: previousfilter and mistake typical [E]
+
+User: for this data, could you tell me some errors you typically make?
+Parsed: previousfilter and mistake typical [E]
+
+User: for these data points, tell me more about the errors you make
+Parsed: previousfilter and mistake typical [E]
+
+User: characterize your errors on this data plz
+Parsed: previousfilter and mistake typical [E]
+
+User: please summarize any typical mistakes you make on this data
+Parsed: previousfilter and mistake typical [E]
+
+User: how accurate is my model on this data?
+Parsed: previousfilter and score accuracy [E]
+
+User: how precise is my model on this data?
+Parsed: previousfilter and score precision [E]
+
+User: how often is my model correct on this data?
+Parsed: previousfilter and score precision [E]
+
+User: is my model frequently correct on this data?
+Parsed: previousfilter and score precision [E]
+
+User: what mistakes do the model typically make on this data?
+Parsed: previousfilter and mistake typical [E]
+
+User: what are some common errors the model makes for this data
+Parsed: previousfilter and mistake typical [E]
+
+User: are there any subgroups the model predicts incorrectly here?
+Parsed: previousfilter and mistake typical [E]
+
+User: are there any subgroups the model predicts incorrectly?
+Parsed: previousfilter and mistake typical [E]
+
+User: are there any portions of this population the model predicts wrongly?
+Parsed: previousfilter and mistake typical [E]
+
+User: what types of people does the model typically get wrong for this subset?
+Parsed: previousfilter and mistake typical [E]
+
+User: which are the subgroup populations often predicted incorrectly?
+Parsed: previousfilter and mistake typical [E]
+
+User: what's the label distribution on this data?
+Parsed: previousfilter and statistic target [E]
+
+User: what's the label frequencies on this data?
+Parsed: previousfilter and statistic target [E]
+
+User: what's the label distribution on this population?
+Parsed: previousfilter and statistic target [E]
+
+User: what's the label frequencies on this population?
+Parsed: previousfilter and statistic target [E]
+
+User: what's the target variable distribution on this subset?
+Parsed: previousfilter and statistic target [E]
+
+User: what's the target variable frequencies on this subset?
+Parsed: previousfilter and statistic target [E]
+
+User: what's the statistics of {num_features} in this subset?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: what's the average {num_features} in this subset?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: what's the max {num_features} in this data?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: what's the statistics of {num_features} in this slice?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: for this particular subset, tell me the minimum of {num_features}
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: accuracy on the previous slice of data
+Parsed: previousfilter and score accuracy [E]
+
+User: how often is the model correct on this subset of data
+Parsed: previousfilter and score accuracy [E]
+
+User: what's the accuracy here?
+Parsed: previousfilter and score accuracy [E]

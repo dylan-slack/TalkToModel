@@ -1,0 +1,41 @@
+Question: Why does the man go to the store?
+Is this a yes or no question?: No
+
+Question: Is it sunny outside?
+Is this a yes or no question?: Yes
+
+Question: Is this instance predicted as likely to buy the item again?
+Is this a yes or no question?: Yes
+
+Question: Are they coming over after the party?
+Is this a yes or no question?: Yes
+
+Question: Could you show me the explanations for the model?
+Is this a yes or no question?: No
+
+Question: show predictions on people younger than 30
+Is this a yes or no question?: No
+
+Question: does the model ever predict true for people younger than 30?
+Is this a yes or no question?: Yes
+
+Question: is it the case that this person is 30 years old
+Is this a yes or no question?: Yes
+
+Question: is it the case that this person is 30 years old
+Is this a yes or no question?: Yes
+
+Question: can pigs fly
+Is this a yes or no question?: Yes
+
+Question: display the roc curve on data instances with ids 23, 34, and 100
+Is this a yes or no question?: No
+
+Question: change the number of times this person has ordered shampoo on Amazon.com to 34 and show me the prediction
+Is this a yes or no question?: No
+
+Question: what about men
+Is this a yes or no question?: No
+
+Question: If I reduce age by 23, will sample id 23 be predicted as true?
+Is this a yes or no question?: Yes

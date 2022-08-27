@@ -1,0 +1,98 @@
+User: How many items are there in the data?
+Parsed: countdata [E]
+
+User: How many data points are there?
+Parsed: countdata [E]
+
+User: Count the total number of data points
+Parsed: countdata [E]
+
+User: number of data points
+Parsed: countdata [E]
+
+User: tell me how many items there are in the data
+Parsed: countdata [E]
+
+User: number of rows in the data
+Parsed: countdata [E]
+
+User: how many data points are in the training data set
+Parsed: countdata [E]
+
+User: total number of training items in the data
+Parsed: countdata [E]
+
+User: total number of elements in the data
+Parsed: countdata [E]
+
+User: how many rows are there across all the items in the data
+Parsed: countdata [E]
+
+User: please tell me how many items are in the data
+Parsed: countdata [E]
+
+User: what are the id's of all the items
+Parsed: countdata [E]
+
+User: show me the item ids on the training data
+Parsed: countdata [E]
+
+User: how many data points have {num_features} equal to {num_values}
+Parsed: filter {num_features} equal to {num_values} and countdata [E]
+
+User: what's the number of data points where {num_features} is less that {num_values}
+Parsed: filter {num_features} less than {num_values} and countdata [E]
+
+User: what's the number of times {num_features} is greater than {num_values}?
+Parsed: filter {num_features} greater than {num_values} and countdata [E]
+
+User: tell me the grand total for the number of data points where {num_features} is less than {num_values}?
+Parsed: filter {num_features} less than {num_values} and countdata [E]
+
+User: for data points where {num_features} is greater than {num_values}, what's the total num data points fitting this description?
+Parsed: filter {num_features} greater than {num_values} and countdata [E]
+
+User: how many people have {filter_text}
+Parsed: {filter_parse} and countdata [E]
+
+User: how many people are {filter_text}
+Parsed: {filter_parse} and countdata [E]
+
+User: what's the number of {filter_text} people
+Parsed: {filter_parse} and countdata [E]
+
+User: tell me how many instances in the data have {filter_text}
+Parsed: {filter_parse} and countdata [E]
+
+User: for {filter_text}, how many instances in the data are there?
+Parsed: {filter_parse} and countdata [E]
+
+User: for those where {filter_text} is the case, could you tell me the total number of item in the data
+Parsed: {filter_parse} and countdata [E]
+
+User: please describe the number of {filter_text} in the data
+Parsed: {filter_parse} and coundata [E]
+
+User: how many instances did that consider?
+Parsed: previousfilter and countdata [E]
+
+User: what's the number of data points that operation took into consideration?
+Parsed: previousfilter and countdata [E]
+
+User: how many data points are in this group?
+Parsed: previousfilter and countdata [E]
+
+User: do the features interact at all in this group?
+Parsed: previousfilter and interact [E]
+
+User: are there any interaction effects?
+Parsed: previousfilter and interact [E]
+
+User: how do the features interact?
+Parsed: previousfilter and interact [E]
+
+User: do the features interact in any interesting ways
+Parsed: previousfilter and interact [E]
+
+User: are there any nonlinear interactions between the features
+Parsed: previousfilter and interact [E]

@@ -1,0 +1,83 @@
+User: How likely is it that {cat_features} are predicted as {class_names}?
+Parsed: filter {cat_features} true and likelihood [E]
+
+User: Could you tell me how likely it is that {cat_features} equal to {cat_values} are predicted as {class_names}?
+Parsed: filter {cat_features} {cat_values} and likelihood [E]
+
+User: Show the likelihood that {cat_features} and {cat_features} with {num_features} greater than or equal to {num_values} are predicted as {class_names}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} greater equal than {num_values} and likelihood [E]
+
+User: How likely are instances with {num_features} less than {num_values} predicted as {class_names}?
+Parsed: filter {num_features} less than {num_values} and likelihood [E]
+
+User: How likely are {cat_features} predicted as {class_names}?
+Parsed: filter {cat_features} true and likelihood [E]
+
+User: Please tell me how likely it is that instances that are not {cat_features} get the prediction {class_names}?
+Parsed: filter {cat_features} false and likelihood [E]
+
+User: What is the probability that id 2215 is predicted as {class_names} by the model?
+Parsed: filter id 2215 and likelihood [E]
+
+User: What is the likelihood that id 15 is predicted as {class_names} by the model?
+Parsed: filter id 15 and likelihood [E]
+
+User: How likely is it that {num_features} less than {num_values} and {num_features} equal to {num_values} but not {cat_features} is predicted as {class_names} by the model?
+Parsed: filter {num_features} less than {num_values} and filter {num_features} equal to {num_values} and filter {cat_features} false and likelihood [E]
+
+User: What's the likelihood of {class_names}?
+Parsed: likelihood [E]
+
+User: For those with {num_features} over {num_values}, what are the likelihoods of {class_names}?
+Parsed: filter {num_features} greater than {num_values} and likelihood [E]
+
+User: What's the probability of {class_names}?
+Parsed: likelihood [E]
+
+User: Could you tell me how likely {cat_features} equal to {cat_values} are to be predicted as {class_names}?
+Parsed: filter {cat_features} {cat_values} and likelihood [E]
+
+User: What is the probability of id 10 being predicted {class_names}?
+Parsed: filter id 10 and likelihood [E]
+
+User: probability of id 532 predicted {class_names}?
+Parsed: filter id 532 and likelihood [E]
+
+User: how likely is it id 155 is {class_names}?
+Parsed: filter id 155 and likelihood [E]
+
+User: what is the chance that the data point with id 2149 is {class_names}
+Parsed: filter id 2149 and likelihood [E]
+
+User: show the probability that id 515 is {class_names}
+Parsed: filter id 515 and likelihood [E]
+
+User: probability data point 22 is predicted by the model {class_names}
+Parsed: filter id 22 and likelihood [E]
+
+User: I want you to tell me the probability of the instance with id 100 being predicted in the "{class_names}" class by the model
+Parsed: filter id 100 and likelihood [E]
+
+User: return the probability that instance 233 is predicted in the {class_names} class
+Parsed: filter id 233 and likelihood [E]
+
+User: what's the chance instance id 324 is scored as {class_names}
+Parsed: filter id 324 and likelihood [E]
+
+User: probability that id 44 is predicted as "{class_names}" from the model
+Parsed: filter id 44 and likelihood [E]
+
+User: for people with a {num_features} over {num_values} or {num_features} over {num_values}, how likely are they to be {class_names}?
+Parsed: filter {num_features} greater than {num_values} or filter {num_features} greater than {num_values} and likelihood [E]
+
+User: how likely are people with {num_features} over {num_values} and at least {num_values} {num_features} to be {class_names}
+Parsed: filter {num_features} greater than {num_values} and filter {num_features} greater equal than {num_values} and likelihood [E]
+
+User: how likely are people with {num_features} below {num_values} and at least {num_values} {num_features} to be {class_names}
+Parsed: filter {num_features} less than {num_values} and filter {num_features} greater equal than {num_values} and likelihood [E]
+
+User: show me the prediction probabilities for {filter_text}
+Parsed: {filter_parse} and likelihood [E]
+
+User: what are the class probabilities on your predictions for {filter_text}?
+Parsed: {filter_parse} and likelihood [E]

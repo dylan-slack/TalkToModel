@@ -1,0 +1,83 @@
+User: Who are you?
+Parsed: self [E]
+
+User: What are you?
+Parsed: self [E]
+
+User: What is the purpose of this web application?
+Parsed: self and function [E]
+
+User: Could you tell me what this is
+Parsed: self and function [E]
+
+User: What is this bot...
+Parsed: self [E]
+
+User: Please explain this bot
+Parsed: self and function[E]
+
+User: What can you do?
+Parsed: function [E]
+
+User: What are your functions?
+Parsed: function [E]
+
+User: Please tell me what you are and what you do!
+Parsed: self and function [E]
+
+User: What is this chat?
+Parsed: self [E]
+
+User: tell me a bit more about what I can do here
+Parsed: function [E]
+
+User: what can i do?
+Parsed: function [E]
+
+User: It would be very useful if you could provide a description of the model!
+Parsed: model [E]
+
+User: describe the model
+Parsed: model [E]
+
+User: tell me about the model
+Parsed: model [E]
+
+User: What do you do and what is the data you're trained on like?
+Parsed: self and function and data [E]
+
+User: What's the function of this? What's the data?
+Parsed: function and data [E]
+
+User: give more description
+Parsed: followup [E]
+
+User: yes
+Parsed: followup [E]
+
+User: could you tell me more?
+Parsed: followup [E]
+
+User: could you give me more information?
+Parsed: followup [E]
+
+User: please provide some more context
+Parsed: followup [E]
+
+User: Could you please give more description?
+Parsed: followup [E]
+
+User: Yes, I would like more description?
+Parsed: followup [E]
+
+User: Could you give some more options?
+Parsed: followup [E]
+
+User: Yeah, show me
+Parsed: followup [E]
+
+User: Yeah, I want to see that
+Parsed: followup [E]
+
+User: Yup, show it to me
+Parsed: followup [E]

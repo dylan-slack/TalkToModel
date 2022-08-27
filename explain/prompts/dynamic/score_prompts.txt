@@ -1,0 +1,149 @@
+User: model accuracy on {cat_features}
+Parsed: filter {cat_features} true and score accuracy [E]
+
+User: could you show model performance on {num_features} over {num_values}
+Parsed: filter {num_features} greater than {num_values} and score default [E]
+
+User: roc score on {num_features} below {num_values}
+Parsed: filter {num_features} less than {num_values} and score roc [E]
+
+User: accuracy on {cat_features} where {num_features} is {num_values}
+Parsed: filter {num_features} equal to {num_values} and filter {cat_features} true and score accuracy [E]
+
+User: testing accuracy
+Parsed: score accuracy [E]
+
+User: testing f1
+Parsed: score f1 [E]
+
+User: can you show me the roc score on the testing data?
+Parsed: score roc [E]
+
+User: can you show me the precision on the data?
+Parsed: score precision [E]
+
+User: can you show me the precision on the training data?
+Parsed: score precision [E]
+
+User: display score
+Parsed: score default [E]
+
+User: give me the accuracy on the data
+Parsed: score accuracy [E]
+
+User: what's the roc score
+Parsed: score roc [E]
+
+User: show me the test set performance
+Parsed: score default [E]
+
+User: give me the accuracy on the training data
+Parsed: score accuracy [E]
+
+User: training accuracy on {cat_features}
+Parsed: filter {cat_features} true and score accuracy [E]
+
+User: recall on instances that aren't {cat_features}
+Parsed: filter {cat_features} false and score recall [E]
+
+User: give the recall score
+Parsed: score recall [E]
+
+User: testing recall score
+Parsed: score recall [E]
+
+User: testing accuracy please
+Parsed: score accuracy [E]
+
+User: nice! could you give me the test accuracy on the training data?
+Parsed: score accuracy [E]
+
+User: nice! could you give me the test f1?
+Parsed: score accuracy f1 [E]
+
+User: training accuracy please
+Parsed: score accuracy [E]
+
+User: I meant what is the f1 score on the evaluation data
+Parsed: score f1 [E]
+
+User: what is the f1 score on the evaluation data
+Parsed: score f1 [E]
+
+User: how often are you right?
+Parsed: score accuracy [E]
+
+User: how often are you correct?
+Parsed: score accuracy [E]
+
+User: what's the rate you do correct predictions?
+Parsed: score accuracy [E]
+
+User: how frequently do you get it correct?
+Parsed: score accuracy [E]
+
+User: how accurate is the model on all the data?
+Parsed: score accuracy [E]
+
+User: how accurate is the model over all the instances in the data?
+Parsed: score accuracy [E]
+
+User: what's the accuracy for people {filter_text}?
+Parsed: {filter_parse} and score accuracy [E]
+
+User: what's the testing accuracy for people {filter_text}
+Parsed: {filter_parse} and score accuracy [E]
+
+User: could you tell me the precision on the training data for {filter_text}
+Parsed: {filter_parse} and score precision [E]
+
+User: for {filter_text}, how well, in terms of accuracy, does the model do on the training and test data
+Parsed: {filter_parse} and score accuracy and score accuracy [E]
+
+User: what's the accuracy performance of the model on the training data for individuals with {filter_text}
+Parsed: {filter_parse} and score accuracy [E]
+
+User: what's the sensitivity on this data?
+Parsed: previousfilter and score sensitivity [E]
+
+User: what's the specificity on this data?
+Parsed: previousfilter and score specificity [E]
+
+User: what's the positive predictive value on this data?
+Parsed: previousfilter and score ppv [E]
+
+User: what's the ppv on this data?
+Parsed: previousfilter and score ppv [E]
+
+User: what's the npv on this data?
+Parsed: previousfilter and score npv [E]
+
+User: what's the negative predictive value on this data?
+Parsed: previousfilter and score npv [E]
+
+User: how accurate are you in predicting the class {class_names}?
+Parsed: score accuracy [E]
+
+User: when scoring {class_names}, what's the model's accuracy?
+Parsed: score accuracy [E]
+
+User: when determining {class_names}, what is your recall score?
+Parsed: score recall [E]
+
+User: what's the sensitivity on {filter_text}?
+Parsed: {filter_parse} and score sensitivity [E]
+
+User: what's the specificity on {filter_text}?
+Parsed: {filter_parse} and score specificity [E]
+
+User: what's the positive predictive value on {filter_text}?
+Parsed: {filter_parse} and score ppv [E]
+
+User: what's the ppv on {filter_text}?
+Parsed: {filter_parse} and score ppv [E]
+
+User: what's the npv on {filter_text}?
+Parsed: {filter_parse} and score npv [E]
+
+User: what's the negative predictive value on {filter_text}?
+Parsed: {filter_parse} and score npv [E]

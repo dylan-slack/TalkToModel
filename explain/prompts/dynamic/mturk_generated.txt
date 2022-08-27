@@ -1,0 +1,146 @@
+User: How do I change the prediction for the data point with id number 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: Could you tell me how to change the prediction point for data point 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: How can I change the prediction for the data point with an id of 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: Could you show me how to change the prediction for the data point 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: How do I change the prediction for the data point with the id number 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: Would it be possible for you to  tell me how to change the prediction for the data point with the id number 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: For data point id 34, how would I change the prediction?
+Parsed: filter id 34 and explain cfe [E]
+
+User: What is the way to change the prediction for the data point with the id number 34?
+Parsed: filter id 34 and explain cfe [E]
+
+User: What matters more for people who make over $10000 when deciding whether to buy our product - {num_features} or {num_values}?
+Parsed: filter income greater than 10000 and important {num_features} and important {num_values} [E]
+
+User: Is {num_features} or {num_features} more determining in figuring out who will buy our product for those who make more than $10000?
+Parsed: filter income greater than 10000 and important {num_features} and important {num_features} [E]
+
+User: If you have an {num_features} over $10000, does {num_features} or {num_features} better predict whether you will buy our product?
+Parsed: filter {num_features} greater than 10000 and important {num_features} and important {num_features} [E]
+
+User: In determining who is more {class_names} for people who make over 10000 {num_features}, does their {num_features} or {num_features} matter more?
+Parsed: filter {num_features} greater than 10000 and important {num_features} and important {num_features} [E]
+
+User: If dog {num_features} is increased by ten pounds the disease will affect {num_features}?
+Parsed: change {num_features} increase 10 and important {num_features} [E]
+
+User: the dog weighted more {num_values} {num_features}, {num_features} be a more important aspect in determining if they will got disease ?
+Parsed: change {num_features} increase {num_values} and important {num_features} [E]
+
+User: in case the {num_features} is will increased as {num_features} {num_features} will be important factor in fixing whether it will get a disease or not ?
+Parsed: change {num_features} increase {num_features} and important {num_features} [E]
+
+User: In determining who is more {class_names} for people who have {num_features} over {num_values}, does their {num_features} or {num_features} matter more?
+Parsed: filter {num_features} greater than {num_values} and important {num_features} and important {num_features} [E]
+
+User: Is {num_features} or {num_features} more relevant in determining whether or not consumers with an income of more than $10,000 will {class_names}?
+Parsed: filter income greater than 10000 and important {num_features} and important {num_features} [E]
+
+User: Is {num_features} or {num_features} more important in determining whether people with more than {num_values} in X will {class_names}?
+Parsed: filter X greater than 10000 and important {num_features} and important {num_features} [E]
+
+User: Do you think that losing more than {num_values} {num_features}, reduces the risk of {class_names}?
+Parsed: likelihood and change {num_features} decrease {num_values} likelihood [E]
+
+User: If somebody lost {num_values} {num_features}, would they be at a lower risk of {class_names}?
+Parsed: likelihood and change {num_features} decrease {num_values} and likelihood [E]
+
+User: Do you agree that individuals who lose {num_values} {num_features}, are less {class_names}?
+Parsed: likelihood and change weight decrease {num_values} and likelihood [E]
+
+User: If someone were to lose {num_values} or more {num_features}, would that make them less {class_names}?
+Parsed: likelihood and change {num_features} decrease {num_values} and likelihood [E]
+
+User: If people between the age 24 and 26 take on {num_values} more in {num_features}, will they be less likely to have a {class_names}?
+Parsed: filter age greater than 23 and filter age less than 27 and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: If people older than 23 but younger than 27 take on {num_values} more in {num_features}, will they have less chance to carry a {class_names}?
+Parsed: filter age greater than 23 and filter age less than 27 and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: If people older than 23 but younger than 27 take on {num_values} more in {num_features}, will they get {class_names}?
+Parsed: filter age greater than 23 and filter age less than 27 and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: If people between 24 and 26 age have {num_values} more in {num_features}, will they don't get {class_names}?
+Parsed: filter age greater than 23 and filter age less than 27 and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: If people between the ages of 23 and 27 take on {num_values} in {num_features}, will it change their chance of a {class_names}?
+Parsed: filter age greater than 23 and filter age less than 27 and likelihood and change {num_features} increase {num_values} and likelihood [E]
+
+User: If {cat_features} between the age of 50 to 57 take on $250 more in {num_features}, does it change their good credit score possibility?
+Parsed: filter {cat_features} and age less than 50 or age greater than 57 and likelihood and change {num_features} increase 250 and likelihood [E]
+
+User: Will taking on $250 more in {num_features} for {cat_features} between the ages of 50-57, change their outcome of a good credit score?
+Parsed: filter {cat_features} and age less than 50 or age greater than 57 and likelihood and change {num_features} increase 250 and likelihood [E]
+
+User: Will the chance of having a good credit score change if you are a {cat_features} between the age of 50-57 and take on $250 more in {num_features}?
+Parsed: filter {cat_features} and age less than 50 or age greater than 57 and likelihood and change {num_features} increase 250 and likelihood [E]
+
+User: How likely is it to change your chance of a good credit score if you are a {cat_features} between the age of 50-57 and you take on $250 more in {num_features} than you had before?
+Parsed: filter {cat_features} and age less than 50 or age greater than 57 and likelihood and change {num_features} increase 250 and likelihood [E]
+
+User: if the {cat_features} are younger than 50 can we take 250USD more in {num_features}?
+Parsed: filter {cat_features} and age less than 50 or age greater than 57 and likelihood and change {num_features} increase 250 and likelihood [E]
+
+User: How important of a difference is a 1000 {num_features} raise on a 30,000 a year {num_features}, on your {num_features}?
+Parsed: filter {num_features} less than 30000 and change {num_features} increase 1000 and important {num_features} [E]
+
+User: Within the data set, how many people {num_features}d {num_values} or less?
+Parsed: filter {num_features} less equal than {num_values} and countdata [E]
+
+User: In the data, how many people had {num_features}s below {num_values}?
+Parsed: filter {num_features} less equal than {num_values} and countdata [E]
+
+User: Who owns more than {num_values} {num_features} with the model predicts them could you show me that type of people?
+Parsed: filter {num_features} greater than {num_values} and show and predict [E]
+
+User: People's who own more than {num_values} {num_features} and model predicts show them personal data to me?
+Parsed: filter {num_features} greater than {num_values} and show and predict [E]
+
+User: If people decreased their {num_features} by {num_values} what would the 3 most important features of the model be?
+Parsed: change {num_features} decrease {num_values} and important topk 3 [E]
+
+User: What are the three most important features of the model be if people were to have their {num_features}s decreased by {num_values}?
+Parsed: change {num_features} decrease {num_values} and important topk 3 [E]
+
+User: If {num_features}s were lower by {num_values}, the model's predictions on people would hinge on which three most important features?
+Parsed: change {num_features} decrease {num_values} and important topk 3 [E]
+
+User: Which 3 features are most important in the model's predictions if the {num_features}s of people were reduced by {num_values}?
+Parsed: change {num_features} decrease {num_values} and important topk 3 [E]
+
+User: What are the 5 most important features in the data if we were to increase feature {num_features} by 10?
+Parsed: change {num_features} increase 10 and important topk 5 [E]
+
+User: If we increase feature {num_features} by 10 what are the 5 most important features in the data?
+Parsed: change {num_features} increase 10 and important topk 5 [E]
+
+User: Increasing feature {num_features} by 10 has what effect on the 5 most important features in the data?
+Parsed: change {num_features} increase 10 and important topk 5 [E]
+
+User: The 5 most important features in the data are impacted in what way by increasing feature {num_features} by 10.
+Parsed: change {num_features} increase 10 and important topk 5 [E]
+
+User: What would the top 10 most important features be for the model's predictions if people decreased feature {num_features} by 35?
+Parsed: change {num_features} decrease 35 and important topk 10 [E]
+
+User: When somebody would decrease feature {num_features} by 35, what would then be the top 10 most important features in the prediction from the model?
+Parsed: change {num_features} decrease 35 and important topk 10 [E]
+
+User: In the model's predictions, what are the top 10 most important features if somebody decreases feature {num_features} by 35?
+Parsed: change {num_features} decrease 35 and important topk 10 [E]
+
+User: In the case that feature {num_features} is decreased by {num_values}, what would the top 10 most important features be in the model's prediction?
+Parsed: change {num_features} decrease {num_values} and important topk 10 [E]

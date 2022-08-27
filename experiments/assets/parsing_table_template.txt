@@ -1,0 +1,55 @@
+\begin{table}[!h]
+    \centering
+    \small
+    \begin{tabular}{lccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{German} & \multicolumn{3}{c}{Compas} & \multicolumn{3}{c}{Diabetes}
+        \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+        & IID & Comp. & Overall & IID & Comp. & Overall & IID & Comp. & Overall \\
+        \midrule
+        Nearest Neighbors      {german}  {compas}  {diabetes}  \\
+        \midrule
+        GPT-Neo 125M          &  &  &  &  &  &  &  &  &  \\
+        125M \hspace{0.2em} 10-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        125M \hspace{0.2em} 20-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        125M \hspace{0.2em} 30-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        \midrule
+        GPT-Neo 1.3B           &  &  &  &  &  &  &  &  &  \\
+        1.3B \hspace{0.2em} 10-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        1.3B \hspace{0.2em} 20-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        1.3B \hspace{0.2em} 30-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        \midrule
+        GPT-Neo 2.7B           &  &  &  &  &  &  &  &  &  \\
+        2.7B \hspace{0.2em} 5-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        2.7B \hspace{0.2em} 10-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        2.7B \hspace{0.2em} 20-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        \midrule
+        GPT-J 6B           &  &  &  &  &  &  &  &  &  \\
+        6B \hspace{0.2em} 5-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        6B \hspace{0.2em} 10-Shot {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        \midrule
+        T5           &  &  &  &  &  &  &  &  &  \\
+        T5 \hspace{0.2em} Small {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        T5 \hspace{0.2em} Base {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        T5 \hspace{0.2em} Large {german}  {compas}  {diabetes}  \\
+        \hspace{0.5em} \em + Guided Decoding {german}  {compas}  {diabetes}  \\
+        \bottomrule
+    \end{tabular}
+    \caption{
+        {\bf Parsing Results}
+    }
+\end{table}

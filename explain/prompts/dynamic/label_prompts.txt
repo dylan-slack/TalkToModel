@@ -1,0 +1,23 @@
+User: what are the labels for {filter_text}
+Parsed: {filter_parse} and label [E]
+
+User: what's the gold label for {filter_text}
+Parsed: {filter_parse} and label [E]
+
+User: for {filter_text}, what are the ground truth labels
+Parsed: {filter_parse} and label [E]
+
+User: what are the ground truth labels in the data for {filter_text}
+Parsed: {filter_parse} and label [E]
+
+User: what are the data labels for {filter_text}
+Parsed: {filter_parse} and label [E]
+
+User: what are the labels for all the data
+Parsed: label [E]
+
+User: just on instances where {filter_text}, show me the labels?
+Parsed: {filter_parse} and label [E]
+
+User: just on instances where {filter_text}, show me the gold labels?
+Parsed: {filter_parse} and label [E]

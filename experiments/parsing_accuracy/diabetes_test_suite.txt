@@ -1,0 +1,572 @@
+What reasoning do you typically use to determine if people have diabetes when glucose levels are over 120?
+filter glucose greater than 120 and explain features [E]
+
+What method would you use to figure out if people with glucose levels over 120 have diabetes?
+filter glucose greater than 120 and explain features [E]
+
+If a person has a glucose level of higher than 120, why would you think that they will get diabetes?
+filter glucose greater than 120 and explain features [E]
+
+How do you determine if people with glucose levels above 120 have diabetes?
+filter glucose greater than 120 and explain features [E]
+
+What's your process for determining whether people with glucose levels over 120 have diabetes?
+filter glucose greater than 120 and explain features [E]
+
+How much do you predict people aged over 30 have diabetes?
+filter age greater than 30 and likelihood [E]
+
+How often do you project people older than 30 to have diabetes?
+filter age greater than 30 and likelihood [E]
+
+How often do you predict people aged more than 30 and have diabetes?
+filter age greater than 30 and likelihood [E]
+
+What are the top three features for the model's predictions in the data?
+important topk 3 [E]
+
+What are the three most important parts of the model's predictions?
+important topk 3 [E]
+
+When the model makes predictions in the data what are the three features that are most important?
+important topk 3 [E]
+
+For what reason did the model predict data point 100 and what can you do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Why did the model predict data point 100 and what can you do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+What can you do to change why the model predicted data point 100, and why was it predicted?
+filter id 100 and explain features and explain cfe [E]
+
+What is the methodology on why the model guessed data point number 100 and what could you do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+What is the precise methodology on why the model predicted data point number 100 and what could you do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Why do you believe the model predicted data point number 100 and how could you shift that?
+filter id 100 and explain features and explain cfe [E]
+
+If possible please list the reasons why the model predicted data point number 100 and what would you do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Is age a more big part than BMI enduring people in the data were three years more prepared?
+change age increase 3 and important age and important bmi [E]
+
+How is the age a more feature than BMI if the people were three years older.
+change age increase 3 and important age and important bmi [E]
+
+What changes would occur in the predictions if people with a bmi of 30 were reduced in age by 5 years.
+filter bmi equal to 30 and change age decrease 5 and predict [E]
+
+If we lowered the age by 5 years for people with a bmi of 30, what changes would occur in the predictions?
+filter bmi equal to 30 and change age decrease 5 and predict [E]
+
+How exactly would the predictions change if age were decreased by 5 years for people with a bmi of 30?
+filter bmi equal to 30 and change age decrease 5 and predict [E]
+
+How exactly would the predictions change if age were decreased by 5 years for people with a bmi of 30?
+filter bmi equal to 30 and change age decrease 5 and predict [E]
+
+What amount of people have less than three pregnancies?
+filter pregnancies less than 3 and countdata [E]
+
+What's the number of people that have been pregnant less than three times?
+filter pregnancies less than 3 and countdata [E]
+
+Can you tell me how many people have less than three pregnancies?
+filter pregnancies less than 3 and countdata [E]
+
+What is the number of mothers with less than three pregnancies?
+filter pregnancies less than 3 and countdata [E]
+
+According to the data provided, how many instance of greater than 100 blood pressure can be counted?
+filter bloodpressure greater than 100 and countdata [E]
+
+How many times was the blood pressure from the data greater than 100?
+filter bloodpressure greater than 100 and countdata [E]
+
+What is the number of occurrences in the data of blood pressure over 100?
+filter bloodpressure greater than 100 and countdata [E]
+
+How many instances are in the model for blood pressure over 100?
+filter bloodpressure greater than 100 and countdata [E]
+
+What's the number of points in the data where blood pressure is greater than 100?
+filter bloodpressure greater than 100 and countdata [E]
+
+Will you show me how likely it is that people older than 30 have diabetes?
+filter age greater than 30 and likelihood [E]
+
+What is the likelihood of diabetes being had by people older than 30?
+filter age greater than 30 and likelihood [E]
+
+How likely is it for someone to have diabetes if they are between 20 and 30 or have had 2 pregnancies?
+filter age greater than 20 and filter age less than 30 or filter pregnancies equal to two and likelihood [E]
+
+What chances are for people that either (1) have had two pregnancies or (2) are older than 20 and younger than 30 to have diabetes?
+filter age greater than 20 and filter age less than 30 or filter pregnancies equal to two and likelihood [E]
+
+People with a 40+ bmi have what top five most important features based on the model's predictions?
+filter bmi greater than 40 and important topk 5 [E]
+
+If your bmi is over 40 than what are the five most important aspects of the model's prediction?
+filter bmi greater than 40 and important topk 5 [E]
+
+When your BMI is over 40, what are the five most important things for the model's prediction?
+filter bmi greater than 40 and important topk 5 [E]
+
+If we increased glucose by 100 for the data point with id 33, what would happen to the likelihood of having diabetes
+filter id 33 and change glucose increase 100 and likelihood [E]
+
+If we increased glucose by 100 for the data point with id 33, would the likelihood of having diabetes go up or down
+filter id 33 and change glucose increase 100 and likelihood [E]
+
+If we increase glucose by 100, what would happen to the likelihood of having diabetes for the data point with id 33?
+filter id 33 and change glucose increase 100 and likelihood [E]
+
+For the data point with id 33, predict the change in the likelihood of having diabetes if we increase glucose by 100.
+filter id 33 and change glucose increase 100 and likelihood [E]
+
+What changes in the likelihood of having diabetes would be made if we were to increase glucose by 100 in data point 33?                         
+filter id 33 and change glucose increase 100 and likelihood [E]
+
+likelihood of having diabetes if we were to increase glucose by 100 for the data point with id 33
+filter id 33 and change glucose increase 100 and likelihood [E]
+
+What are the top three features used to make predictions for people that have dropped their bmi's by 10 points?
+change bmi decrease 10 and important topk 3 [E]
+
+What is the typical rationale the model uses to predict people with glucose levels below 80?
+filter glucose less than 80 and explain features [E]
+
+what do you think the reason is for the model predicting people with glucose levels less than 80?
+filter glucose less than 80 and explain features [E]
+
+model's rationale for predicting people with glucose levels below a value of 80?
+filter glucose less than 80 and explain features [E]
+
+What effect do the features have those predictions made by the model on the training information?
+interact [E]
+
+Still imagine they were 20 years more aged?
+change age set 20 and previousoperation [E]
+
+But what happens if they happen to be twenty years older?
+change age set 20 and previousoperation [E]
+
+What are the chances they have diabetes?
+previousfilter and likelihood [E]
+
+What are the odds they have diabetes?
+previousfilter and likelihood [E]
+
+Can you let me know the odds that they have diabetes?
+previousfilter and likelihood [E]
+
+What are the actual chances that they have diabetes?
+previousfilter and likelihood [E]
+
+How high is the likelihood of them having diabetes?
+previousfilter and likelihood [E]
+
+Could you indicate, the specifics, for people above age 45?
+filter age greater than 45 and show [E]
+
+Can you please show me data for people older than 45?
+filter age greater than 45 and show [E]
+
+Do you have data for people over 45 you can show me?
+filter age greater than 45 and show [E]
+
+For people over 45, do you have data you could show me?
+filter age greater than 45 and show [E]
+
+Can you show me the data you have for people older than 45?
+filter age greater than 45 and show [E]
+
+On average what age are the individuals in these data?
+statistic age [E]
+
+According to the data, what is the mean age?
+statistic age [E]
+
+What's the mean age in the data?
+statistic age [E]
+
+What's the average age in the data?
+statistic age [E]
+
+How old are average people who have bmi value greater than 35 and have more than 1 pregnancy
+filter bmi greater than 35 and filter pregnancies greater than 1 and statistic age [E]
+
+Can you tell me the average age of folks whose bmi is over 35 and have had more than one pregnancy?
+filter bmi greater than 35 and filter pregnancies greater than 1 and statistic age [E]
+
+What labels are used for people with blood pressure under 100?
+filter bloodpressure less than 100 and label [E]
+
+If a person's blood pressure is lower than 100, what labels are used?
+filter bloodpressure less than 100 and label [E]
+
+What labels apply to individuals with blood pressure under 100?
+filter bloodpressure less than 100 and label [E]
+
+What labels get used for people with less than 100 for their blood pressure?
+filter bloodpressure less than 100 and label [E]
+
+People with a blood pressure lower than 100 can have what labels?
+filter bloodpressure less than 100 and label [E]
+
+What are the labels if a person has a blood pressure lower than 100?
+filter bloodpressure less than 100 and label [E]
+
+IF a person's blood pressure is lower than 100, what are they labelled as?
+filter bloodpressure less than 100 and label [E]
+
+What are the labels for the data points on insulin levels that equal 20?
+filter insulin equal to 20 and label [E]
+
+What are the labels for the data points where the insulin levels are equivalent to 20?
+filter insulin equal to 20 and label [E]
+
+Will you show me the labels on the data points where insulin levels equal 20?
+filter insulin equal to 20 and label [E]
+
+Can you show me the labels for the data points where insulin levels are equal to 20
+filter insulin equal to 20 and label [E]
+
+Can you show what the labels are for the data points where insulin levels are that of 20?
+filter insulin equal to 20 and label [E]
+
+What are the labels for the data points where insulin levels are equal to 20?
+filter insulin equal to 20 and label [E]
+
+Can you describe the data?
+data [E]
+
+Can you provide a description of the data?
+data [E]
+
+Can you describe how the data features interact with the model's predictions?
+previousfilter and interact [E]
+
+How exactly do the various features of the data interact in the model's predictions on this particular data set?
+previousfilter and interact [E]
+
+Can you tell me how the various features of the data interact in the model's predictions on this particular data set?
+previousfilter and interact [E]
+
+How do the elements of the information cooperate in the model's predictions on this specific information?
+previousfilter and interact [E]
+
+For data point number 32, how likely is diabetes?
+filter id 32 and likelihood [E]
+
+How likely is diabetes in data point number 32?
+filter id 32 and likelihood [E]
+
+What are the chances of diabetes for data point 32?
+filter id 32 and likelihood [E]
+
+What is the possibility that the thirty-second data point has diabetes?
+filter id 32 and likelihood [E]
+
+what is the chance that number 32 has diabetes?
+filter id 32 and likelihood [E]
+
+What is the likely chance that data point 32 has diabetes?
+filter id 32 and likelihood [E]
+
+What is the likelihood that data point number 32 has diabetes?
+filter id 32 and likelihood [E]
+
+Which slip-ups are you prone to making?
+mistake typical [E]
+
+What mistakes do you commonly make?
+mistake typical [E]
+
+What are the frequent mistakes you make?
+mistake typical [E]
+
+What are examples of your mistakes when predicting whether people have diabetes?
+mistake sample [E]
+
+Will you show me examples of inaccurate predictions on whether people have diabetes?
+mistake sample [E]
+
+Can you please explain the mistakes you've made predicting if people are diabetic?
+mistake sample [E]
+
+Can you show me instances of the mistakes you've made when predicting whether people have diabetes?
+mistake sample [E]
+
+How often are you right at predicting whether people have diabetes or not?
+score accuracy [E]
+
+How accurate are your predictions regarding whether or not people have diabetes?
+score accuracy [E]
+
+What are common mistakes that are often made when making predictions about people under 25 and their diabetes risk?
+filter age less than 25 and mistake typical [E]
+
+What are common mistakes you make when predicting if people younger than 25 have diabetes?
+filter age less than 25 and mistake typical [E]
+
+What common mistakes can you make when predicting if individuals under the age of 25 have diabetes?
+filter age less than 25 and mistake typical [E]
+
+Can you tell me common mistakes you made predicting whether or not folks under 25 have diabetes?
+filter age less than 25 and mistake typical [E]
+
+Could you describe some mistakes you have made predicting whether folks under 25 have diabetes?
+filter age less than 25 and mistake typical [E]
+
+How correctly can you predict diabetes for people with BMI's over 40?
+filter bmi greater than 40 and score accuracy [E]
+
+What is the precision of your projection that those with BMI's over forty have diabetes?
+filter bmi greater than 40 and score accuracy [E]
+
+How on target, can you gauge, whether humans, with 40 plus, BMIs, have the condition of diabetes?
+filter bmi greater than 40 and score accuracy [E]
+
+What are some of the mistakes most people make on individuals over 40?
+filter age greater than 40 and mistake typical [E]
+
+What are some of the common mistakes we make regarding people over 40?
+filter age greater than 40 and mistake typical [E]
+
+Considering the mistakes you make on people whose ages are greater than 40, can you provide some examples?
+filter age greater than 40 and mistake sample [E]
+
+Can you tell me some mistakes you have made about people over 40?
+filter age greater than 40 and mistake sample [E]
+
+What kinds of mistakes have you made about people above 40?
+filter age greater than 40 and mistake sample [E]
+
+On people over 40, what are some common mistakes that you make?
+filter age greater than 40 and mistake typical [E]
+
+What mistakes are you inclined to make on people over the age of 40?
+filter age greater than 40 and mistake typical [E]
+
+If the bmi in the data set were increased by 5 points, what would the predictions for the data be?
+change bmi increase 5 and predict [E]
+
+What would the predictions for the data be if the bmi in the data set were to be increased by 5 points?
+change bmi increase 5 and predict [E]
+
+If the bmi is increased by 5 points in the data set, what would the prediction for the data be?
+change bmi increase 5 and predict [E]
+
+What would be the predictions if BMI was increased by 5 points?
+change bmi increase 5 and predict [E]
+
+If BMI was increased by 5 points, what would be the predictions?
+change bmi increase 5 and predict [E]
+
+What are the chances someone will develop diabetes with bmi 10 points lower?
+change bmi decrease 10 and likelihood [E]
+
+If people eliminate 10 points from their bmi's, would they cut down their risk of diabetes?
+change bmi decrease 10 and likelihood [E]
+
+When predicting whether people older than 50 with bmi's over 30 have diabates, what are typical mistakes the model makes?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+What mistakes can typically be expected when the model predicts whether people older than 50 with bmi over 30 have diabetes
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+For people older than 50 with bmi over 30, what mistakes are typically made by the model?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+What are some frequent errors caused by the model when predicting if individuals over 50 with a BMI of higher than 30 have diabetes?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+What are typical errors the model makes when predicting whether people older than 50 with bmi's above 30 have diabetes?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+What are the mistakes the model makes when predicting whether people older than 50 with bmi's above 30 have diabetes?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+What are errors that the model makes when predicting whether people older than 50 with bmi's above 30 have diabetes?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+What are normal mistakes the model makes when predicting whether people older than 50 with bmi's above 30 have diabetes?
+filter age greater than 50 and filter bmi greater than 30 and mistake typical [E]
+
+I'd like to see mistakes made on people with insulin over 50.
+filter insulin greater than 50 and mistake sample [E]
+
+For this data subset, how accurate is the model?
+previousfilter and score accuracy [E]
+
+How accurate is the model given this subset of data?
+previousfilter and score accuracy [E]
+
+How accurate is the model for this subset in the data?
+previousfilter and score accuracy [E]
+
+What is the accuracy of the model for this subset in the data?
+previousfilter and score accuracy [E]
+
+For this subset in the data, what is the models accuracy?
+previousfilter and score accuracy [E]
+
+Can you please show a few examples the model predicts incorrectly and how accurate the model is on the data?
+mistake sample and score accuracy [E]
+
+Could you demonstrate a few instances where the model predicts incorrectly and how accurate the model is on the data?
+mistake sample and score accuracy [E]
+
+Could you give us a few situations where the model predicts incorrectly and how accurate the model is on the data?
+mistake sample and score accuracy [E]
+
+Can you describe some incorrect predictions the model has made and tell me how reliable the model is on the data?
+mistake sample and score accuracy [E]
+
+What did the models predict for people over 50? What mistakes did the model have?
+filter age greater than 50 and predict and mistake sample [E]
+
+what are the exact predictions for people older than 50 and what are some mistakes the model makes on this data?
+filter age greater than 50 and predict and mistake sample [E]
+
+Could you display data point number 21 and let me know if the model correctly predicted it?
+filter id 21 and show and mistake sample [E]
+
+could you show me data point number 21 and tell me whether the model predicts it accurately?
+filter id 21 and show and mistake sample [E]
+
+Let me see data point 21. Did the model predict it correctly?
+filter id 21 and show and mistake sample [E]
+
+Show data point 21. Did the model predict data point 21 accurately?
+filter id 21 and show and mistake sample [E]
+
+show me data point number 21 and tell me whether the model predicts it correctly?
+filter id 21 and show and mistake sample [E]
+
+For those with glucose values of 80 and age over 40, what are the true labels?
+filter glucose equal to 80 or filter age greater than 40 and label [E]
+
+What are the true labels for people over 40 with glucose of 80?
+filter glucose equal to 80 or filter age greater than 40 and label [E]
+
+For people older than 40 and with glucose values of 80, what are the true labels?
+filter glucose equal to 80 or filter age greater than 40 and label [E]
+
+What are the true labels for people aged older than 40 or has glucose values of 80?
+filter glucose equal to 80 or filter age greater than 40 and label [E]
+
+What are the true labels for people with glucose values 80 or aged older than 40?
+filter glucose equal to 80 or filter age greater than 40 and label [E]
+
+What predictions do you make for people with insulin levels of 23?
+filter insulin equal to 23 and predict [E]
+
+What are your predictions for people with insulin levels of 23?
+filter insulin equal to 23 and predict [E]
+
+What do you foresee for people with insulin levels of 23?
+filter insulin equal to 23 and predict [E]
+
+What's your prediction for people with insulin levels at 23?
+filter insulin equal to 23 and predict [E]
+
+What are errors that the model makes on people with a diabetes pedigree function greater or equal to 0.8?
+filter diabetespedigreefunction greater equal than 0.8 and mistake sample [E]
+
+What are some of the mistakes the model makes on people with a diabetes pedigree function greater or equal to 0.8?
+filter diabetespedigreefunction greater equal than 0.8 and mistake sample [E]
+
+What common errors does the the model make on people with a diabetes pedigree function greater or equal to 0.8?
+filter diabetespedigreefunction greater equal than 0.8 and mistake sample [E]
+
+Where did the model make a mistake on people with a diabetes pedigree function 0.8 or higher?
+filter diabetespedigreefunction greater equal than 0.8 and mistake sample [E]
+
+What was the exact mistakes that took place with the model on people with diabetes pedigree function at or higher than 0.8?
+filter diabetespedigreefunction greater equal than 0.8 and mistake sample [E]
+
+What types of errors does the model make when dealing with diabetes individuals with a pedigree function of 0.8 or higher?
+filter diabetespedigreefunction greater equal than 0.8 and mistake sample [E]
+
+For the data points for people older than 76, what would the predictions be if their glucose levels went down 20?
+filter age greater than 76 and change glucose decrease 20 and predict [E]
+
+Considering data points on people older than 76, how would the predictions change if their glucose levels were reduced by 20?
+filter age greater than 76 and change glucose decrease 20 and predict [E]
+
+Reduce glucose levels by 20 for all data points older than 76 and show me the predictions.
+filter age greater than 76 and change glucose decrease 20 and predict [E]
+
+Reduce glucose levels by 20 for data points with age greater than 76, and show me the predictions
+filter age greater than 76 and change glucose decrease 20 and predict [E]
+
+Show me the predictions for data points with age over 76 after reducing glucose levels by 20.
+filter age greater than 76 and change glucose decrease 20 and predict [E]
+
+Reduce the glucose levels of data points over age 76 by 20, then show me the predictions.
+filter age greater than 76 and change glucose decrease 20 and predict [E]
+
+What are the odds people in this data have diabetes?
+likelihood [E]
+
+What percentage of people in this data have diabetes?
+likelihood [E]
+
+What prediction can you make on the instances in this data? What do you think the mistakes will be in the predictions?
+predict and mistake sample [E]
+
+In the case of the instances in the data, what do you predict. On another note, what errors do you think these predictions will have?
+predict and mistake sample [E]
+
+What mistakes are considered common when diagnosing people with BMIs over 40 for diabetes?
+filter bmi greater than 40 and mistake typical [E]
+
+What are common errors that you find when diagnosing patients with bmi over 40 with diabetes?
+filter bmi greater than 40 and mistake typical [E]
+
+What was your reasoning for giving these people a diabetes diagnosis?
+previousfilter and explain features [E]
+
+Why were all these people diagnosed with diabetes?
+previousfilter and explain features [E]
+
+What lead to all these people being diagnosed with diabetes?
+previousfilter and explain features [E]
+
+Is there a reason why all these people were diagnosed with diabetes by you?
+previousfilter and explain features [E]
+
+You diagnosed these people with diabetes, why?
+previousfilter and explain features [E]
+
+Why did you diagnose diabetes in these people?
+previousfilter and explain features [E]
+
+For what reason did you diagnose these people with diabetes?
+previousfilter and explain features [E]
+
+Are people who don't reduce their bmi's by 10 have more of a threat to attain diabetes? How?
+previousfilter and change bmi decrease 10 and likelihood and explain features [E]
+
+Would people who lower their BMI's by 10 have diabetes? Why?
+previousfilter and change bmi decrease 10 and likelihood and explain features [E]
+
+To be diagnosed as unlikely to have diabetes, what does patient 34 have to do?
+filter id 34 and explain cfe [E]
+
+For patient number 34 to be unlikely to have diabetes, what do they need to do?
+filter id 34 and explain cfe [E]
+
+To unlikely have diabetes, and be diagnosed as so, what does patient number 34 need to do?
+filter id 34 and explain cfe [E]
+
+In the case of patient 34, what would they need to do to not be diagnosed with diabetes?
+filter id 34 and explain cfe [E]

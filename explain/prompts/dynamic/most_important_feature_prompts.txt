@@ -1,0 +1,191 @@
+User: Could you tell me when {cat_features} is an important feature?
+Parsed: important {cat_features} [E]
+
+User: Could you please indicate when {num_features} is important?
+Parsed: important {num_features} [E]
+
+User: I'm trying to figure out when the model thinks {num_features} is important. Think you could help?
+Parsed: important {num_features} [E]
+
+User: Can you help me identify when {cat_features} is an important feature for {num_features} greater than {num_values}?
+Parsed: filter {num_features} greater than {num_values} and important {cat_features} [E]
+
+User: So, I need to figure out when {num_features} is an important feature in the data. I also need to do this just for {num_features} less than {num_values} and not for {cat_features}.
+Parsed: filter {num_features} less than {num_values} and filter {cat_features} false and important {num_features} [E]
+
+User: For {cat_features}, could you show for what instances {cat_features} ends up being important?
+Parsed: filter {cat_features} true and important {cat_features} [E]
+
+User: For {cat_features} with {num_features} equal to {num_values}, could you tell me when {cat_features} is a highly ranked feature?
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and important {cat_features}. [E]
+
+User: When do you rank {cat_features} very highly?
+Parsed: important {cat_features} [E]
+
+User: Over what instances is {num_features} ranked pretty high?
+Parsed: important {num_features} [E]
+
+User: Could you help me figure out a bit more about the ordering of the feature importances? In particular, I want to figure out when {cat_features} is ranked highly.
+Parsed: important {cat_features} [E]
+
+User: What are the most important features?
+Parsed: important all [E]
+
+User: show the feature importances
+Parsed: important all [E]
+
+User: feature importances
+Parsed: important all [E]
+
+User: what features are the most important?
+Parsed: important all [E]
+
+User: display most important features
+Parsed: important all [E]
+
+User: please show the ranking of features by importance
+Parsed: important all [E]
+
+User: what features most influence the model's predictions
+Parsed: important all [E]
+
+User: what are the most important features for the predictions
+Parsed: important all [E]
+
+User: most important features for predictions
+Parsed: important all [E]
+
+User: show the feature importances
+Parsed: important all [E]
+
+User: feature importance
+Parsed: important all [E]
+
+User: what are the top 2 most important features
+Parsed: important topk 2 [E]
+
+User: display the 42 most important features
+Parsed: important topk 42 [E]
+
+User: please show the most important feature for the predictions
+Parsed: important topk 1 [E]
+
+User: please show the top few features for the predictions
+Parsed: important topk 3 [E]
+
+User: top 10 most important features for predicting {cat_features}
+Parsed: filter {cat_features} true and important topk 10 [E]
+
+User: top three most important features
+Parsed: important topk 3 [E]
+
+User: what are the highest 15 features by importance
+Parsed: important topk 15 [E]
+
+User: what features most influence model predictions
+Parsed: important all [E]
+
+User: could you show which features are most critical for the predictions of the model
+Parsed: important all [E]
+
+User: 5 most important features
+Parsed: important topk 5 [E]
+
+User: thirty most important features
+Parsed: important topk 30 [E]
+
+User: most important feature
+Parsed: important topk 1 [E]
+
+User: least important features
+Parsed: important all [E]
+
+User: features that are not important for predictions
+Parsed: important all [E]
+
+User: what features are not that important
+Parsed: important all [E]
+
+User: tell me the top 10 most important features for data with a {num_features} over {num_values}
+Parsed: filter {num_features} greater than {num_values} and important topk 10 [E]
+
+User: what are the top 7 most essential features when predicted data points where {num_features} is less than {num_values}
+Parsed: filter {num_features} less than {num_values}  [E]
+
+User: most important features for {num_features} greater than {num_values}
+Parsed: filter {num_features} greater than {num_values} and important all [E]
+
+User: top three most important features for {cat_features} equal to {cat_values}
+Parsed: filter {cat_features} {cat_values} and important topk 3 [E]
+
+User: 5 most important features for {num_features} equal to {num_values}
+Parsed: filter {num_features} equal to {num_values} and important topk 5 [E]
+
+User: what are the top five most important features for the models predictions?
+Parsed: important topk 5 [E]
+
+User: what are the top two most important features for the models predictions?
+Parsed: important topk 2 [E]
+
+User: for those with {num_features} greater than {num_values}, what are the top three most important features for the model's predictions?
+Parsed: filter {num_features} greater than {num_values} and important topk 3 [E]
+
+User: for people with {num_features} less than {num_values}, what are the top three most important features for the model's predictions?
+Parsed: filter {num_features} less than {num_values} and important topk 3 [E]
+
+User: what's the most important feature for data point 33?
+Parsed: filter id 33 and important topk 1 [E]
+
+User: most important feature for id 10
+Parsed: filter id 10 and important topk 10 [E]
+
+User: 10 most important features for id's 5, 151, 315
+Parsed: filter id 5 or filter id 151 or filter id 315 and important topk 10 [E]
+
+User: what three features most influence the model's predictions for ids 1515 and 55
+Parsed: filter id 1515 or filter id 55 and important topk 3 [E]
+
+User: most important features for data point 100055
+Parsed: filter id 100055 and important all [E]
+
+User: I was wondering what are the most important features for instance 213?
+Parsed: filter id 213 and important all [E]
+
+User: Could you show top 3 most important features for the data point 98
+Parsed: filter id 98 and important topk 3 [E]
+
+User: How important is {cat_features} for the predictions?
+Parsed: important {cat_features} [E]
+
+User: How important is {num_features} for the predictions?
+Parsed: important {num_features} [E]
+
+User: What's the importance of {num_features} for the predictions?
+Parsed: important {num_features} [E]
+
+User: Tell me the importance of {cat_features} for the model's predictions?
+Parsed: important {cat_features} [E]
+
+User: Overall, to what degree is {cat_features} important for the model's predictions?
+Parsed: important {cat_features} [E]
+
+User: is {num_features} an important feature
+Parsed: important {num_features} [E]
+
+User: what are the most important features in the data when reasoning about {filter_text} to make decisions?
+Parsed: {filter_parse} and important all [E]
+
+User: what are the 3 most important features in the data when reasoning about {filter_text} to make decisions?
+Parsed: {filter_parse} and important topk 3 [E]
+
+User: what's the most important feature for the model predicting {filter_text}?
+Parsed: {filter_parse} and important topk 1 [E]
+
+User: what are the top 3 features for the model's prediction on data point 32?
+Parsed: filter id 32 and important topk 3 [E]
+
+User: for {filter_text}, what are the nine most important features for the model's predictions?
+Parsed: {filter_parse} and important topk 9 [E]
+
+User: if people with {filter_text} were to have {num_features} increased by {num_values}, what would the top 5 most important features be?
+Parsed: {filter_parse} and change {num_features} increase {num_values} and important topk 5 [E]

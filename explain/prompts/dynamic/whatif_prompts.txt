@@ -1,0 +1,167 @@
+User: Show me the predictions of all the {cat_features} if you increased {num_features} by 10
+Parsed: filter {cat_features} true and change {num_features} increase 10 and predict [E]
+
+User: Tell me what the model would predict if you decreased {num_features} by 5 on all the data
+Parsed: change {num_features} decrease 5 and predict [E]
+
+User: Over all the instances in the data, what would the predictions be if {cat_features} were set to false?
+Parsed: change {cat_features} false and predict [E]
+
+User: For all the data, what would the predictions be if {cat_features} were set to true?
+Parsed: change {cat_features} true and predict [E]
+
+User: For the entire dataset, what would the predictions be if you decreased {num_features} by {num_values}?
+Parsed: change {num_features} decrease {num_values} and predict [E]
+
+User: What would the predictions be if you set {num_features} to {num_values} on the entire dataset?
+Parsed: change {num_features} set {num_values} and predict [E]
+
+User: What would the explanations be if you set {num_features} to {num_values} on the entire dataset?
+Parsed: change {num_features} set {num_values} and explain features [E]
+
+User: Could you show me the predictions for instances where {cat_features} equal to {cat_values} with {num_features} set to 215?
+Parsed: filter {cat_features} {cat_values} and change {num_features} set 215 and predict [E]
+
+User: If you set {cat_features} to {cat_values}, what would the model's rationale be on all the data?
+Parsed: change {cat_features} {cat_values} and explain features [E]
+
+User: What would you predict if {num_features} were set to 11 and {num_features} were increased by 1566 for the entire dataset?
+Parsed: change {num_features} set 11 and change {num_features} increase 1566 and predict [E]
+
+User: What would the prediction for id 1552 be if you change {cat_features} to {cat_values}?
+Parsed: filter id 1552 and change {cat_features} {cat_values} and predict [E]
+
+User: What would the prediction for sample id 1552 be if you change {cat_features} to {cat_values}?
+Parsed: filter id 1552 and change {cat_features} {cat_values} and predict [E]
+
+User: How would you predict instance 111 if you decreased {num_features} by 100 and increased {num_features} by -15?
+Parsed: filter id 111 and change {num_features} decrease 100 and change {num_features} increase -15 and predict [E]
+
+User: If you increased {num_features} by {num_values}, what would the model's rationale be?
+Parsed: change {num_features} increase {num_values} and explain features [E]
+
+User: What is the models predictions on {num_features} greater than 12 and what would it be if you decreased {num_features} by {num_values}?
+Parsed: filter {num_features} greater than 12 and predict and change {num_features} decrease {num_values} and predict [E]
+
+User: What is the importance of {cat_features} if {num_features} were set to 6299?
+Parsed: change {num_features} set 6299 and important {cat_features} [E]
+
+User: What would the prediction be if you set {num_features} to {num_values} for instance id 115?
+Parsed: filter id 115 and change {num_features} set {num_values} and predict [E]
+
+User: What would the explanation be if you set {num_features} to {num_values} for instance id 15255?
+Parsed: filter id 15255 and change {num_features} set {num_values} and explain features [E]
+
+User: How would the predictions change for all the instances in the data if you increased {num_features} by 15, decreased {num_features} by 10, and set {cat_features} to {cat_values}?
+Parsed: change {num_features} increase 15 and change {num_features} decrease 10 and change {cat_features} {cat_values} and predict [E]
+
+User: What would the prediction for id 55 be if you change {num_features} to {num_values}?
+Parsed: filter id 55 and change {num_features} set {num_values} and predict [E]
+
+User: What would happen to the predictions for instances with {num_features} less than {num_values} if you were to change {num_features} to {num_values}?
+Parsed: filter {num_features} less than {num_values} and change {num_features} set {num_values} and predict [E]
+
+User: What would the predictions be like for instances with {num_features} less than {num_values} if you were to increase {num_features} by {num_values}?
+Parsed: filter {num_features} less than {num_values} and change {num_features} increase {num_values} and predict [E]
+
+User: what's the likelihood this instance is {class_names} if we increase {num_features} by {num_values}?
+Parsed: previousfilter and change {num_features} increase {num_values} and likelihood [E]
+
+User: probability this data point is predicted as {class_names} if we increase {num_features} by {num_values}
+Parsed: previousfilter and change {num_features} increase {num_values} and likelihood [E]
+
+User: what's the probability of id 11 getting predicted {class_names} if we were to decrease {num_features} by {num_values}
+Parsed: filter id 11 and change {num_features} decrease {num_values} and likelihood [E]
+
+User: how likely would the "{class_names}" class be if {num_features} were set to {num_values} for id 515
+Parsed: filter id 515 and change {num_features} set {num_values} and likelihood [E]
+
+User: how would the predictions change if X were decreased by 10 for people with a {num_features} of {num_values}?
+Parsed: filter {num_features} equal to {num_values} and change X decrease 10 and predict [E]
+
+User: what are the predictions for those with {num_features} of {num_values}?
+Parsed: filter {num_features} equal to {num_values} and predict [E]
+
+User: in what was would the predictions be altered if it were the case that those with {num_features} of {num_values} had {num_features} decreased by {num_values}?
+Parsed: filter {num_features} equal to {num_values} and change {num_feautres} decrease {num_values} and predict [E]
+
+User: what would happen to the class probabilities if we increased {num_features} by {num_values}?
+Parsed: previousfilter and change {num_features} increase {num_values} and likelihood [E]
+
+User: What if we took {num_values} points away from {num_features} for id 235135? What would happen to the probability of the predictions?
+Parsed: filter id 235135 and change {num_features} decrease {num_values} and likelihood [E]
+
+User: How would the prediction probabilites change if we decrease {num_features} by {num_values}?
+Parsed: previousfilter and change {num_features} decrease {num_values} and likelihood [E]
+
+User: What happens to the prediction likelihoods if we add {num_values} to {num_features}?
+Parsed: previousfilter and change {num_features} increase {num_values} and likelihood [E]
+
+User: for data point 515, how would the class probabilities change if we took {num_values} away from {num_features}?
+Parsed: filter id 515 and change {num_features} decrease {num_values} and likelihood [E]
+
+User: what if, for instance 1515, we added {num_values} to {num_features} and viewed the class probabilities?
+Parsed: filter id 1515 and change {num_features} increase {num_values} and likelihood [E]
+
+User: please tell me what would happen for the instance with id 10 if we added {num_values} to the {num_features} feature and viewed the probability of the {class_names} class
+Parsed: filter id 10 and change {num_features} increase {num_values} and likelihood [E]
+
+User: what's the likelihood of id 32 being {class_names} if we add {num_values} to {num_features}?
+Parsed: filter id 32 and change {num_features} increase {num_values} and likelihood [E]
+
+User: probability of id 34 getting predicted {class_names} adding {num_values} to {num_features}
+Parsed: filter id 34 and change {num_features} increase {num_values} and likelihood [E]
+
+User: for those with {num_values} or more {num_features}, what would happen to the model's predictions if {num_features} were decreased by {num_values}?
+Parsed: filter {num_features} greater equal than {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: for those with {num_values} or more {num_features}, what would happen to the distribution of model predictions if {num_features} were increased by {num_values}?
+Parsed: filter {num_features} greater equal than {num_values} and change {num_features} increase {num_values} and predict [E]
+
+User: what would happen to the distribution of model predictions if people with {num_features} less than {num_values} had {num_features} decreased by {num_values}
+Parsed: filter {num_features} less than {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: what would happen to the distribution of model predictions if individuals with {num_features} greater than {num_values} had {num_features} decreased by {num_values}
+Parsed: filter {num_features} greater than {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: what would happen to the likelihood of {class_names} if we were to increase {num_features} by 70 for the data point with sample id 100
+Parsed: filter id 100 and change {num_features} increase 70 and likelihood [E]
+
+User: whats the probability that sample id 22 has diabetes
+Parsed: filter id 22 and likelihood [E]
+
+User: what is the probability for 3312 if {num_features} is increased by {num_values}
+Parsed: filter id 3312 and change {num_features} increase {num_values} and likelihood [E]
+
+User: what is the prediction probability for 93 if its {num_features} is increased by {num_values}
+Parsed: filter id 93 and change {num_features} increase {num_values} and likelihood [E]
+
+User: what is the probability for instance with id 34 if {num_features} is increased by {num_values}
+Parsed: filter id 34 and change {num_features} increase {num_values} and likelihood [E]
+
+User: what is the probability for instance with id 34 if {num_features} is decreased by {num_values}
+Parsed: filter id 34 and change {num_features} decrease {num_values} and likelihood [E]
+
+User: what are the predictions of people more than {num_values} {num_features} if they had {num_values} fewer {num_features}
+Parsed: filter {num_features} greater than {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: reduce the number of occurances for everyone with more than {num_values} {num_features} by 10, and show the predictions
+Parsed: filter {num_features} greater than {num_values} and change occurances decrease 10 and predict [E]
+
+User: take all the instances with more than {num_values} {num_features}, reduce their {num_features} by {num_values}, and tell me the predictions
+Parsed: filter {num_features} greater than {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: if id 120 had a {num_features} of {num_values} would they be predicted {class_names}?
+Parsed: filter id 120 and change {num_features} set {num_values} and predict [E]
+
+User: if it were the case that sample 325 had a {num_features} of {num_values} what would the class probabilities be?
+Parsed: filter id 523 and change {num_features} set {num_values} and likelihood [E]
+
+User: if 78 were to have {num_features} of {num_values} would this person be {class_names}?
+Parsed: filter id 78 and change {num_features} set {num_values} and likelihood [E]
+
+User: if {num_features} is increased by {num_values} for {filer_text}, what would the model predict?
+Parsed: {filter_parse} and change {num_features} increase {num_values} and predict [E]
+
+User: if {num_features} is decreased by {num_values} for {filer_text}, what would the model predict?
+Parsed: {filter_parse} and change {num_features} increase {num_values} and predict [E]

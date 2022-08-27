@@ -1,0 +1,5 @@
+User: Show me the predictions of all the {cat_features}
+Parsed: filter {cat_features} true and predict [E]
+
+User: Could you explain {exp_name} the predictions for instance {cat_features} equal to {cat_values}?
+Parsed: filter {cat_features} {cat_values} and {exp_name} [E]

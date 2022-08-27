@@ -1,0 +1,185 @@
+User: describe data
+Parsed: data [E]
+
+User: more info about the data and model
+Parsed: data and model [E]
+
+User: Tell me a bit more about the data please.
+Parsed: data [E]
+
+User: Give an overview of the data.
+Parsed: data [E]
+
+User: What does the data look like?
+Parsed: data [E]
+
+User: Could you describe the data a bit more?
+Parsed: data [E]
+
+User: What are the features in the data?
+Parsed: data [E]
+
+User: what are the features
+Parsed: data [E]
+
+User: show me the features
+Parsed: data [E]
+
+User: Could you describe the data and model?
+Parsed: data and model [E]
+
+User: What's the data like and what can you do?
+Parsed: data and function [E]
+
+User: tell me what the model is
+Parsed: model [E]
+
+User: tell me what the model and data are
+Parsed: model and data [E]
+
+User: describe the model and data
+Parsed: model and data [E]
+
+User: what is the distribution of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the distribution of {cat_features}
+Parsed: statistic {cat_features} [E]
+
+User: what is the {num_features} feature like
+Parsed: statistic {num_features} [E]
+
+User: what is the {cat_features} feature like
+Parsed: statistic {cat_features} [E]
+
+User: what are the statistics of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the variability of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: describe the variability of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the range of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the max value of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the minimum value of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the mean of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is 1 std of {num_features}?
+Parsed: statistic {num_features} [E]
+
+User: what is 1 standard deviation of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what are the statistics of {num_features} like?
+Parsed: statistic {num_features} [E]
+
+User: for {filter_text}, what is the distribution of {num_features}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: for {filter_text}, what is the distribution of {cat_features}?
+Parsed: {filter_parse} and statistic {cat_features} [E]
+
+User: where {filter_text}, show the distribution of {cat_features}?
+Parsed: {filter_parse} and statistic {cat_features} [E]
+
+User: what is 1 standard deviation of the label
+Parsed: statistic target [E]
+
+User: what are the statistics of the labels like?
+Parsed: statistic target [E]
+
+User: what's the {num_features} of id 78?
+Parsed: filter id 78 and statistic {num_features} [E]
+
+User: what's the {cat_features} of id 22
+Parsed: filter id 22 and statistic {num_features} [E]
+
+User: what's the value of {cat_features} of id 25
+Parsed: filter id 25 and statistic {cat_features} [E]
+
+User: what's the value of {num_features} of id 25
+Parsed: filter id 25 and statistic {num_features} [E]
+
+User: what are is the distribution of the target variable?
+Parsed: statistic target [E]
+
+User: for {filter_text}, what is the distribution of the labels?
+Parsed: {filter_parse} and statistic target [E]
+
+User: for {filter_text}, what is the distribution of the target variable?
+Parsed: {filter_parse} and statistic target [E]
+
+User: for {filter_text}, what is the distribution of the label?
+Parsed: {filter_parse} and statistic target [E]
+
+User: where {filter_text}, show the distribution of the ground truth values?
+Parsed: {filter_parse} and statistic target [E]
+
+User: for data where {filter_text}, what is the statistics of {num_features}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: for data where {filter_text}, what is the statistics of {cat_features}?
+Parsed: {filter_parse} and statistic {cat_features} [E]
+
+User: for data where {filter_text}, what is the average values of {num_features}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: for instances {filter_text}, show statistics for the {num_features} feature
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what's the average {num_features} for people where {filter_text}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what's the statistics of {num_features} for data where {filter_text}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what are the label frequencies
+Parsed: statistic target [E]
+
+User: what are the class frequencies
+Parsed: statistic target [E]
+
+User: what are the gold label frequencies
+Parsed: statistic target [E]
+
+User: what are the gold target frequencies
+Parsed: statistic target [E]
+
+User: describe the {num_features} feature
+Parsed: define {num_features} [E]
+
+User: define the {num_features} feature
+Parsed: define {num_features} [E]
+
+User: describe the {num_features} feature
+Parsed: define {num_features} [E]
+
+User: define the {cat_features} feature
+Parsed: define {cat_features} [E]
+
+User: what's the definition of {num_features}?
+Parsed: define {num_features} [E]
+
+User: what's the meaning of the {num_features} feature?
+Parsed: define {num_features} [E]
+
+User: could you tell me what {num_features} means?
+Parsed: define {num_features} [E]
+
+User: could you tell me what {cat_features} means?
+Parsed: define {cat_features} [E]
+
+User: how do you define the feature named {num_features}?
+Parsed: define {num_features} [E]
+
+User: how do you define the feature named {cat_features}?
+Parsed: define {cat_features} [E]

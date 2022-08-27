@@ -1,0 +1,48 @@
+# ExplainBot Params
+ExplainBot.parsing_model_name = "EleutherAI/gpt-neo-125M"
+ExplainBot.seed = 0
+
+ExplainBot.name = "diabetes-debug"
+
+ExplainBot.model_file_path = "./tests/data/diabetes_model_logistic_regression.pkl"
+ExplainBot.dataset_file_path = "./tests/data/diabetes_test.csv"
+ExplainBot.background_dataset_file_path = "./tests/data/diabetes_test.csv"
+
+ExplainBot.dataset_index_column = 0
+ExplainBot.target_variable_name = "y"
+ExplainBot.categorical_features = None
+ExplainBot.numerical_features = None
+ExplainBot.remove_underscores = True
+
+# Prompt params
+Prompts.prompt_cache_size = 1_000_000
+Prompts.prompt_cache_location = "{prompt_cache}/promts_cache.pkl"
+Prompts.max_values_per_feature = 1
+Prompts.sentence_transformer_model_name = "all-mpnet-base-v2"
+Prompts.prompt_folder = "./tests/test_prompts"
+
+Prompts.num_per_knn_prompt_template = 1
+Prompts.num_prompt_template = 10
+
+# Explanation Params
+Explanation.max_cache_size = 1_000_000
+
+# MegaExplainer Params
+MegaExplainer.cache_location = "./cache/compas-mega-explainer-tabular.pkl"
+MegaExplainer.use_selection = False
+
+
+# Tabular Dice Params
+TabularDice.cache_location = "{prompt_cache}/diabetes-dice-tabular-logistic-regression.pkl"
+
+# Conversation params
+Conversation.class_names = {0: "unlikely to have diabetes", 1: "likely to have diabetes"}
+Conversation.data_folder = "./data"
+
+# Dataset description
+DatasetDescription.dataset_objective = "predict whether someone has diabetes"
+DatasetDescription.dataset_description = "diabetes prediction"
+DatasetDescription.model_description = "logistic regression"
+
+# Don't use remote database
+log_dialogue_input.dynamodb_table = None

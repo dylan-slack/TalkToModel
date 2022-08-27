@@ -1,0 +1,74 @@
+User: does the model predict {filter_text} correctly?
+Parsed: {filter_parse} and mistake sample [E]
+
+User: what are some mistakes on {filter_text} that the model makes
+Parsed: {filter_parse} and mistake sample [E]
+
+User: could you show me a few examples you get incorrect for {filter_text}
+Parsed: {filter_parse} and mistake sample [E]
+
+User: for {filter_text}, could you show me if the model predicts the data correctly for some examples?
+Parsed: {filter_parse} and mistake sample [E]
+
+User: {filter_text} show mistakes
+Parsed: {filter_parse} and mistake sample [E]
+
+User: {filter_text} sample mistakes
+Parsed: {filter_parse} and mistake sample [E]
+
+User: {filter_text} return incorrect predictions
+Parsed: {filter_parse} and mistake sample [E]
+
+User: {filter_text} show faulty predictions
+Parsed: {filter_parse} and mistake sample [E]
+
+User: {filter_text} show bad predictions
+Parsed: {filter_parse} and mistake sample [E]
+
+User: could you show me some data the model predicts incorrectly?
+Parsed: mistake sample [E]
+
+User: show me data the model gets wrong
+Parsed: mistake sample [E]
+
+User: show me some data you predict incorrectly
+Parsed: mistake sample [E]
+
+User: what are some data points you get incorrect?
+Parsed: mistake sample [E]
+
+User: could you show me a few examples of data that you get wrong?
+Parsed: mistake sample [E]
+
+User: what are some typical mistakes the model makes?
+Parsed: mistake typical [E]
+
+User: for {filter_text}, what are some mistakes you typically make?
+Parsed: {filter_parse} and mistake typical [E]
+
+User: what are some typical mistakes on {filter_text}
+Parsed: {filter_parse} and mistake typical [E]
+
+User: how would you characterize the mistakes you make on {filter_text}?
+Parsed: {filter_parse} and mistake typical [E]
+
+User: how would you characterize the mistakes you make on all the data?
+Parsed: mistake typical [E]
+
+User: describe your typical mistakes over the dataset
+Parsed: mistake typical [E]
+
+User: what are some common mistakes you make when predicting {filter_text}?
+Parsed: {filter_parse} and mistake typical [E]
+
+User: what are some mistakes on {filter_text} the model typically makes
+Parsed: {filter_parse} and mistake typical [E]
+
+User: what data points does the model typically predict wrongly on people with {filter_text}?
+Parsed: {filter_parse} and mistake typical [E]
+
+User: what data points does the model typically predict mistakenly on people with {filter_text}?
+Parsed: {filter_parse} and mistake typical [E]
+
+User: what errors does the model typically make on the data?
+Parsed: mistake typical [E]

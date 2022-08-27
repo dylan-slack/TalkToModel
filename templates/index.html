@@ -1,0 +1,368 @@
+<!-- This code is modified from a script provided in https://studygyaan.com/python/create-web-based-chatbot-in-python-django-flask -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TalkToModel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/static/styles/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <messagebody>
+        <!-- The text interaction part of the method -->
+        <section class="ttm">
+          <header class="ttm-header">
+            <div class="ttm-header-title">
+             TalkToModel
+            </div>
+          </header>
+          <main class="ttm-chat">
+            <div class="msg left-msg">
+              <div class="msg-bubble">
+                <div class="msg-text">
+                  Hello 😊, I'm a machine learning model trained to {{ datasetObjective }}.
+                  <br><br>
+                  Let's get started. Ask me something!
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <form class="ttm-inputarea">
+            <input type="text" class="ttm-input" id="textInput" placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
+              <button type="submit" class="ttm-send-btn">Send</button>
+          </form>
+            <span class="genOptions">👇Help me generate a question about...👇</span>
+
+            <div class="slideDown">
+                <div class="dots-cont", id="generation-loading"> <span class="dot dot-1"></span> <span class="dot dot-2"></span> <span class="dot dot-3"></span> </div>
+                <div class="buttons", id="generation-buttons">
+                    <button id="idea-important" class="idea-button" onclick="sampleImportant()">important features</button>
+                    <button id="idea-why" class="idea-button" onclick="sampleWhy()">explanations</button>
+                    <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
+                    <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">prediction likelihood</button>
+                    <button id="idea-show" class="idea-button" onclick="sampleShow()">showing data</button>
+                    <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system capabilities</button>
+                    <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
+                    <button id="idea-whatif" class="idea-button" onclick="sampleWhatIf()">what if scenario</button>
+                    <button id="idea-flip" class="idea-button" onclick="sampleFlip()">how to change a prediction</button>
+                    <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">dataset description</button>
+                    <button id="idea-interaction" class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>
+                    <button id="idea-interaction" class="idea-button" onclick="sampleMistakes()">mistakes</button>
+                    <button id="idea-interaction" class="idea-button" onclick="sampleLabels()">data labels</button>
+                </div>
+            </div>
+        </section>
+        <section class="pins" id="my-pins">
+          <header class="pins-header">
+            <div class="pins-header-title">
+             Pins
+            </div>
+          </header>
+            <main class="pins-scroll"> <!-- pinned messages appear here -->
+                <div class="pin left-msg">
+                  <div class="pin-bubble">
+                    <div class="pin-text">Pin messages and they will appear here!</div>
+                  </div>
+                </div>
+            </main>
+        </section>
+    </messagebody>
+</body>
+</html>
+
+<script>
+    $('.genOptions').click(function(e){
+        $('.slideDown').slideToggle();
+    });
+</script>
+
+<script>
+    function doSample(rawAction) {
+        let username = '{{ currentUserId }}'
+        let dataPackage = {action: rawAction, thisUserName: username}
+        let jsonDataPackage = JSON.stringify(dataPackage)
+
+        let button_div = document.getElementById("")
+
+        const result = $.ajax({
+            type: 'POST',
+            url: "{{ url_for('.sample_prompt') }}",
+            data: jsonDataPackage,
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (data) {
+                ttmInput.value = data;
+            }
+        });
+    }
+    function sampleDataDescription() {
+        doSample("description");
+    }
+    function samplePerformance() {
+        doSample("score");
+    }
+    function sampleWhatIf() {
+        doSample("whatif");
+    }
+    function sampleMistakes() {
+        doSample("mistake");
+    }
+    function sampleFlip() {
+        doSample("cfe");
+    }
+    function sampleImportant() {
+        doSample("important");
+    }
+    function sampleLabels() {
+        doSample("labels");
+    }
+    function sampleWhy() {
+        doSample("explain");
+    }
+    function samplePredict() {
+        doSample("predict");
+    }
+    function sampleLikelihood() {
+        doSample("likelihood");
+    }
+    function sampleShow() {
+        doSample("show");
+    }
+    function sampleCapabilities() {
+        doSample("function");
+    }
+    function sampleInteractions() {
+        doSample("interactions")
+    }
+</script>
+
+<script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+    <script>
+      const ttmForm = get(".ttm-inputarea");
+      const ttmInput = get(".ttm-input");
+      const ttmChat = get(".ttm-chat");
+      const ttmPins = get(".pins-scroll");
+      let userInputs = [];
+      let userInputIndex = 0;
+
+      // text box command
+      ttmForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const msgText = ttmInput.value;
+        if (!msgText) return;
+        addToChat("right", msgText, "");
+        insertLoadingDots();
+        ttmChat.scrollTop += 200;
+        ttmInput.value = "";
+        botResponse(msgText);
+      });
+
+      function answeredNo(logText) {
+        // Fade out
+        $('.all-feedback').fadeOut(250, function() {
+            $('.all-feedback').remove();
+        });
+
+        const feedback = `MessageID: ${logText} || Feedback: Negative || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+      }
+
+      function answeredInsight(logText) {
+        $('.all-feedback').fadeOut(250, function() {
+            $('.all-feedback').remove();
+        });
+
+        const feedback = `MessageID: ${logText} || Feedback: Insightful || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+      }
+
+      function answeredConfused(logText) {
+        // Fade out
+        $('.all-feedback').fadeOut(250, function() {
+            $('.all-feedback').remove();
+        });
+
+        const feedback = `MessageID: ${logText} || Feedback: Confused || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+      }
+
+      function answeredYes(logText) {
+        // Fade out
+        $('.all-feedback').fadeOut(250, function() {
+            $('.all-feedback').remove();
+        });
+        const feedback = `MessageID: ${logText} || Feedback: Positive || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+      }
+
+      function insertLoadingDots() {
+          let msgHTML = `
+            <div class="loading-dots", id="current-dots">
+                <div class="msg left-msg">
+                    <div class="msg-bubble">
+                        <div class="stage">
+                             <div class="dot-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `
+          ttmChat.insertAdjacentHTML("beforeend", msgHTML);
+      }
+
+      function deleteLoadingDots() {
+        document.getElementById("current-dots").outerHTML = "";
+      }
+
+      function pinMessage(text) {
+          let msgHTML = `
+            <div class="msg left-msg">
+              <div class="msg-bubble">
+                <div class="msg-text">${text}</div>
+              </div>
+            </div>
+        `;
+          ttmPins.insertAdjacentHTML("beforeend", msgHTML);
+      }
+
+      function addToChat(side, text, logText) {
+        // Defines adding messages to the conversation
+        let msgHTML = "";
+
+        // replace quotes for pinned messages, there are some issues with have quotes in here
+        let modifiedText = text.replace("\"", "");
+        modifiedText = modifiedText.replace("'", "");
+
+        // modifiedText = modifiedText.replace("(", "");
+        // modifiedText = modifiedText.replace(")", "");
+        if (side == "left") {
+         msgHTML = `
+            <div class="msg ${side}-msg">
+              <div class="msg-bubble">
+                <div class="msg-text">${text}</div>
+              <div class="happy-sad-unsure-response">
+                <div class="all-feedback">
+                <div class="feedback-opener">
+                    Feedback
+                  </div>
+                   <div class="feedback-form" >
+                        <button title="positive" class="unhappy-button" id="yesbutton" onclick="answeredYes('${logText}');">👍</button>
+                        <button title="negative" class="unhappy-button" id="nobutton" onclick="answeredNo('${logText}');">👎</button>
+                        <button title="insightful" class="unhappy-button" id="insightbutton" onclick="answeredInsight('${logText}');">💡</button>
+                        <button title="confused" class="unhappy-button" id="confusedbutton" onclick="answeredConfused('${logText}');">😕</button>
+                    </div>
+                </div>
+                  <div class="pin-button">
+                    <svg onclick="pinMessage('${modifiedText}')" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
+                      <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
+                    </svg>
+                  </div>
+              </div>
+            </div>
+            </div>
+            `;
+            ttmChat.insertAdjacentHTML("beforeend", msgHTML);
+            document.addEventListener("click", doReact);
+            function doReact(event) {
+                let feedback = document.querySelector("div.feedback-opener");
+                let isClickInside = feedback.contains(event.target);
+                if (isClickInside) {
+                    let right = feedback.getBoundingClientRect().right
+                    let bottom = feedback.getBoundingClientRect().bottom
+                    let feedbackFrom = document.querySelector("div.feedback-form");
+                    feedbackFrom.style.display = "block";
+                    ttmChat.scrollTop += 200;
+                } else {
+                    let feedbackFrom = document.querySelector("div.feedback-form");
+                    feedbackFrom.style.display = "none";
+                }
+            }
+        } else {
+          userInputIndex = userInputs.push(text);
+          msgHTML = `
+              <div class="msg ${side}-msg">
+                <div class="msg-bubble">
+                  <div class="msg-text">${text}</div>
+                </div>
+              </div>
+              `;
+              ttmChat.insertAdjacentHTML("beforeend", msgHTML);
+        }
+        ttmChat.scrollTop += 500;
+      }
+
+      function botResponse(rawText) {
+          let dataPackage = {userInput: rawText, userName: "{{ currentUserId }}"};
+          dataPackage =  JSON.stringify(dataPackage)
+          $('.all-feedback').fadeOut(250, function() {
+            $('.all-feedback').remove();
+          });
+          const result = $.ajax({
+              type: 'POST',
+              url: "{{ url_for('.get_bot_response') }}",
+              data: dataPackage,
+              processData: false,
+              contentType: false,
+              cache: false,
+              success: function (data) {
+                  const splitData = data.split('<>')
+                  const msgText = splitData[0];
+                  const logText = splitData[1];
+                  deleteLoadingDots();
+                  addToChat("left", msgText, logText);
+              }
+          });
+      }
+      function get(selector, root = document) {
+        return root.querySelector(selector);
+      }
+    </script>
+
+    <script>
+      function logFeedback(feedback) {
+      result = $.ajax({
+        type: 'POST',
+          url:"{{ url_for('.log_feedback') }}",
+          data: feedback,
+          processData: false, 
+          contentType: false,
+          cache: false,
+        });
+      }
+
+
+    // Handle key cycling
+    document.onkeydown = checkKey;
+    function checkKey(e) {
+        e = e || window;
+
+
+        if (e.keyCode == '38') {
+            // up arrow
+            if (userInputs.length == 0) {
+                return
+            }
+            userInputIndex = userInputIndex - 1;
+            if (userInputIndex < 0) {
+                userInputIndex = 0;
+            }
+            ttmInput.value = userInputs[userInputIndex];
+        } else if (e.keyCode == '40') {
+            // down arrow
+            if (userInputs.length == 0) {
+                return
+            }
+            userInputIndex = userInputIndex + 1;
+            if (userInputIndex > userInputs.length - 1) {
+                userInputIndex = userInputs.length - 1;
+            }
+            ttmInput.value = userInputs[userInputIndex];
+        }
+    }
+    </script>

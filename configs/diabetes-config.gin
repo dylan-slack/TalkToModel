@@ -1,0 +1,78 @@
+##########################################
+# The diabetes dataset conversation config
+##########################################
+
+# Name of the parsing model: {ucinlp/diabetes-t5-small, ucinlp/diabetes-t5-large}
+# for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
+ExplainBot.parsing_model_name = "ucinlp/diabetes-t5-small"
+#ExplainBot.parsing_model_name = "EleutherAI/gpt-neo-2.7B"
+
+# Set skip_prompts to true for quicker startup for finetuned models
+# make sure to set to false using few-shot models
+ExplainBot.skip_prompts = True
+
+# t5 configuration file
+ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
+
+# User provided prediction model file path
+ExplainBot.model_file_path = "./data/diabetes_model_grad_tree.pkl"
+
+# Seed
+ExplainBot.seed = 0
+
+# The dataset to run the conversation on
+ExplainBot.dataset_file_path = "./data/diabetes_test.csv"
+
+# The background dataset for the conversation
+ExplainBot.background_dataset_file_path = "./data/diabetes_train.csv"
+ExplainBot.name = "diabetes"
+
+# Dataset feature information
+ExplainBot.dataset_index_column = 0
+ExplainBot.target_variable_name = "y"
+ExplainBot.categorical_features = None
+ExplainBot.numerical_features = None
+ExplainBot.remove_underscores = True
+
+# Few-shot settings
+ExplainBot.prompt_metric = "cosine"
+ExplainBot.prompt_ordering = "ascending"
+
+# Prompt params
+Prompts.prompt_cache_size = 1_000_000
+Prompts.prompt_cache_location = "./cache/diabetes-prompts.pkl"
+Prompts.max_values_per_feature = 2
+Prompts.sentence_transformer_model_name = "all-mpnet-base-v2"
+Prompts.prompt_folder = "./explain/prompts"
+Prompts.num_per_knn_prompt_template = 1
+Prompts.num_prompt_template = 7
+
+# Explanation Params
+Explanation.max_cache_size = 1_000_000
+
+# MegaExplainer Params
+MegaExplainer.cache_location = "./cache/diabetes-mega-explainer-tabular.pkl"
+MegaExplainer.use_selection = False
+
+# Tabular Dice Params
+TabularDice.cache_location = "./cache/diabetes-dice-tabular.pkl"
+
+# Conversation params
+Conversation.class_names = {0: "unlikely to have diabetes", 1: "likely to have diabetes"}
+
+# Dataset description
+DatasetDescription.dataset_objective = "predict whether someone has diabetes"
+DatasetDescription.dataset_description = "diabetes prediction"
+DatasetDescription.model_description = "gradient boosted tree"
+
+# Feature definitions
+ExplainBot.feature_definitions = {
+    "age": "age (years)",
+    "pregnancies": "Number of times pregnant",
+    "glucose": "Plasma glucose concentration a 2 hours in an oral glucose tolerance test",
+    "bloodpressure": "Diastolic blood pressure (mm Hg)",
+    "skinthickness": "Triceps skin fold thickness (mm)",
+    "insulin": "2-Hour serum insulin (mu U/ml)",
+    "bmi": "Body mass index (weight in kg/(height in m)^2)",
+    "diabetespedigreefunction": "Diabetes pedigree function",
+}

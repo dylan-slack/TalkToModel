@@ -1,0 +1,671 @@
+What is your logic for determining if people with no missed payments are good credit risk?
+filter missedpayments false and explain features [E]
+
+What is your reasoning for deciding if people with no missed payments are good credit risk?
+filter missedpayments false and explain features [E]
+
+What is your reasoning for determining if those with no missed payments are good credit risk?
+filter missedpayments false and explain features [E]
+
+How likely are the people older than 30 to be good credit risk?
+filter age greater than 30 and likelihood [E]
+
+How likely are people older than 30 to be a good credit risk?
+filter age greater than 30 and likelihood [E]
+
+How likely are people that are older than 30 to be good credit risk?
+filter age greater than 30 and likelihood [E]
+
+Can people older than 30 have a good credit risk?
+filter age greater than 30 and likelihood [E]
+
+How likely are people older than 30 to be good credit risk?
+filter age greater than 30 and likelihood [E]
+
+How likely are people older than 30 to be good credit risk?
+filter age greater than 30 and likelihood [E]
+
+How likely are people older than 30 to be good credit risk?
+filter age greater than 30 and likelihood [E]
+
+Which three features are the most important for the model's predictions in the data?
+important topk 3 [E]
+
+In the model prediction's data what are the three most important features?
+important topk 3 [E]
+
+Which three of the features are the most important for the model prediction's data?
+important topk 3 [E]
+
+What three features are the most important when it comes to the model's predictions in the data?
+important topk 3 [E]
+
+What would you say is the three best and important features for the model's predictions in the data?
+important topk 3 [E]
+
+Can you list the top three important features for the model's predictions in the data?
+important topk 3 [E]
+
+three most important features for the model's predictions in the data?
+important topk 3 [E]
+
+Why did the model predict data point number 100 and is there anything you can do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+Why did the model predict data point 100? How could you change it?
+filter id 100 and explain features and explain cfe [E]
+
+Why were the predictions for data point 100 made that way? How can you change it?
+filter id 100 and explain features and explain cfe [E]
+
+why the model predicted data point number 100 and what could you do to change it?
+filter id 100 and explain features and explain cfe [E]
+
+How important would the age and loan features be for predicting credit risk if the people in the data are unemployed?
+change unemployed true and important age and important loanamount [E]
+
+In the case that the data is showing unemployed people how important are the age and loan features for predicting credit risk?
+change unemployed true and important age and important loanamount [E]
+
+If those in the data were unemployed, how important would the age and loan amount features be for predicting credit risk?
+change unemployed true and important age and important loanamount [E]
+
+If the people in the data were unemployed, how important would the age and loan amount features be for predicting credit risk?
+change unemployed true and important age and important loanamount [E]
+
+If people in the data were unemployed, how important would their age and loan amount features be for predicting credit risk?
+change unemployed true and important age and important loanamount [E]
+
+Assuming that the age of unemployment is decreased by 5 years, what would the prediction be?
+filter unemployed true and change age decrease 5 and predict [E]
+
+prediction be if age were decreased by 5 years for people who are unemployed?
+filter unemployed true and change age decrease 5 and predict [E]
+
+What would the prediction be if their age were decreased by 5 years for people who are unemployed?
+filter unemployed true and change age decrease 5 and predict [E]
+
+How many people asked for loans worth less than 2000?
+filter loanamount less than 2000 and countdata [E]
+
+How many people asked for loans worth less than 2000?
+filter loanamount less than 2000 and countdata [E]
+
+How many people asked for loans worth less than 2000?
+filter loanamount less than 2000 and countdata [E]
+
+How many people asked for loans worth less than 2000?
+filter loanamount less than 2000 and countdata [E]
+
+How many people asked for loans that were worth less than 2000?
+filter loanamount less than 2000 and countdata [E]
+
+How many people happened to ask for loans worth less than 2000?
+filter loanamount less than 2000 and countdata [E]
+
+What number of points in data where the individual asks fo a loan?
+filter loanpurposenewcar and countdata [E]
+
+How many numbers of instances in data when asking for a new car?
+filter loanpurposenewcar and countdata [E]
+
+What's the number of instances in the data set where the individual is asking for a loan for a new car?
+filter loanpurposenewcar and countdata [E]
+
+What's the number of instances in the data where the individual is asking for a loan for a brand new car?
+filter loanpurposenewcar and countdata [E]
+
+For individuals asking for a loan for a new car, how many instances appear in the data?
+filter loanpurposenewcar and countdata [E]
+
+people younger than 25 to be bad credit risk?
+filter age less than 25 and likelihood [E]
+
+How possible is it that people younger than 25 can be at risk for bad credit?
+filter age less than 25 and likelihood [E]
+
+Are people younger than 25 vulnerable to bad credit risk?
+filter age less than 25 and likelihood [E]
+
+What are the chances that people under the age of 25 to be bad credit risk?
+filter age less than 25 and likelihood [E]
+
+Is it likely that people under 25 are to be of bad credit risk?
+filter age less than 25 and likelihood [E]
+
+How likely are those that who are either foreign workers or unemployed to be bad credit risk?
+filter foreignworker true or filter unemployed true and likelihood [E]
+
+How likely are those that are either foreign workers or unemployed to be bad credit risking?
+filter foreignworker true or filter unemployed true and likelihood [E]
+
+What are the top five most important functions for the model's predictions on people than have lived two years at their current home?
+filter yearsatcurrenthome equal to 2 and important topk 5 [E]
+
+What are the top five most meaningful features for the model's predictions on people than have lived two years at their current home?
+filter yearsatcurrenthome equal to 2 and important topk 5 [E]
+
+What are the top five most vital features for the model's predictions on people than have lived two years at their current home?
+filter yearsatcurrenthome equal to 2 and important topk 5 [E]
+
+For people that have lived two years at their current home, what are the top five most important features for the model's predictions?
+filter yearsatcurrenthome equal to 2 and important topk 5 [E]
+
+top five most important features for the model's predictions on people than have lived two years at their current home?
+filter yearsatcurrenthome equal to 2 and important topk 5 [E]
+
+Show me the data and predictions for people older than 20. 
+filter age greater than 20 and show and predict [E]
+
+If we were to increase the loan amount by 250, what would happen to the likelihood of being bad credit risk for the data point with id 89?
+filter id 89 and change glucose loanamount 250 and likelihood [E]
+
+What would happen to the likelihood of being bad credit risk for the data point with id 89 if we were to increase the loan amount by 250?
+filter id 89 and change glucose loanamount 250 and likelihood [E]
+
+what are top three most important data points for determining whether those who are applying for furniture loans are good credit risk?
+filter loanpurposefurniture true and important topk 3 [E]
+
+Name the three most important features to determine whether those that are applying for furniture loans are good credit risk.
+filter loanpurposefurniture true and important topk 3 [E]
+
+What are the three most important features regarding whether someone has a good credit risk when applying for furniture loans?
+filter loanpurposefurniture true and important topk 3 [E]
+
+What is the model's reasoning for predicting people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's rationale when predicting people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's rationale for predicting people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's rationale for predicting people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's rationale for predicting people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's logic for predicting people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's rationale for predicting those people with no missed payments?
+filter missedpayments false and explain features [E]
+
+What is the model's rationale for predicting the people with no missed payments?
+filter missedpayments false and explain features [E]
+
+How do the features interact within the model's predictions on the training data?
+interact [E]
+
+How do the features interact in the model's estimates on the training data?
+interact [E]
+
+How do the features interact in the model's predictions within the training data?
+interact [E]
+
+But what if they held other loans at the bank?
+previousfilter and change otherloansatbank true and previousoperation [E]
+
+But what if they had various other loans at the bank?
+previousfilter and change otherloansatbank true and previousoperation [E]
+
+But what happens if they had other loans at the bank?
+previousfilter and change otherloansatbank true and previousoperation [E]
+
+But what if they had other loans at the bank?
+previousfilter and change otherloansatbank true and previousoperation [E]
+
+But what if they had other loans at the bank?
+previousfilter and change otherloansatbank true and previousoperation [E]
+
+What is the likelihood they are bad credit risk?
+previousfilter and likelihood [E]
+
+What is the likelihood they are bad credit risk?
+previousfilter and likelihood [E]
+
+What is the likelihood they are bad credit risk?
+previousfilter and likelihood [E]
+
+What are the chances that they are bad credit risk?
+previousfilter and likelihood [E]
+
+How likely is it that they are bad credit risk?
+previousfilter and likelihood [E]
+
+Can you show me some data for people who have coapplicants?
+filter hascoapplicant true and show [E]
+
+Please can you show me some data for people who have coapplicants?
+filter hascoapplicant true and show [E]
+
+For people that have coapplicants, can you show me some data?
+filter hascoapplicant true and show [E]
+
+Could you show me some data for the people who have coapplicants?
+filter hascoapplicant true and show [E]
+
+tell me what the average age in the data?
+statistic age [E]
+
+what average age does the data show? 
+statistic age [E]
+
+What is the average age in the data?
+statistic age [E]
+
+What's the average age in the information?
+statistic age [E]
+
+What's the average age within the data?
+statistic age [E]
+
+What is the average loan amount for those with no current loans and that do not own a house?
+filter nocurrentloan true and filter ownshouse false and statistic loanamount [E]
+
+What is the average loan amount for the people with no current loans and that do not own a house?
+filter nocurrentloan true and filter ownshouse false and statistic loanamount [E]
+
+What is the average loan amount for people without current loans and that do not own a house?
+filter nocurrentloan true and filter ownshouse false and statistic loanamount [E]
+
+What's the average loan amount for non-homeowners with no current loans?
+filter nocurrentloan true and filter ownshouse false and statistic loanamount [E]
+
+What is the average loan amount for people that do not own a house and have no current loans?
+filter nocurrentloan true and filter ownshouse false and statistic loanamount [E]
+
+Show me the labels for single people.
+filter single true and label [E]
+
+What are the labels for people that are single?
+filter single true and label [E]
+
+What are the labels for people that are single?
+filter single true and label [E]
+
+What are the labels for people that are single?
+filter single true and label [E]
+
+What are the labels for people that are single?
+filter single true and label [E]
+
+Show me the labels for data points where the loan duration is 1 year
+filter loanduration equal to 1 and label [E]
+
+Show me labels for the data points where the loan duration is 1 year
+filter loanduration equal to 1 and label [E]
+
+Show me the labels for the data points where the loan duration is exactly 1 year
+filter loanduration equal to 1 and label [E]
+
+Where the loan duration is 1 year, show me the labels for the data points.
+filter loanduration equal to 1 and label [E]
+
+could you describe the data?
+data [E]
+
+Could you explain the data?
+data [E]
+
+Can you describe the data?
+data [E]
+
+Can you please describe the data?
+data [E]
+
+Could you describe the data to me?
+data [E]
+
+Please describe the data 
+data [E]
+
+How do features of the data interact in the model's predictions on this particular data?
+previousfilter and interact [E]
+
+How do the features of this data interact in the model's predictions on this particular data?
+previousfilter and interact [E]
+
+How do the features of all of this data interact in the model's predictions on this particular data?
+previousfilter and interact [E]
+
+How do the characteristics of the data interact in the model's predictions on this particular data?
+previousfilter and interact [E]
+
+How likely is data point number 32 to be good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is data point number 32 to be good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is data point number 32 to be good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is data point number 32 to be good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is data point 32 to be good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is the data point number 32 to be good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is data point number 32 to be a good credit risk?
+filter id 32 and likelihood [E]
+
+How likely is data point number 32 to be decent credit risk?
+filter id 32 and likelihood [E]
+
+Which common mistakes you make when determining if individuals are good credit risk?
+mistake typical [E]
+
+What are a few of the usual miscalculations you commit when deciding if people are good credit risk?
+mistake typical [E]
+
+What are some common missteps you make when determining if people are good credit risk?
+mistake typical [E]
+
+What are some common errors you make when determining if people are good credit risk?
+mistake typical [E]
+
+Can you show me examples of the mistakes you've made when predicting whether people are good credit risk?
+mistake sample [E]
+
+Can you please show me examples of the mistakes you've made when predicting whether people are good credit risk?
+mistake sample [E]
+
+Can you please show some examples of the mistakes you've made when predicting whether people are good credit risk?
+mistake sample [E]
+
+Are you accurate at predicting whether people are good credit risks?
+score accuracy [E]
+
+How accurate are you at predicting whether people are good credit risk?
+score accuracy [E]
+
+How accurate are you at predicting whether people are really good credit risk?
+score accuracy [E]
+
+How accurate are you at predicting whether people are good or not at credit risk?
+score accuracy [E]
+
+What are some typical mistakes made when predicting whether people younger than 25 are good credit risk?
+filter age less than 25 and mistake typical [E]
+
+When predicting whether people younger than 25 are good credit risk, what are some typical mistakes you make?
+filter age less than 25 and mistake typical [E]
+
+What are some typical mistakes made when predicting whether people younger than 25 are good credit risk?
+filter age less than 25 and mistake typical [E]
+
+What are some typical mistakes you made when you were predicting whether people younger than 25 are good credit risk?
+filter age less than 25 and mistake typical [E]
+
+How good are you with predicting whether people who are asking for loans for home appliances are good credit risk?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+How exactly accurate are you at predicting whether people who are asking for loans for home appliances are good credit risk?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+How accurate are you at predicting whether those who are asking for loans for home appliances are good credit risk?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+How accurate are you at predicting whether people that are asking for loans for home appliances are good credit risk?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+For people who are asking for loans for home appliances, how accurate are you at predicting whether they are good credit risks?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+How accurately can you predict whether people who are asking for loans for home appliances are good credit risks?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+When people who are asking for loans for home appliances, how accurately can you predict if they are a good credit risk?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+How accurate are your predictions about whether people applying for a loan for home appliances are a good credit risk?
+filter loanpurposehomeappliances true and score accuracy [E]
+
+What are the examples of some mistakes you make on people older than 40?
+filter age greater than 40 and mistake sample [E]
+
+What are some of the examples of some mistakes you make on people older than 40?
+filter age greater than 40 and mistake sample [E]
+
+What are examples of some errors you make on people older than 40?
+filter age greater than 40 and mistake sample [E]
+
+What are examples of some of the errors you make on people older than 40?
+filter age greater than 40 and mistake sample [E]
+
+In the dataset, if the loan term were to be increased by 2 years, what would the predictions for the data be?
+change loanduration increase 2 and predict [E]
+
+In the dataset, if the loan terms were to be increased by 2 years, what would the predictions for the data be?
+change loanduration increase 2 and predict [E]
+
+In the dataset, if the loan duration happened to be increased by 2 years, what would the predictions for the data be?
+change loanduration increase 2 and predict [E]
+
+In the dataset, if the loan duration were to be upped by 2 years, what would the predictions for the data be?
+change loanduration increase 2 and predict [E]
+
+If those people asked for loan amounts that were 500 less, what's the likelihood they are good credit risk?
+change loanamount decrease 500 and likelihood [E]
+
+If some people asked for loan amounts that were 500 less, what's the likelihood they are good credit risk?
+change loanamount decrease 500 and likelihood [E]
+
+If people requested for loan amounts that were 500 less, what's the likelihood they are good credit risk?
+change loanamount decrease 500 and likelihood [E]
+
+What is the likelihood that people asking for loan amounts that were 500 less are good credit risk?
+change loanamount decrease 500 and likelihood [E]
+
+If people asked for loan amounts that were 500 less, what's are the chances that they are good credit risk?
+change loanamount decrease 500 and likelihood [E]
+
+What are the chances that people asking for loan amounts that were 500 less are good credit risk?
+change loanamount decrease 500 and likelihood [E]
+
+When predicting whether people older than 50 asking for new car loans are good credit risks, what mistakes does the model typically make?
+filter age greater than 50 and filter loanpurposenewcar true and mistake typical [E]
+
+Some me some errors the model makes on people who have worked less than 1 year at their current job
+filter yearsatcurrentjoblessthan1 true and mistake sample [E]
+
+Some me some of the errors that the model makes on people who have worked less than 1 year at their current job
+filter yearsatcurrentjoblessthan1 true and mistake sample [E]
+
+Some me some of the various mistakes the model makes on people who have worked less than 1 year at their current job
+filter yearsatcurrentjoblessthan1 true and mistake sample [E]
+
+For this subset in the data, what is the precision result of the model?
+previousfilter and score precision [E]
+
+For this subset of the data, what is the precision score of the model?
+previousfilter and score precision [E]
+
+Could you show me examples the model predicts incorrectly and how accurate the model is on the data?
+mistake sample and score accuracy [E]
+
+Can you show me some examples the model predicts incorrectly and how accurate the model is on the data?
+mistake sample and score accuracy [E]
+
+Could you show me some examples where the model predicts incorrectly and how accurate the model is on the data?
+mistake sample and score accuracy [E]
+
+what are the predictions for those older than 50 and what are some mistakes the model makes on this data?
+filter age greater than 50 and predict and mistake sample [E]
+
+what are the predictions for those people older than 50 and what are some mistakes the model makes on this data?
+filter age greater than 50 and predict and mistake sample [E]
+
+what are the predictions for the people whom are older than 50 and what are some mistakes the model makes on this data?
+filter age greater than 50 and predict and mistake sample [E]
+
+what are the predictions and some of the mistakes the model makes for people older than 50.
+filter age greater than 50 and predict and mistake sample [E]
+
+can you show me data point number 21 and tell me whether the model predicts it correctly?
+filter id 21 and show and mistake sample [E]
+
+could you please show me data point number 21 and tell me whether the model predicts it correctly?
+filter id 21 and show and mistake sample [E]
+
+Could you show me and tell me whether a model predicts correctly data point number 21?
+filter id 21 and show and mistake sample [E]
+
+given data point number twenty one, can you tell me whether a model would predict it correctly?
+filter id 21 and show and mistake sample [E]
+
+What are the real labels for those asking for business loans and that are older than 40?
+filter loanpurposebusiness true and filter age greater than 40 and label [E]
+
+What are the real actual labels for those asking for business loans and that are older than 40?
+filter loanpurposebusiness true and filter age greater than 40 and label [E]
+
+What are some of the true labels for those asking for business loans and that are older than 40?
+filter loanpurposebusiness true and filter age greater than 40 and label [E]
+
+What are your predictions for people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+For people with checking account balances greater or equal than 200, what are your predictions
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What do you predict for people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What do you estimate on people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What do you predict on people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What do you predict on people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What do you predict on people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What do you predict on people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+For people with checking account balances greater or equal than 200, what do you predict?
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What is your prediction for people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What are your predictions on people with checking account balances greater or equal than 200
+filter checkingaccountbalancegreaterorequalthan200 true and predict [E]
+
+What are some mistakes the model makes on people with loan rates as a percent of income less than 50?
+filter loanrateaspercentofincome less than 50 and mistake sample [E]
+
+What are the mistakes the model makes on people with loan rates as a percent of income less than 50?
+filter loanrateaspercentofincome less than 50 and mistake sample [E]
+
+What are errors the model makes on people with loan rates as a percent of income less than 50?
+filter loanrateaspercentofincome less than 50 and mistake sample [E]
+
+When making predictions on people with loan rates as a percent of income less than 50, what mistakes does the model make?
+filter loanrateaspercentofincome less than 50 and mistake sample [E]
+
+For all the data points with age greater than 76, lower the loan amounts they ask for by 1000 and show me the predictions
+filter age greater than 76 and change loanamount decrease 1000 and predict [E]
+
+For all the data points with age greater than 76, lower the loan amounts they ask for by 1000 and then show me the predictions
+filter age greater than 76 and change loanamount decrease 1000 and predict [E]
+
+For all data points with age greater than 76, reduce the loan amounts they ask for by 1000 and show me the predictions
+filter age greater than 76 and change loanamount decrease 1000 and predict [E]
+
+For all the main data points with age greater than 76, reduce the loan amounts they ask for by 1000 and show me the predictions
+filter age greater than 76 and change loanamount decrease 1000 and predict [E]
+
+For all the key data points with age greater than 76, reduce the loan amounts they ask for by 1000 and show me the predictions
+filter age greater than 76 and change loanamount decrease 1000 and predict [E]
+
+predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Can you show me the predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Could you please show me the predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+can you please show me the predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Could you show me the predictions on instances that are labeled good credit risk but the model predicts them not good credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Can you show me the predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Could you please show me the predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Can you please show me the predictions on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+Could you show me the estimates on instances that are labeled good credit risk but the model predicts them bad credit risk?
+filter labelfilter 1 and filter predictionfilter 0 and predict [E]
+
+What do you see on the instances in the data? Also, could you show me an example of a few mistakes you make in these predictions?
+predict and mistake sample [E]
+
+What do you forecast on the instances in the data? Also, could you show me an example of a few mistakes you make in these predictions?
+predict and mistake sample [E]
+
+What do you  think about the instances in the data? Also, could you show me an example of a few mistakes you make in these predictions?
+predict and mistake sample [E]
+
+What do you predict for these instances in the data? Can you show me an example of a few of the mistakes you make in these predictions, too?
+predict and mistake sample [E]
+
+For these instances in the data, what are your predictions? Can you also show me an example of some of the mistakes you make in these predictions?
+predict and mistake sample [E]
+
+What are typical mistakes  that have current loansyou make on diagnosing loan applications 
+filter nocurrentloan false and mistake typical [E]
+
+What are common mistakes you make on diagnosing loan applications that have current loans?
+filter nocurrentloan false and mistake typical [E]
+
+What are some typical mistakes you make on diagnosing loan applications that have current loans?
+filter nocurrentloan false and mistake typical [E]
+
+What are some of the typical mistakes you make on diagnosing loan applications that have current loans?
+filter nocurrentloan false and mistake typical [E]
+
+What signs show you that someone is a bad credit risk?
+previousfilter and explain features [E]
+
+But why did you think that these people are bad credit risk?
+previousfilter and explain features [E]
+
+But why did you think these people are bad credit risk?
+previousfilter and explain features [E]
+
+But why did you think these people are bad credit risk?
+previousfilter and explain features [E]
+
+But why did you think these people are bad credit risk?
+previousfilter and explain features [E]
+
+If these specific people were not unemployed, what's the likelihood they are good credit risk? Why?
+previousfilter and change unemployed false and likelihood and explain features [E]
+
+What does loan applicant number 34 have to change in order to be recommended as good credit risk?
+filter id 34 and explain cfe [E]
+
+What does loan applicant number 34 have to make a change to in order to be recommended as good credit risk?
+filter id 34 and explain cfe [E]
+
+What are the things that loan applicant 34 need to change to be seen as a good credit risk? 
+filter id 34 and explain cfe [E]

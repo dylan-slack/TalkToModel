@@ -1,0 +1,107 @@
+{num_features} more than {num_values}
+filter {num_features} greater than {num_values}
+
+{num_features} less than {num_values}
+filter {num_features} less than {num_values}
+
+{cat_features}
+filter {cat_features} true
+
+not {cat_features}
+filter {cat_features} false
+
+{num_features} above {num_values}
+filter {num_features} greater than {num_values}
+
+{num_features} the same or more than {num_values}
+filter {num_features} greater equal than {num_values}
+
+{num_features} equal to or below {num_values}
+filter {num_features} less equal than {num_values}
+
+{num_features} of {num_values}
+filter {num_features} equal to {num_values}
+
+{num_features} not equal to {num_values}
+filter {num_features} not equal to {num_values}
+
+{cat_features} where {num_features} is of {num_values}
+filter {cat_features} true and filter {num_features} equal to {num_values}
+
+{num_features} is not greater than {num_values}
+filter {num_features} less equal than {num_values}
+
+{num_features} is equal to but not greater than {num_values}
+filter {num_features} less equal than {num_values}
+
+{num_features} is not less than {num_values}
+filter {num_features} greater equal than {num_values}
+
+{cat_features}, {cat_features}, {cat_features} are all true, but {cat_features} is not true
+filter {cat_features} true and filter {cat_features} true and filter {cat_features} true and filter {cat_features} false
+
+{num_features} is beyond {num_values} but {num_features} is less than {num_values} and not {cat_features}
+filter {num_features} greater than {num_values} and filter {num_features} less than {num_values} and {cat_features} false
+
+everything but not {num_features} of {num_values}
+filter {num_features} not equal to {num_values}
+
+{num_features} upper than {num_values}
+filter {num_features} greater than {num_values}
+
+{num_features} older than {num_values}
+filter {num_features} greater than {num_values}
+
+{num_features} younger than {num_values}
+filter {num_features} less than {num_values}
+
+{num_features} exceeds {num_values}
+filter {num_features} greater than {num_values}
+
+{num_features} taller than {num_values}
+filter {num_features} greater than {num_values}
+
+a {cat_features}
+filter {cat_features} true
+
+{num_features} older than {num_values} and {num_features} younger than {num_values}
+filter {num_features} greater than {num_values} and filter {num_features} less than {num_values}
+
+id 61
+filter id 61
+
+id 78
+filter id 78
+
+data points 89 and 90
+filter id 89 and filter id 90
+
+the model predicts {class_names}
+predictionfilter {non_semantic_class_names}
+
+the model's prediction is {class_names}
+predictionfilter {non_semantic_class_names}
+
+{class_names} is what the individuals outcome under the model is
+predictionfilter {non_semantic_class_names}
+
+the model predicts {class_names} and the label is {class_names}
+predictionfilter {non_semantic_class_names} and labelfilter {class_names}
+
+the model predicts {class_names} but the label is {class_names}
+predictionfilter {non_semantic_class_names} and labelfilter {non_semantic_class_names}
+
+the model outcome is {class_names} but the label is {class_names}
+predictionfilter {non_semantic_class_names} and labelfilter {non_semantic_class_names}
+
+the model predicts {class_names} but actually are {class_names}
+predictionfilter {non_semantic_class_names} and labelfilter {non_semantic_class_names}
+
+the model predicts {class_names} but whose ground truth label is {class_names}
+predictionfilter {non_semantic_class_names} and labelfilter {non_semantic_class_names}
+
+where they are actually {class_names} but the model predicts {class_names}
+labelfilter {non_semantic_class_names} and predictionfilter {non_semantic_class_names}
+
+who are {class_names} but get predicted as {class_names}
+labelfilter {non_semantic_class_names} and predictionfilter {non_semantic_class_names}

@@ -1,0 +1,155 @@
+User: Show me the predictions of all the {cat_features}
+Parsed: filter {cat_features} true and predict [E]
+
+User: Could you show me the predictions for instance {cat_features} equal to {cat_values}?
+Parsed: filter {cat_features} {cat_values} and predict [E]
+
+User: Show the predictions of {cat_features} and {cat_features} with {num_features} greater than or equal to {num_values}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Display the predictions of {cat_features} and {cat_features} with {num_features} less than or equal to {num_values}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} less than or equal to {num_values} and predict [E]
+
+User: Reveal the predictions of {cat_features} and {cat_features} with {num_features} greater than or equal to {num_values}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: What are the predictions for instances with {num_features} less than {num_values}?
+Parsed: filter {num_features} less than {num_values} and predict [E]
+
+User: What happens to the predictions for data with {num_features} of {num_values} where {num_features} is decreased by {num_values}?
+Parsed: filter {num_features} equal to {num_values} and change {num_features} decrease {num_values} and predict [E]
+
+User: What happens to the predictions for data with {num_features} of {num_values} where {num_features} is added by {num_values}?
+Parsed: filter {num_features} equal to {num_values} and change {num_features} increase {num_values} and predict [E]
+
+User: Reveal the predictions of {cat_features} or {cat_features} with {num_features} greater than or equal to {num_values}
+Parsed: filter {cat_features} true or filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Show the predictions of {cat_features} {cat_values}, {cat_features} {cat_values}, or {cat_features} {cat_values}
+Parsed: filter {cat_features} {cat_values} or filter {cat_features} {cat_values} or filter {cat_features} {cat_values} predict [E]
+
+User: Could you show me the predictions on all the data?
+Parsed: predict [E]
+
+User: Super cool system you got here.... could you show me the predictions across all the data?
+Parsed: predict [E]
+
+User: Could you show me predictions for instances with {num_values} {num_features} or {num_values} {num_features}?
+Parsed: filter {num_features} equal to {num_values} or filter {num_features} equal to {num_values} and predict [E]
+
+User: Please tell me what the model predicts instances with {num_values} {num_features} or {num_values} {num_features}?
+Parsed: filter {num_features} equal to {num_values} or filter {num_features} equal to {num_values} and predict [E]
+
+User: Please tell me what the model predicts instances with {num_values} {num_features} or {num_values} {num_features} or {num_values} {num_features}?
+Parsed: filter {num_features} equal to {num_values} or filter {num_features} equal to {num_values} or filter {num_features} equal to {num_values} and predict [E]
+
+User: For datapoints with {num_values} {num_features} or {num_values} {num_features}, please tell me what the model predicts?
+Parsed: filter {num_features} equal to {num_values} or filter {num_features} equal to {num_values} and predict [E]
+
+User: What are the predictions for {cat_features} that have {num_values} {num_features}?
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and predict [E]
+
+User: What are the model predictions for {cat_features} that have {num_values} {num_features}?
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and predict [E]
+
+User: What are the predictions for data with {num_features} less than {num_values}?
+Parsed: filter {num_features} less than {num_values} and predict [E]
+
+User: What are the predictions for instances with {num_features} greater than {num_values}?
+Parsed: filter {num_features} greater than {num_values} and predict [E]
+
+User: What does the model predict for instances with {num_features} greater than {num_values}?
+Parsed: filter {num_features} greater than {num_values} and predict [E]
+
+User: Show predictions for {cat_features} where {num_features} is {num_values} or less
+Parsed: filter {cat_features} true and filter {num_features} less than or equal to {num_values} and predict [E]
+
+User: Show all predictions for {cat_features} where {num_features} is {num_values} or more
+Parsed: filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Display predictions for {cat_features} where {num_features} is {num_values} exactly
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and predict [E]
+
+User: Return the model's predictions for {cat_features} where {num_features} is not {num_values}
+Parsed: filter {cat_features} true and filter {num_features} not equal to {num_values} and predict [E]
+
+User: What does the model predict for instances that have a {cat_features} or that have exactly {num_values} {num_features}?
+Parsed: filter {cat_features} true or filter {num_features} equal to {num_values} and predict [E]
+
+User: What do you predict for 215?
+Parsed: filter id 215 and predict [E]
+
+User: What is the prediction for data point number 9130?
+Parsed: filter id 9130 and predict [E]
+
+User: Can you please tell me the prediction for id 91?
+Parsed: filter id 91 and predict [E]
+
+User: For id 776, please provide the prediction.
+Parsed: filter id 776 and predict [E]
+
+User: What is the prediction for id 1553 and why do you predict it?
+Parsed: filter id 1553 and predict and explain features [E]
+
+User: What are the reasons for predicting id 1552 and why do you predict this instance?
+Parsed: filter id 1552 and explain features and predict [E]
+
+User: Show the predictions on all the data
+Parsed: predict [E]
+
+User: Show the predictions across all the instances
+Parsed: predict [E]
+
+User: What does the model predict on the {cat_features}?
+Parsed: filter {cat_features} true and predict [E]
+
+User: What are the predictions on the {cat_features}?
+Parsed: filter {cat_features} true and predict [E]
+
+User: Show the predictions on people older than 20
+Parsed: filter age greater than 20 and predict [E]
+
+User: what are the predictions on people older than thirty
+Parsed: filter age greater than 30 and predict [E]
+
+User: display the predictions on people older than 20 or that have {num_features} less than {num_values}
+Parsed: filter age greater than 20 and filter {num_features} less than {num_values} and predict [E]
+
+User: show prediction of id 120
+Parsed: filter id 120 and predict [E]
+
+User: predict 320
+Parsed: filter id 320 and predict [E]
+
+User: return prediction id 13423
+Parsed: filter id 13423 and predict [E]
+
+User: show the prediction of id 3421
+Parsed: filter id 3421 and predict [E]
+
+User: please display the prediction of the instance with id 34
+Parsed: filter id 34 and predict [E]
+
+User: predict 22
+Parsed: filter id 22 and predict [E]
+
+User: what does the model predict on all the training data
+Parsed: predict [E]
+
+User: what does the model predict for {filter_text}?
+Parsed: {filter_parse} and predict [E]
+
+User: First, show me the predictions on data with a {num_features} of {num_values}. Second, tell me why the model predicted them.
+Parsed: filter {num_features} equal to {num_values} and predict and explain features [E]
+
+User: Initially, show me the data with a {num_features} less than {num_values}. Second, tell me why the model predicted them.
+Parsed: filter {num_features} less than {num_values} and show and explain features [E]
+
+User: could you tell me why the model predicts those instances with {num_features} above {num_values} and that have a {num_features} of {num_values} and also what these instances are?
+Parsed: filter {num_features} greater than {num_values} and filter {num_features} equal to {num_values} and explain features and show [E]
+
+User: could you show me data with a {num_features} of {num_values} and tell me why the model predicts it?
+Parsed: filter {num_features} equal to {num_values} and show and explain features [E]
+
+User: could you show me data with a {num_features} of {num_values} and tell me what the model predictions are?
+Parsed: filter {num_features} equal to {num_values} and show and predict [E]

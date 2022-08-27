@@ -1,0 +1,28 @@
+load_t5_params.model_name = "t5-base"
+load_t5_params.regenerate_dataset = False
+load_t5_params.device = "cuda"
+load_t5_params.seed = 0
+
+load_t5_params.source_len = 128
+load_t5_params.target_len = 128
+load_t5_params.n_epochs = 25
+
+load_t5_params.train_pct = 0.95
+
+load_t5_params.source_text = "natural_language"
+load_t5_params.target_text = "parsed_utterance"
+
+load_t5_params.verbose = True
+
+load_t5_params.append_text = "Convert the question into an SQL parse: "
+
+load_t5_params.train_batch_size = 32
+load_t5_params.val_batch_size = 16
+
+load_t5_params.learning_rate = 1e-4
+load_t5_params.optimizer = "adamw"
+
+load_t5_params.debug = False
+load_t5_params.model_dir = "./parsing/t5/models"
+
+Decoder.no_init = True

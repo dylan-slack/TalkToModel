@@ -200,4 +200,8 @@ Cite us 🫶
  }
 ```
 
+## Contact 
+
+You can reach out to [dslack@uci.edu](dslack@uci.edu) with any questions.
+
 

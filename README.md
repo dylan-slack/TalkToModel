@@ -1,6 +1,6 @@
 # TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues
 
-[![arXiv](https://img.shields.io/badge/arXiv-2207.04154-b31b1b.svg)](https://arxiv.org/abs/2207.04154)
+[![Python application](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml/badge.svg)](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml) [![arXiv](https://img.shields.io/badge/arXiv-2207.04154-b31b1b.svg)](https://arxiv.org/abs/2207.04154)
 
 
 Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) repo! The goal of this project is to enable anyone to understand a machine learning model through a natural language conversation.

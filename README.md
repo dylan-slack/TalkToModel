@@ -37,7 +37,7 @@ We additionally wrote a [precursor paper](https://arxiv.org/abs/2202.01875) abou
 - [Running the TalkToModel Application](#running-the-talktomodel-application)
 - [Running On Your Own Model & Dataset](#running-on-your-own-model--dataset)
 - [Experiments](#experiments)
-- [Development]()
+- [Development](#development)
 
 ## Overview
 

@@ -19,12 +19,12 @@ Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) repo! The g
 If you found this work useful, please cite us! 
 
 ```bibtex
-@inproceedings{ttm:arXiv,  
- author = {Dylan Slack and Satyapriya Krishna and Himabindu Lakkaraju and Sameer Singh},  
- title = {TalkToModel: Understanding Machine Learning Models With Open-Ended Dialogues},  
- booktitle = {arXiv},  
- year = {2022}
- }
+@article{Slack_TalkToModel_Understanding_Machine_2022,
+author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
+journal = {arXiv},
+title = {{TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues}},
+year = {2022}
+}
 ```
 
 We additionally wrote a [precursor paper](https://arxiv.org/abs/2202.01875) about domain experts needs for understanding models, that helped inspire this work. It's called *Rethinking Explainability as a Dialogue: A Practitioner's Perspective*. Check that out as well!
@@ -192,12 +192,12 @@ You can run the tests by running `pytest` from the base directory.
 Cite us 🫶
 
 ```bibtex
-@inproceedings{ttm:arXiv,  
- author = {Dylan Slack and Satyapriya Krishna and Himabindu Lakkaraju and Sameer Singh},  
- title = {TalkToModel: Understanding Machine Learning Models With Open-Ended Dialogues},  
- booktitle = {arXiv},  
- year = {2022}
- }
+@article{Slack_TalkToModel_Understanding_Machine_2022,
+author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
+journal = {arXiv},
+title = {{TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues}},
+year = {2022}
+}
 ```
 
 ## Contact 

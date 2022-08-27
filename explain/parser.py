@@ -261,24 +261,5 @@ class Parser:
         grammar += self.numerical_feature_names
         grammar += self.all_feature_names
 
-        # Check to make sure the grammar is valid
-        self.validate(grammar)
-
         return grammar
 
-    def validate(self, grammar: str):
-        """Validates a grammar to make sure it follows the acceptable format.
-
-        TODO(dylan): Write grammar validation.
-
-        This needs to check for a couple things
-            - Each grammar token begins with a space
-            - There are no terminals written into the grammar (i.e., no all caps)
-            - There are no terminals that when parsed end with tokenized version of [e], otherwise
-              the system will interrupt prematurely
-
-        Arguments:
-            grammar: The grammar to validate.
-        Raises:
-            invalid_grammar: Throws an error if the grammar is invalid.
-        """

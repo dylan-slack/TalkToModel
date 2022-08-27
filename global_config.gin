@@ -3,7 +3,7 @@
 #######################
 
 # Model + dataset configuration specific file
-GlobalArgs.config = "./configs/derm-config.gin"
+GlobalArgs.config = "./configs/diabetes-config.gin"
 
 # Set the base url to host the demo, if needed
 GlobalArgs.baseurl = "/"

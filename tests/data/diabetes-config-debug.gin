@@ -37,7 +37,6 @@ TabularDice.cache_location = "{prompt_cache}/diabetes-dice-tabular-logistic-regr
 
 # Conversation params
 Conversation.class_names = {0: "unlikely to have diabetes", 1: "likely to have diabetes"}
-Conversation.data_folder = "./data"
 
 # Dataset description
 DatasetDescription.dataset_objective = "predict whether someone has diabetes"

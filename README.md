@@ -1,3 +1,7 @@
+<p align="center">
+<img src="static/images/banner.png" alt="drawing" width="600"/>
+</p>
+
 # TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues
 
 

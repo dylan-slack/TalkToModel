@@ -2,7 +2,7 @@
 <img src="static/images/banner.png" alt="drawing" width="600"/>
 </p>
 
-# TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues
+# TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations
 
 
 [![Python application](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml/badge.svg)](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml) [![arXiv](https://img.shields.io/badge/arXiv-2207.04154-b31b1b.svg)](https://arxiv.org/abs/2207.04154)
@@ -26,7 +26,7 @@ If you found this work useful, please cite us!
 @article{Slack_TalkToModel_Understanding_Machine_2022,
 author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
 journal = {arXiv},
-title = {{TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues}},
+title = {{TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations}},
 year = {2022}
 }
 ```
@@ -199,7 +199,7 @@ Cite us 🫶
 @article{Slack_TalkToModel_Understanding_Machine_2022,
 author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
 journal = {arXiv},
-title = {{TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues}},
+title = {{TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations}},
 year = {2022}
 }
 ```

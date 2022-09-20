@@ -9,7 +9,7 @@ authors:
   given-names: "Himabindu"
 - family-names: "Singh"
   given-names: "Sameer"
-title: "TalkToModel: Understanding Machine Learning Models With Open Ended Dialogues"
+title: "TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations"
 date-released: 2022-08-27
 url: "https://github.com/dylan-slack/TalkToModel"
 preferred-citation:

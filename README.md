@@ -59,7 +59,7 @@ TalkToModel supports *tabular* models and datasets. For example, you could use t
 
 ## Installation
 
-To run TalkToModel, you can either setup a conda environment or use Docker to directly run the Flask App. Note, for GPU inference, the environment requires CUDA 11.3.
+To run TalkToModel, you can either setup a conda environment or use Docker to directly run the Flask App. Note, for GPU inference, the environment requires **CUDA 11.3**.
 
 ### Docker
 

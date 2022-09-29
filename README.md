@@ -210,7 +210,7 @@ year = {2022}
 
 You can reach out to [dslack@uci.edu](dslack@uci.edu) with any questions or issues you're running into.
 
-Please do reach out, because I would love to help you get it running, especially on your own models and data ❤️!
+Please do reach out or submit an issue, because I would love to help you get it running, especially on your own models and data ❤️!
 
 
 

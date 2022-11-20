@@ -23,8 +23,8 @@ preferred-citation:
     given-names: "Himabindu"
   - family-names: "Singh"
     given-names: "Sameer"
-  journal: "arXiv"
-  archivePrefix: "arXiv"
+  journal: "TSRML @ NeurIPS"
+  archivePrefix: "tsrml"
   eprint: "2207.04154"
   title: "TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations"
   year: 2022

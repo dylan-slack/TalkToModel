@@ -25,7 +25,7 @@ If you found this work useful, please cite us!
 ```bibtex
 @article{Slack_TalkToModel_Understanding_Machine_2022,
 author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
-journal = {arXiv},
+journal = {TSRML @ NeurIPS},
 title = {{TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations}},
 year = {2022}
 }

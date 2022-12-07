@@ -18,7 +18,7 @@ Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) page! The g
 ## Links
 
 - Check out the [arXiv TalkToModel paper](https://arxiv.org/abs/2207.04154) ✨
-- Check out the [github code] (https://github.com/dylan-slack/TalkToModel) 🖥️
+- Check out the [github code](https://github.com/dylan-slack/TalkToModel) 🖥️
 - We are hosting a [demo of TalkToModel](https://nlp.ics.uci.edu/talk-to-healthcare-model/) on the diabetes prediction task 🚀
 
 If you found this work useful, please cite us! 

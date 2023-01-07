@@ -32,6 +32,8 @@ year = {2022}
 }
 ```
 
+[UPDATE] This work won an honorable mention outstanding paper at the TSRML Workshop at NeurIPS 🎉
+
 We additionally wrote a [precursor paper](https://arxiv.org/abs/2202.01875) about domain experts needs for understanding models, that helped inspire this work. It's called *Rethinking Explainability as a Dialogue: A Practitioner's Perspective*. Check that out as well!
 
 

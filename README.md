@@ -4,8 +4,7 @@
 
 # TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations
 
-
-[![arXiv](https://img.shields.io/badge/arXiv-2207.04154-b31b1b.svg)](https://arxiv.org/abs/2207.04154)
+[![Python application](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml/badge.svg)](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml) [![arXiv](https://img.shields.io/badge/arXiv-2207.04154-b31b1b.svg)](https://arxiv.org/abs/2207.04154)
 
 
 Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) page! The goal of this project is to enable anyone to understand the predictions of a trained machine learning model through a natural language conversation. Ultimately, it is a platform for **conversational XAI**!

@@ -4,20 +4,20 @@
 
 # TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations
 
-
 [![Python application](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml/badge.svg)](https://github.com/dylan-slack/TalkToModel/actions/workflows/python-app.yml) [![arXiv](https://img.shields.io/badge/arXiv-2207.04154-b31b1b.svg)](https://arxiv.org/abs/2207.04154)
 
 
-Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) repo! The goal of this project is to enable anyone to understand the predictions of a trained machine learning model through a natural language conversation. Ultimately, it is a platform for **conversational XAI**!
+Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) page! The goal of this project is to enable anyone to understand the predictions of a trained machine learning model through a natural language conversation. Ultimately, it is a platform for **conversational XAI**!
 
 <p align="center">
 &nbsp;&nbsp;&nbsp;
 <img src="static/images/output.gif" alt="drawing" width="600"/>
 </p>
 
-## Quick Links
+## Links
 
 - Check out the [arXiv TalkToModel paper](https://arxiv.org/abs/2207.04154) ✨
+- Check out the [github code](https://github.com/dylan-slack/TalkToModel) 🖥️
 - We are hosting a [demo of TalkToModel](https://nlp.ics.uci.edu/talk-to-healthcare-model/) on the diabetes prediction task 🚀
 
 If you found this work useful, please cite us! 
@@ -25,11 +25,13 @@ If you found this work useful, please cite us!
 ```bibtex
 @article{Slack_TalkToModel_Understanding_Machine_2022,
 author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
-journal = {arXiv},
-title = {{TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations}},
+journal = {TSRML @ NeurIPS},
+title = {TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations},
 year = {2022}
 }
 ```
+
+[UPDATE] This work won an honorable mention outstanding paper at the TSRML Workshop at NeurIPS 🎉
 
 We additionally wrote a [precursor paper](https://arxiv.org/abs/2202.01875) about domain experts needs for understanding models, that helped inspire this work. It's called *Rethinking Explainability as a Dialogue: A Practitioner's Perspective*. Check that out as well!
 
@@ -200,8 +202,8 @@ Cite us 🫶
 ```bibtex
 @article{Slack_TalkToModel_Understanding_Machine_2022,
 author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
-journal = {arXiv},
-title = {{TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations}},
+journal = {TSRML @ NeurIPS},
+title = {TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations},
 year = {2022}
 }
 ```

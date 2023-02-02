@@ -19,23 +19,38 @@ def explain_operation(conversation, parse_text, i, **kwargs):
     parse_op = gen_parse_op_text(conversation)
 
     # Note, do we want to remove parsing for lime -> mega_explainer here?
-    if parse_text[i+1] == 'features' or parse_text[i+1] == 'lime':
+    if parse_text[i + 1] == 'features' or parse_text[i + 1] == 'lime':
         # mega explainer explanation case
-        mega_explainer_exp = conversation.get_var('mega_explainer').contents
-        full_summary, short_summary = mega_explainer_exp.summarize_explanations(data,
-                                                                                filtering_text=parse_op,
-                                                                                ids_to_regenerate=regen)
-        conversation.store_followup_desc(full_summary)
-        return short_summary, 1
-    if parse_text[i+1] == 'cfe':
-        dice_tabular = conversation.get_var('tabular_dice').contents
-        out = dice_tabular.summarize_explanations(data,
-                                                  filtering_text=parse_op,
-                                                  ids_to_regenerate=regen)
-        additional_options, short_summary = out
-        conversation.store_followup_desc(additional_options)
-        return short_summary, 1
-    if parse_text[i+1] == 'shap':
+        return explain_lime(conversation, data, parse_op, regen)
+    if parse_text[i + 1] == 'cfe':
+        return explain_cfe(conversation, data, parse_op, regen)
+    if parse_text[i + 1] == 'shap':
         # This is when a user asks for a shap explanation
         raise NotImplementedError
     raise NameError(f"No explanation operation defined for {parse_text}")
+
+
+def explain_lime(conversation, data, parse_op, regen):
+    """Get Lime explanation"""
+    mega_explainer_exp = conversation.get_var('mega_explainer').contents
+    full_summary, short_summary = mega_explainer_exp.summarize_explanations(data,
+                                                                            filtering_text=parse_op,
+                                                                            ids_to_regenerate=regen)
+    conversation.store_followup_desc(full_summary)
+    return short_summary, 1
+
+
+def explain_cfe(conversation, data, parse_op, regen):
+    """Get CFE explanation"""
+    dice_tabular = conversation.get_var('tabular_dice').contents
+    out = dice_tabular.summarize_explanations(data,
+                                              filtering_text=parse_op,
+                                              ids_to_regenerate=regen)
+    additional_options, short_summary = out
+    conversation.store_followup_desc(additional_options)
+    return short_summary, 1
+
+
+def explain_shap():
+    """Get Shap explanation"""
+    pass

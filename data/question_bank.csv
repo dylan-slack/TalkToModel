@@ -1,16 +1,16 @@
-﻿Question;Paraphrased;Method
-What features does the system consider?;Which attributes does the model use to make predictions?;Show Features
-Is [feature X] used or not used for the prediction?;Does the model include [feature X] when making the prediction?;Feature Importance (SHAP / LIME)
-How does it weight different features?;How important is each attribute to the model's predictions?;Feature Importance (SHAP / LIME)
-How does [feature X] impact the prediction?;How strong does [feature X] affect the prediction?;Feature Importance (SHAP / LIME)
-What are the top rules/features it uses?;What are the most important attributes for this prediction?;Feature Importance (SHAP / LIME)
-Why/how is this instance given this prediction?;Why did the model give this particular prediction for this person?;Feature Importance (SHAP / LIME)
-What features of this instance leads to the system's prediction?;What attributes of this person led the model to make this prediction?;Feature Importance (SHAP / LIME)
-Why/how is this instance NOT predicted …?;Why didn't the model predict this person as [opposite class]?;
-Why is this instance predicted P instead of Q?;What caused the model to predict class [P] instead of class [Q] for this person?;Counterfactual Explanation (DICE / CFProto)
-What would the system predict if this feature of the instance changes to …?;What would happen to the prediction if we changed [feature] for this person?;Predict new instance
-How should this instance change to get a different prediction?;How should this person change to get a different prediction?;Counterfactual Explanation (CFProto)
-How should this feature change to get a different prediction?;How should this attribute change to get a different prediction?;Counterfactual Explanation (DICE)
-What is the scope of change permitted to still get the same prediction?;Which changes to this person would still get the same prediction?;Sufficiency conditions (Anchors)
-What is the [highest/lowest/...] feature(s) one can have to still get the same prediction?;;Sufficiency conditions (Anchors)
-What is the necessary feature(s) present or absent to guarantee this prediction?;What attributes must be present or absent to guarantee this prediction?;Semi-Factual Explanations
+﻿q_id;question;paraphrased;method;method_category
+0;What features does the system consider?;Which attributes does the model use to make predictions?;list_features;Lookup
+1;Is [feature X] used or not used for the prediction?;Does the model include [feature X] when making the prediction?;shap/lime;Feature Importance
+2;How does it weight different features?;How important is each attribute to the model's predictions?;shap/lime;Feature Importance
+3;How does [feature X] impact the prediction?;How strong does [feature X] affect the prediction?;shap/lime;Feature Importance
+4;What are the top rules/features it uses?;What are the most important attributes for this prediction?;shap/lime;Feature Importance
+5;Why/how is this instance given this prediction?;Why did the model give this particular prediction for this person?;shap/lime;Feature Importance
+6;What features of this instance leads to the system's prediction?;What attributes of this person led the model to make this prediction?;shap/lime;Feature Importance
+7;Why/how is this instance NOT predicted …?;Why didn't the model predict this person as [opposite class]?;dice/cfproto;Counterfactual Explanation
+8;Why is this instance predicted P instead of Q?;What caused the model to predict class [P] instead of class [Q] for this person?;dice/cfproto;Counterfactual Explanation
+9;What would the system predict if this feature of the instance changes to …?;What would happen to the prediction if we changed [feature] for this person?;predict;Prediction
+10;How should this instance change to get a different prediction?;How should this person change to get a different prediction?;cfproto;Counterfactual Explanation
+11;How should this feature change to get a different prediction?;How should this attribute change to get a different prediction?;dice;Counterfactual Explanation
+12;What is the scope of change permitted to still get the same prediction?;Which changes to this person would still get the same prediction?;Anchors;Sufficiency conditions
+13;What is the [highest/lowest/...] feature(s) one can have to still get the same prediction?;;Anchors;Sufficiency conditions
+14;What is the necessary feature(s) present or absent to guarantee this prediction?;What attributes must be present or absent to guarantee this prediction?;Semi-Factual Explanations;Semi-Factual Explanations

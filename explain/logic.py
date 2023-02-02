@@ -23,7 +23,6 @@ from explain.prompts import Prompts
 from explain.utils import read_and_format_data
 from explain.write_to_log import log_dialogue_input
 
-
 app = Flask(__name__)
 
 
@@ -107,8 +106,9 @@ class ExplainBot:
         self.decoding_model_name = parsing_model_name
 
         # Initialize completion + parsing modules
+        """
         app.logger.info(f"Loading parsing model {parsing_model_name}...")
-        """self.decoder = Decoder(parsing_model_name,
+        self.decoder = Decoder(parsing_model_name,
                                t5_config,
                                use_guided_decoding=self.use_guided_decoding,
                                dataset_name=name)"""

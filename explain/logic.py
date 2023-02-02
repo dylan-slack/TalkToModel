@@ -14,7 +14,7 @@ import torch
 from flask import Flask
 import gin
 
-from explain.action import run_action
+from explain.action import run_action, run_action_by_id
 from explain.conversation import Conversation
 from explain.decoder import Decoder
 from explain.explanation import MegaExplainer, TabularDice
@@ -422,26 +422,33 @@ class ExplainBot:
 
         app.logger.info(f'USER INPUT: {text}')
 
+        # TODO: Implement logic to handle user queries.
+
         # Parse user input into text abiding by formal grammar
         if "t5" not in self.decoding_model_name:
             parse_tree, parsed_text = self.compute_parse_text(text)
         else:
-            parse_tree, parsed_text = self.compute_parse_text_t5(text)
+            pass
+            # parse_tree, parsed_text = self.compute_parse_text_t5(text) #We don't need text parsing for now.
 
         # Run the action in the conversation corresponding to the formal grammar
-        returned_item = run_action(
-            user_session_conversation, parse_tree, parsed_text)
+        if "t5" not in self.decoding_model_name:
+            returned_item = run_action(
+                user_session_conversation, parse_tree, parsed_text)
+        else:
+            # TODO: Provide real question ID here
+            returned_item = run_action_by_id(user_session_conversation, 0)
 
         username = user_session_conversation.username
 
         response_id = self.gen_almost_surely_unique_id()
-        logging_info = self.build_logging_info(self.bot_name,
+        """logging_info = self.build_logging_info(self.bot_name,
                                                username,
                                                response_id,
                                                text,
                                                parsed_text,
-                                               returned_item)
-        self.log(logging_info)
+                                               returned_item)"""
+        # self.log(logging_info) # Logging dict currently off.
         # Concatenate final response, parse, and conversation representation
         # This is done so that we can split both the parse and final
         # response, then present all the data

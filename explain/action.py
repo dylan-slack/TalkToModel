@@ -67,3 +67,12 @@ def run_action(conversation: Conversation,
         return_statement = return_statement[:-len("<br>")]
 
     return return_statement
+
+
+def run_action_by_id(conversation: Conversation,
+                     question_id: int):
+    """
+    Runs the action selected by an ID instead of text parsing and updates the conversation object.
+    """
+    # TODO Implement question handling and responses.
+    return f"This is a mocked answer to your question with id {question_id}."

@@ -108,10 +108,11 @@ class ExplainBot:
 
         # Initialize completion + parsing modules
         app.logger.info(f"Loading parsing model {parsing_model_name}...")
-        self.decoder = Decoder(parsing_model_name,
+        """self.decoder = Decoder(parsing_model_name,
                                t5_config,
                                use_guided_decoding=self.use_guided_decoding,
-                               dataset_name=name)
+                               dataset_name=name)"""
+        self.decoder = None
 
         # Initialize parser + prompts as None
         # These are done when the dataset is loaded

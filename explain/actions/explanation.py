@@ -30,13 +30,15 @@ def explain_operation(conversation, parse_text, i, **kwargs):
     raise NameError(f"No explanation operation defined for {parse_text}")
 
 
-def explain_feature_importances(conversation, data, parse_op, regen):
+def explain_feature_importances(conversation, data, parse_op, regen, return_full_summary=False):
     """Get Lime or SHAP explanation, considering fidelity (mega explainer functionality)"""
     mega_explainer_exp = conversation.get_var('mega_explainer').contents
     full_summary, short_summary = mega_explainer_exp.summarize_explanations(data,
                                                                             filtering_text=parse_op,
                                                                             ids_to_regenerate=regen)
     conversation.store_followup_desc(full_summary)
+    if return_full_summary:
+        return full_summary, 1
     return short_summary, 1
 
 

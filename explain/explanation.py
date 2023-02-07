@@ -321,13 +321,11 @@ class MegaExplainer(Explanation):
 
         return full_print_out, shortened_output
 
-    def summarize_explanations(self,
-                               data: pd.DataFrame,
-                               ids_to_regenerate: list = None,
-                               filtering_text: str = None,
-                               save_to_cache: bool = False):
-        """Summarizes explanations for lime tabular.
-
+    def get_feature_importances(self,
+                                data: pd.DataFrame,
+                                ids_to_regenerate: list = None,
+                                save_to_cache=False):
+        """
         Arguments:
             data: pandas df containing data.
             ids_to_regenerate: ids of instances to regenerate explanations for even if they're cached
@@ -338,12 +336,13 @@ class MegaExplainer(Explanation):
         Returns:
             summary: a string containing the summary.
         """
+
+        # Note that the explanations are returned as MegaExplanation
+        # dataclass instances
         if ids_to_regenerate is None:
             ids_to_regenerate = []
         ids = list(data.index)
 
-        # Note that the explanations are returned as MegaExplanation
-        # dataclass instances
         explanations = self.get_explanations(ids,
                                              data,
                                              ids_to_regenerate=ids_to_regenerate,
@@ -377,6 +376,27 @@ class MegaExplainer(Explanation):
             if label not in scores:
                 scores[label] = []
             scores[label].append(explanations[ids[i]].score)
+        return feature_importances, scores
+
+    def summarize_explanations(self,
+                               data: pd.DataFrame,
+                               ids_to_regenerate: list = None,
+                               filtering_text: str = None,
+                               save_to_cache: bool = False):
+        """Summarizes explanations for lime tabular.
+
+        Arguments:
+            data: pandas df containing data.
+            ids_to_regenerate: ids of instances to regenerate explanations for even if they're cached
+            filtering_text: text describing the filtering operations for the data the explanations
+                            are run on.
+            save_to_cache: whether to write explanations generated_to_cache. If ids are regenerated and
+                           save_to_cache is set to true, the existing explanations will be overwritten.
+        Returns:
+            summary: a string containing the summary.
+        """
+
+        feature_importances, scores = self.get_feature_importances(data, ids_to_regenerate, save_to_cache)
 
         full_summary, short_summary = self.format_explanations_to_string(feature_importances,
                                                                          scores,

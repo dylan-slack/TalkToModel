@@ -6,7 +6,7 @@ are things like running an explanation or performing filtering.
 """
 from flask import Flask
 
-from explain.actions.explanation import explain_lime
+from explain.actions.explanation import explain_feature_importances
 from explain.actions.filter import filter_operation
 from explain.actions.interaction_effects import measure_interaction_effects
 from explain.conversation import Conversation

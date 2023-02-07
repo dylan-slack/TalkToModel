@@ -21,7 +21,7 @@ def explain_operation(conversation, parse_text, i, **kwargs):
     # Note, do we want to remove parsing for lime -> mega_explainer here?
     if parse_text[i + 1] == 'features' or parse_text[i + 1] == 'lime':
         # mega explainer explanation case
-        return explain_lime(conversation, data, parse_op, regen)
+        return explain_feature_importances(conversation, data, parse_op, regen)
     if parse_text[i + 1] == 'cfe':
         return explain_cfe(conversation, data, parse_op, regen)
     if parse_text[i + 1] == 'shap':
@@ -30,8 +30,8 @@ def explain_operation(conversation, parse_text, i, **kwargs):
     raise NameError(f"No explanation operation defined for {parse_text}")
 
 
-def explain_lime(conversation, data, parse_op, regen):
-    """Get Lime explanation"""
+def explain_feature_importances(conversation, data, parse_op, regen):
+    """Get Lime or SHAP explanation, considering fidelity (mega explainer functionality)"""
     mega_explainer_exp = conversation.get_var('mega_explainer').contents
     full_summary, short_summary = mega_explainer_exp.summarize_explanations(data,
                                                                             filtering_text=parse_op,
@@ -51,6 +51,12 @@ def explain_cfe(conversation, data, parse_op, regen):
     return short_summary, 1
 
 
-def explain_shap():
-    """Get Shap explanation"""
-    pass
+def explain_anchor(conversation, data, parse_op, regen):
+    """Get Anchor explanation"""
+    anchor_exp = conversation.get_var('tabular_anchor').contents
+    out = anchor_exp.summarize_explanations(data,
+                                            filtering_text=parse_op,
+                                            ids_to_regenerate=regen)
+    additional_options, short_summary = out
+    conversation.store_followup_desc(additional_options)
+    return short_summary, 1

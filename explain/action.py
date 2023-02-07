@@ -6,6 +6,9 @@ are things like running an explanation or performing filtering.
 """
 from flask import Flask
 
+from explain.actions.explanation import explain_lime
+from explain.actions.filter import filter_operation
+from explain.actions.interaction_effects import measure_interaction_effects
 from explain.conversation import Conversation
 from explain.actions.get_action_functions import get_all_action_functions_map
 
@@ -70,9 +73,33 @@ def run_action(conversation: Conversation,
 
 
 def run_action_by_id(conversation: Conversation,
-                     question_id: int):
+                     question_id: int,
+                     instance_id: int,
+                     build_temp_dataset: bool = True) -> str:
     """
     Runs the action selected by an ID instead of text parsing and updates the conversation object.
+
+    onversation: Conversation, Conversation Object
+    question_id: int, id of the question as defined in question_bank.csv
+    instance_id: int, id of the instance that should be explained. Needed for local explanations
+    build_temp_dataset: bool = True If building tmp_dataset is needed.
     """
-    # TODO Implement question handling and responses.
-    return f"This is a mocked answer to your question with id {question_id}."
+    if build_temp_dataset:
+        conversation.build_temp_dataset()
+
+    # Create parse text as filter works with it
+    parse_text = f"filter id {instance_id}".split(" ")
+    _ = filter_operation(conversation, parse_text, 0)
+    # Get tmp dataset to perform explanation on (here, single ID will be in tmp_dataset)
+    data = conversation.temp_dataset.contents['X']
+    regen = conversation.temp_dataset.contents['ids_to_regenerate']
+
+    if question_id == 0:
+        explanation = explain_lime(conversation, data, f"ID {instance_id}", regen)
+        return explanation[0]
+    if question_id == 1:
+        # How important is each attribute to the model's predictions?
+        explanation = measure_interaction_effects(conversation)
+        return explanation[0]
+    else:
+        return f"This is a mocked answer to your question with id {question_id}."

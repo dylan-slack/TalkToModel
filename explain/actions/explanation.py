@@ -40,6 +40,13 @@ def explain_feature_importances(conversation, data, parse_op, regen):
     return short_summary, 1
 
 
+def get_feature_importances(conversation, id, parse_op, regen, return_full_summary=False):
+    """Get Lime or SHAP explanation, considering fidelity (mega explainer functionality)"""
+    mega_explainer_exp = conversation.get_var('mega_explainer').contents
+    feature_importances = mega_explainer_exp.get_feature_importances(ids=[id])
+    return feature_importances, 1
+
+
 def explain_cfe(conversation, data, parse_op, regen):
     """Get CFE explanation"""
     dice_tabular = conversation.get_var('tabular_dice').contents

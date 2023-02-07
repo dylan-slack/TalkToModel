@@ -29,7 +29,7 @@ def get_text(interactions: list[tuple], feature_names: list, parse_op: str):
     return output
 
 
-def measure_interaction_effects(conversation, parse_text, i, **kwargs):
+def measure_interaction_effects(conversation, parse_text=None, i=None, **kwargs):
     """Gets the interaction scores
 
     Arguments:
@@ -50,11 +50,11 @@ def measure_interaction_effects(conversation, parse_text, i, **kwargs):
 
     # Categorical features
     cat_features = conversation.get_var('dataset').contents['cat']
-    cat_feature_names = [data.columns[i] for i in cat_features]
+    #cat_feature_names = [data.columns[i] for i in cat_features]
 
     interaction_explainer = FeatureInteraction(data=data,
                                                prediction_fn=predict_proba,
-                                               cat_features=cat_feature_names)
+                                               cat_features=cat_features)
 
     # Figure out which features to use by taking top k features
     ids = list(data.index)

@@ -17,7 +17,8 @@ parent = dirname(dirname(abspath(__file__)))
 sys.path.append(parent)
 
 from explain.logic import load_sklearn_model  # noqa: E402
-from explain.explanation import TabularDice, MegaExplainer, Explanation, load_cache  # noqa: E402
+from explain.explanation import MegaExplainer, Explanation, load_cache  # noqa: E402
+from explain.explanations.dice_explainer import TabularDice
 from explain.utils import read_and_format_data  # noqa: E402
 
 gin.parse_config_file('./tests/tests-config.gin')

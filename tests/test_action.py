@@ -12,7 +12,8 @@ parent = dirname(dirname(abspath(__file__)))
 sys.path.append(parent)
 
 from explain.action import run_action  # noqa: E402, F401
-from explain.explanation import MegaExplainer, TabularDice, Explanation, load_cache  # noqa: E402, F401
+from explain.explanation import MegaExplainer, Explanation, load_cache  # noqa: E402, F401
+from explain.explanations.dice_explainer import TabularDice
 from explain.logic import load_sklearn_model  # noqa: E402, F401
 from explain.conversation import Conversation  # noqa: E402, F401
 from explain.utils import read_and_format_data  # noqa: E402, F401

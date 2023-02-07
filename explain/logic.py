@@ -17,7 +17,8 @@ import gin
 from explain.action import run_action, run_action_by_id
 from explain.conversation import Conversation
 from explain.decoder import Decoder
-from explain.explanation import MegaExplainer, TabularDice
+from explain.explanation import MegaExplainer
+from explain.explanations.dice_explainer import TabularDice
 from explain.parser import Parser, get_parse_tree
 from explain.prompts import Prompts
 from explain.utils import read_and_format_data

@@ -2,11 +2,11 @@
 :root {
   --body-bg: #fff;
   --ttm-bg: #fff;
-  --pins-bg: #fff;
+  --questions-bg: #fff;
   --border: 2px solid #ddd;
   --left-msg-bg: #ececec;
   --right-msg-bg: #579ffb;
-  --left-pins-bg: #ececec;
+  --left-questions-bg: #ececec;
 }
 
 body {
@@ -108,7 +108,7 @@ parse {
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
 
-.pins {
+.questions {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -118,7 +118,7 @@ parse {
   height: calc(100% - 10px);
   border: var(--border);
   border-radius: 5px;
-  background: var(--pins-bg);
+  background: var(--questions-bg);
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
 
@@ -133,7 +133,7 @@ parse {
   color: #666;
 }
 
-.pins-header {
+.questions-header {
    /*display: flex;*/
   font-size: large;
   justify-content: space-between;
@@ -175,18 +175,18 @@ parse {
 }
 
 
-.pins-scroll {
+.questions-scroll {
   flex: 1;
   overflow-y: auto;
   padding: 10px;
 }
-.pins-scroll::-webkit-scrollbar {
+.questions-scroll::-webkit-scrollbar {
   width: 6px;
 }
-.pins-scroll::-webkit-scrollbar-track {
+.questions-scroll::-webkit-scrollbar-track {
   background: #ddd;
 }
-.pins-scroll::-webkit-scrollbar-thumb {
+.questions-scroll::-webkit-scrollbar-thumb {
   background: #bdbdbd;
 }
 
@@ -229,7 +229,7 @@ parse {
   max-width: 450px;
   padding: 10px;
   border-radius: 15px;
-  background: var(--left-pins-bg);
+  background: var(--left-questions-bg);
 }
 
 .left-msg .msg-bubble {

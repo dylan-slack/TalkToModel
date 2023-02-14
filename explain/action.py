@@ -75,13 +75,15 @@ def run_action(conversation: Conversation,
 def run_action_by_id(conversation: Conversation,
                      question_id: int,
                      instance_id: int,
+                     feature_name: str = None,
                      build_temp_dataset: bool = True) -> str:
     """
     Runs the action selected by an ID instead of text parsing and updates the conversation object.
 
-    onversation: Conversation, Conversation Object
+    conversation: Conversation, Conversation Object
     question_id: int, id of the question as defined in question_bank.csv
     instance_id: int, id of the instance that should be explained. Needed for local explanations
+    feature_name: str, string of the feature name the question is about (if specified)
     build_temp_dataset: bool = True If building tmp_dataset is needed.
     """
     if build_temp_dataset:

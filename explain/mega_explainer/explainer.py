@@ -103,6 +103,7 @@ class Explainer:
         lime_template = partial(Lime,
                                 model=self.model,
                                 data=self.data,
+                                feature_names=self.feature_names,
                                 discrete_features=discrete_features)
 
         # Generate explanations with many lime kernels

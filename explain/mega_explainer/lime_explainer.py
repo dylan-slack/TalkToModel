@@ -12,12 +12,13 @@ class Lime(BaseExplainer):
     def __init__(self,
                  model,
                  data: np.ndarray,
+                 feature_names: [str],
                  discrete_features: list,
                  mode: str = "tabular",
                  sample_around_instance: bool = False,
                  kernel_width: float = 0.75,
                  n_samples: int = 10_000,
-                 discretize_continuous: bool = False):
+                 discretize_continuous: bool = True):
         """
 
         Args:

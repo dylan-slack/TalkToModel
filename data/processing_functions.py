@@ -3,8 +3,10 @@
 This code originates from one of my other projects:
 https://github.com/dylan-slack/
 Modeling-Uncertainty-Local-Explainability/blob/main/bayes/data_routines.py."""
+import json
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
 # The number of segments to use for the images
 NSEGMENTS = 20
@@ -68,6 +70,29 @@ def get_and_preprocess_compas_data():
     return x_values
 
 
+def _save_column_id_to_value_index_mapping(data: np.ndarray,
+                                           column_ids: [int]):
+    """
+    Takes in a dataset in numpy and a list of column indices to create a nested dict from the column indices to
+    indexed unique values in a column of the dataset. {col_id: {value_id: unique_value}}
+    Needed for XAI methods that handle categorical features this way.
+    """
+    categorical_names = {}
+    for column_id in column_ids:
+        if column_id != 2:  # Ignore column 'Job' because it is already in int.
+            # As in LIME example "Categorical features"
+            # https://marcotcr.github.io/lime/tutorials/Tutorial%20-%20continuous%20and%20categorical%20features.html
+            le = LabelEncoder()
+            le.fit(data[:, column_id])
+            data[:, column_id] = le.transform(data[:, column_id])
+            categorical_names[column_id] = le.classes_.tolist()
+
+    with open("german_column_id_to_values_mapping.json", "w") as f:
+        json.dump(categorical_names, f)
+
+    return data, categorical_names
+
+
 def get_and_preprocess_german():
     """"Handle processing of German.  We use a preprocessed version of German from Ustun et. al.
     https://arxiv.org/abs/1809.06514.  Thanks Berk!
@@ -81,7 +106,7 @@ def get_and_preprocess_german():
     positive_outcome = 1
     negative_outcome = 0
 
-    x_values = pd.read_csv("./data/german_raw.csv")
+    x_values = pd.read_csv("german_raw.csv")
     y_values = x_values["GoodCustomer"]
     loan_purpose = x_values["PurposeOfLoan"]
 
@@ -112,6 +137,44 @@ def get_and_preprocess_german():
     }
 
     return output
+
+
+def get_and_preprocess_german_short():
+    """" Preprocess german_short with only 10 variables.
+    Parameters:
+    ----------
+    params : Params
+    Returns:
+    ----------
+    Pandas data frame x_values of processed data, np.ndarray y_values, and list of column names
+    """
+    positive_outcome = 1
+    negative_outcome = 0
+
+    x_values = pd.read_csv("german_raw_short.csv", keep_default_na=False)
+    y_values = x_values["Risk"]
+    x_values = x_values.drop(["Risk"], axis=1)
+    x_values = x_values.drop((["Unnamed: 0"]), axis=1)
+    col_names = list(x_values.columns)
+
+    # Transform target label to 0 and 1.
+    y_values = np.array([positive_outcome if p == "good" else negative_outcome for p in y_values.values])
+
+    # Transform categorical values to int with LabelEncoder
+    data_columns = list(x_values.columns)
+    categorical_col_names = ['Sex', 'Job', 'Housing', 'Saving accounts', 'Checking account', 'Purpose']
+
+    categorical_col_ids = [data_columns.index(col) for col in categorical_col_names]
+
+    x_values, categorical_mapping = _save_column_id_to_value_index_mapping(x_values.to_numpy(), categorical_col_ids)
+    x_values = pd.DataFrame(x_values, columns=col_names)
+    output = {
+        "x_values": x_values,
+        "y_values": y_values,
+        "column_names": col_names
+    }
+
+    return output, categorical_mapping
 
 
 def get_dataset_by_name(name):

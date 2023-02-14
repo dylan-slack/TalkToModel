@@ -201,7 +201,8 @@ class Explainer:
 
         # TODO(satya): Could you make these lines more readable?
         y = self._arr([i[label] for i in self._arr(self.model(x.reshape(1, -1)))])
-        y_perturbed = self._arr([i[label] for i in self._arr(self.model(x_perturbed.float()))])
+        # Model expects numpy arrays for german dataset. (Dimi)
+        y_perturbed = self._arr([i[label] for i in self._arr(self.model(x_perturbed.float().numpy()))])
 
         # Return abs mean
         return np.mean(np.abs(y - y_perturbed), axis=0)

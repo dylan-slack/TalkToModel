@@ -7,6 +7,7 @@ import os
 import pickle as pkl
 from typing import Union
 
+import pandas
 import pandas as pd
 from tqdm import tqdm
 from typing import Callable
@@ -140,7 +141,8 @@ class MegaExplainer(Explanation):
                  cat_features: Union[list[int], list[str]],
                  cache_location: str = "./cache/mega-explainer-tabular.pkl",
                  class_names: list[str] = None,
-                 use_selection: bool = True):
+                 use_selection: bool = True,
+                 categorical_mapping: dict = None):
         """Init.
 
         Args:
@@ -163,6 +165,7 @@ class MegaExplainer(Explanation):
                                         feature_names=data.columns,
                                         discrete_features=cat_features,
                                         use_selection=use_selection)
+        self.categorical_mapping = categorical_mapping
 
     @staticmethod
     def get_cat_features(data: pd.DataFrame,
@@ -199,7 +202,7 @@ class MegaExplainer(Explanation):
             generated_explanations: A dictionary containing {id: explanation} pairs
         """
         generated_explanations = {}
-        np_data = data.to_numpy()
+        np_data = data.to_numpy(dtype=object)
         # Generate the lime explanations
         pbar = tqdm(range(np_data.shape[0]))
         for i in pbar:
@@ -236,7 +239,8 @@ class MegaExplainer(Explanation):
     def format_explanations_to_string(self,
                                       feature_importances: dict,
                                       scores: dict, filtering_text: str,
-                                      include_confidence_text: bool = False):
+                                      include_confidence_text: bool = False,
+                                      feature_values: pandas.DataFrame = None):
         """Formats dict of label -> feature name -> feature_importance dicts to string.
 
         TODO(dylan): In shortened text summary, consider adding something about anomalous
@@ -250,6 +254,7 @@ class MegaExplainer(Explanation):
                     predictive performance across a
             filtering_text: text describing the filtering operations for the data the explanations
                             are run on.
+            feature_values: Dataframe of the instance that is explained.
         Returns:
             r_str: Two string, the first providing a full summary of the result and the second providing
                    a condensed summary of the result.
@@ -274,8 +279,18 @@ class MegaExplainer(Explanation):
             full_print_out += " the feature importances are:<br>"
 
             for feature_imp in feature_importances[label]:
-                sig_coefs.append([feature_imp,
-                                  np.mean(feature_importances[label][feature_imp])])
+                if feature_values is not None and self.categorical_mapping is not None:
+                    feature_value = feature_values[feature_imp].values[0]
+                    column_id = self.data.columns.get_loc(feature_imp)
+                    try:
+                        decoded_feature_value = self.categorical_mapping[str(column_id)][int(feature_value)]
+                    except KeyError:
+                        decoded_feature_value = feature_value
+                    sig_coefs.append([feature_imp + " = " + str(decoded_feature_value),
+                                      np.mean(feature_importances[label][feature_imp])])
+                else:
+                    sig_coefs.append([feature_imp,
+                                      np.mean(feature_importances[label][feature_imp])])
 
             sig_coefs.sort(reverse=True, key=lambda x: abs(x[1]))
             app.logger.info(sig_coefs)
@@ -400,5 +415,6 @@ class MegaExplainer(Explanation):
 
         full_summary, short_summary = self.format_explanations_to_string(feature_importances,
                                                                          scores,
-                                                                         filtering_text)
+                                                                         filtering_text,
+                                                                         feature_values=data)
         return full_summary, short_summary

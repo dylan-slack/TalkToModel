@@ -71,7 +71,7 @@ class NormalPerturbation(BasePerturbation):
                                num_samples times.
         """
         feature_type = feature_metadata
-
+        original_sample = original_sample.astype(float)  # Convert from object to float
         message = f"mask size == original sample in get_perturbed_inputs for {self.__class__}"
         assert len(feature_mask) == len(original_sample), message
 

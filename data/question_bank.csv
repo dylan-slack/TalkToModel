@@ -6,11 +6,9 @@
 4;What are the top rules/features it uses?;What are the most important attributes for this prediction?;shap/lime;Feature Importance
 5;Why/how is this instance given this prediction?;Why did the model give this particular prediction for this person?;shap/lime;Feature Importance
 6;What features of this instance leads to the system's prediction?;What attributes of this person led the model to make this prediction?;shap/lime;Feature Importance
-7;Why/how is this instance NOT predicted …?;Why didn't the model predict this person as [opposite class]?;dice/cfproto;Counterfactual Explanation
-8;Why is this instance predicted P instead of Q?;What caused the model to predict class [P] instead of class [Q] for this person?;dice/cfproto;Counterfactual Explanation
-9;What would the system predict if this feature of the instance changes to …?;What would happen to the prediction if we changed [feature] for this person?;predict;Prediction
-10;How should this instance change to get a different prediction?;How should this person change to get a different prediction?;cfproto;Counterfactual Explanation
-11;How should this feature change to get a different prediction?;How should this attribute change to get a different prediction?;dice;Counterfactual Explanation
-12;What is the scope of change permitted to still get the same prediction?;Which changes to this person would still get the same prediction?;Anchors;Sufficiency conditions
-13;What is the [highest/lowest/...] feature(s) one can have to still get the same prediction?;Which maximum changes would not influence the class prediction?;Anchors;Sufficiency conditions
-14;What is the necessary feature(s) present or absent to guarantee this prediction?;What attributes must be present or absent to guarantee this prediction?;Semi-Factual Explanations;Semi-Factual Explanations
+7;What would the system predict if this feature of the instance changes to …?;What would happen to the prediction if we changed [feature] for this person?;predict;Prediction
+8;How should this instance change to get a different prediction?;How should this person change to get a different prediction?;cfproto;Counterfactual Explanation
+9;How should this feature change to get a different prediction?;How should this attribute change to get a different prediction?;dice;Counterfactual Explanation
+10;What is the scope of change permitted to still get the same prediction?;Which changes to this person would still get the same prediction?;Anchors;Sufficiency conditions
+11;What is the [highest/lowest/...] feature(s) one can have to still get the same prediction?;Which maximum changes would not influence the class prediction?;Anchors;Sufficiency conditions
+12;What is the necessary feature(s) present or absent to guarantee this prediction?;What attributes must be present or absent to guarantee this prediction?;Semi-Factual Explanations;Semi-Factual Explanations

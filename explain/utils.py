@@ -47,7 +47,7 @@ def read_and_format_data(filepath,
         num_features: The numerical feature names.
     """
     # Load the dataset
-    dataset = pd.read_csv(filepath, index_col=index_col)
+    dataset = pd.read_csv(filepath, index_col=index_col, keep_default_na=False)
 
     # Underscores hurt decoding performance in feature names, remove them
     # for better performance, if requested.

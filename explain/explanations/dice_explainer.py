@@ -71,10 +71,10 @@ class TabularDice(Explanation):
                 self.model = m
 
             def predict(self, X):
-                return self.model.predict(X.values)
+                return self.model.predict(X.values.astype(int))
 
             def predict_proba(self, X):
-                return self.model.predict_proba(X.values)
+                return self.model.predict_proba(X.values.astype(int))
         return Model(model)
 
     def run_explanation(self,

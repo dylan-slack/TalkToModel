@@ -11,7 +11,6 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from data.utils import TypeSelector
 
 np.random.seed(0)
 parent = dirname(dirname(abspath(__file__)))
@@ -26,11 +25,10 @@ savings_categories = [[0, 1, 2, 3, 4]]
 # checking_categories = [['NA', 'little', 'moderate', 'rich']]
 checking_categories = [[0, 1, 2, 3]]
 one_hot_col_names = ['Sex', 'Housing', 'Purpose']
-sex_categories = [list(german_data['x_values']['Sex'].unique())]
-housing_categories = [list(german_data['x_values']['Housing'].unique())]
-purpose_categories = [list(german_data['x_values']['Purpose'].unique())]
+sex_categories = [list(np.sort(german_data['x_values']['Sex'].unique()))]
+housing_categories = [list(np.sort(german_data['x_values']['Housing'].unique()))]
+purpose_categories = [list(np.sort(german_data['x_values']['Purpose'].unique()))]
 standard_scaler_col_list = ['Age', 'Credit amount', 'Duration']
-job_categories = [[0, 1, 2, 3]]
 
 X_values = german_data["x_values"]
 y_values = german_data["y_values"]
@@ -48,8 +46,8 @@ X_test.to_csv('german_test.csv')
 X_train.pop("y")
 X_test.pop("y")
 
-X_train = X_train.to_numpy()
-X_test = X_test.to_numpy()
+X_train = X_train.values
+X_test = X_test.values
 
 # Setup pipeline
 # lr_pipeline = Pipeline([('scaler', StandardScaler()),
@@ -64,15 +62,13 @@ preprocessor = ColumnTransformer(
         ('onehot_sex', OneHotEncoder(categories=sex_categories), [data_columns.index('Sex')]),
         ('onehot_housing', OneHotEncoder(categories=housing_categories), [data_columns.index('Housing')]),
         ('onehot_purpose', OneHotEncoder(categories=purpose_categories), [data_columns.index('Purpose')]),
-        ('ordinal_job', OrdinalEncoder(categories=job_categories), [data_columns.index('Job')]),
         ('ordinal_saving', OrdinalEncoder(categories=savings_categories), [data_columns.index('Saving accounts')]),
         ('ordinal_checking', OrdinalEncoder(categories=checking_categories), [data_columns.index('Checking account')]),
         ('scaler', StandardScaler(), [data_columns.index(col) for col in standard_scaler_col_list])
     ],
     remainder='drop'
 )
-lr_pipeline = Pipeline([('dtype', TypeSelector("object")),
-                        ('preprocessing', preprocessor),
+lr_pipeline = Pipeline([('preprocessing', preprocessor),
                         ('lr', GradientBoostingClassifier())])
 lr_pipeline.fit(X_train, y_train)
 

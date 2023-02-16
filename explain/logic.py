@@ -49,14 +49,15 @@ class ExplainBot:
                  numerical_features: list[str],
                  remove_underscores: bool,
                  name: str,
-                 parsing_model_name: str = "ucinlp/diabetes-t5-small",
+                 parsing_model_name: str = "nearest-neighbor",
                  seed: int = 0,
                  prompt_metric: str = "cosine",
                  prompt_ordering: str = "ascending",
                  t5_config: str = None,
                  use_guided_decoding: bool = True,
                  feature_definitions: dict = None,
-                 skip_prompts: bool = False):
+                 skip_prompts: bool = False,
+                 categorical_mapping_path: str = None):
         """The init routine.
 
         Arguments:
@@ -87,6 +88,7 @@ class ExplainBot:
             t5_config: The path to the configuration file for t5 models, if using one of these.
             skip_prompts: Whether to skip prompt generation. This is mostly useful for running fine-tuned
                           models where generating prompts is not necessary.
+            categorical_mapping_path: Path to json mapping for each col that assigns a categorical var to an int.
         """
 
         # Set seeds
@@ -127,6 +129,14 @@ class ExplainBot:
         # Load the model into the conversation
         self.load_model(model_file_path)
 
+        # Load categorical mapping
+        if categorical_mapping_path is not None:
+            with open(categorical_mapping_path, "r") as f:
+                categorical_mapping = json.load(f)
+                self.categorical_mapping = {int(k): v for k, v in categorical_mapping.items()}
+        else:
+            self.categorical_mapping = None
+
         # Load the dataset into the conversation
         self.load_dataset(dataset_file_path,
                           dataset_index_column,
@@ -146,13 +156,14 @@ class ExplainBot:
                                                store_to_conversation=False)
 
         # Load the explanations
-        self.load_explanations(background_dataset=background_dataset)
+        self.load_explanations(background_dataset=background_dataset,
+                               categorical_mapping=self.categorical_mapping)
 
     def init_loaded_var(self, name: bytes):
         """Inits a var from manual load."""
         self.manual_var_filename = name.decode("utf-8")
 
-    def load_explanations(self, background_dataset):
+    def load_explanations(self, background_dataset, categorical_mapping=None):
         """Loads the explanations.
 
         If set in gin, this routine will cache the explanations.
@@ -173,7 +184,8 @@ class ExplainBot:
         mega_explainer = MegaExplainer(prediction_fn=pred_f,
                                        data=background_dataset,
                                        cat_features=categorical_f,
-                                       class_names=self.conversation.class_names)
+                                       class_names=self.conversation.class_names,
+                                       categorical_mapping=self.categorical_mapping)
         mega_explainer.get_explanations(ids=list(data.index),
                                         data=data)
         message = (f"...loaded {len(mega_explainer.cache)} mega explainer "

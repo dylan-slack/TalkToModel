@@ -54,7 +54,7 @@ def read_and_format_data(filepath,
     if remove_underscores:
         dataset.columns = dataset.columns.str.replace('_', '')
         dataset.columns = dataset.columns.str.replace('-', '')
-        dataset.columns = dataset.columns.str.lower()
+        # dataset.columns = dataset.columns.str.lower()
 
     # Get the target variable from the data.
     y_values = dataset.pop(target_var_name)

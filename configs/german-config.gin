@@ -49,6 +49,7 @@ TabularDice.cache_location = "./cache/german-dice-tabular-logistic-regression.pk
 
 # Conversation params
 Conversation.class_names = {0: "bad credit risk", 1: "good credit risk"}
+Conversation.question_bank_path =  "./data/question_bank.csv"
 
 # Dataset description
 DatasetDescription.dataset_objective = "predict whether someone is good or bad credit risk"

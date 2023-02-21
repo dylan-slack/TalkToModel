@@ -60,7 +60,8 @@ class Conversation:
                  target_var_name: str = "y",
                  default_metric: str = "accuracy",
                  eval_file_path: str = None,
-                 feature_definitions: dict = None):
+                 feature_definitions: dict = None,
+                 question_bank_path: str = None):
         """
 
         Args:
@@ -95,6 +96,8 @@ class Conversation:
         self.followup = self.describe.get_text_description()
 
         self.default_metric = default_metric
+
+        self.question_bank_path = question_bank_path
 
     def get_feature_definition(self, feature_name):
         """Gets semantic feature definition."""
@@ -131,6 +134,17 @@ class Conversation:
         """Gets the ids for the training data."""
         dataset = self.stored_vars["dataset"].contents["X"]
         return list(dataset.index)
+
+    def get_questions(self):
+        assert self.question_bank_path is not None, "Question bank path not set"
+        try:
+            return self.get_var("questions")
+        except KeyError:
+            question_bank = pd.read_csv(self.question_bank_path, delimiter=";")["paraphrased"]
+            var = Variable(name='question_bank', contents=question_bank, kind='question_bank')
+            self._store_var(var)
+            return var
+
 
     def add_dataset(self,
                     data: pd.DataFrame,

@@ -60,6 +60,14 @@ def explain_cfe(conversation, data, parse_op, regen):
     return short_summary, 1
 
 
+def explain_cfe_single_feature(conversation, data, parse_op, feature_name):
+    dice_tabular = conversation.get_var('tabular_dice').contents
+    out = dice_tabular.get_cfe_with_single_feature_change(data, parse_op, feature_name)
+    additional_options, short_summary = out
+    conversation.store_followup_desc(additional_options)
+    return short_summary, 1
+
+
 def explain_anchor(conversation, data, parse_op, regen):
     """Get Anchor explanation"""
     anchor_exp = conversation.get_var('tabular_anchor').contents

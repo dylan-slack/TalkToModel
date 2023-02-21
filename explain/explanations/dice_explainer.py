@@ -79,13 +79,15 @@ class TabularDice(Explanation):
 
     def run_explanation(self,
                         data: pd.DataFrame,
-                        desired_class: str = None):
+                        desired_class: str = None,
+                        features_to_vary="all"):
         """Generate tabular dice explanations.
 
         Arguments:
             data: The data to generate explanations for in pandas df.
             desired_class: The desired class of the cfes. If None, will use the default provided
                            at initialization.
+            features_to_vary: Either a string "all" or a list of feature names to vary.
         Returns:
             explanations: The generated cf explanations.
         """
@@ -105,7 +107,8 @@ class TabularDice(Explanation):
                     desired_class = int(np.random.choice([p for p in self.classes if p != self.model.predict(data.loc[[d]])[0]]))
                 cur_cfe = self.exp.generate_counterfactuals(data.loc[[d]],
                                                             total_CFs=self.num_cfes_per_instance,
-                                                            desired_class=desired_class)
+                                                            desired_class=desired_class,
+                                                            features_to_vary=features_to_vary)
             cfes[d] = cur_cfe
         return cfes
 

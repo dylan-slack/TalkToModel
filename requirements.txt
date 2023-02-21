@@ -16,9 +16,9 @@ gin-config==0.5.0
 gitdb==4.0.9
 GitPython==3.1.27
 gunicorn==20.1.0
-h5py==3.6.0
 huggingface-hub==0.4.0
 idna==3.3
+dill>=0.3.6,<4
 imageio==2.16.1
 inflect==5.4.0
 iniconfig==1.1.1
@@ -80,10 +80,6 @@ threadpoolctl==3.1.0
 tifffile==2022.3.25
 tokenizers==0.11.6
 tomli==2.0.1
---extra-index-url https://download.pytorch.org/whl/cu113
-torch==1.12.1
---extra-index-url https://download.pytorch.org/whl/cu113
-torchvision==0.13.1+cu113
 tqdm==4.63.1
 transformers==4.17.0
 twilio==7.8.0
@@ -93,3 +89,4 @@ wandb==0.13.2
 Werkzeug==2.0.3
 word2number==1.1
 wordninja==2.0.0
+anchor-exp>=0.0.2.0<1

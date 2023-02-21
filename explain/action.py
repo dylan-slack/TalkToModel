@@ -6,9 +6,9 @@ are things like running an explanation or performing filtering.
 """
 from flask import Flask
 
-from explain.actions.explanation import explain_feature_importances
+from explain.actions.explanation import explain_feature_importances, explain_cfe, \
+    get_feature_importance_by_feature_id, explain_cfe_single_feature
 from explain.actions.filter import filter_operation
-from explain.actions.interaction_effects import measure_interaction_effects
 from explain.conversation import Conversation
 from explain.actions.get_action_functions import get_all_action_functions_map
 
@@ -95,13 +95,62 @@ def run_action_by_id(conversation: Conversation,
     # Get tmp dataset to perform explanation on (here, single ID will be in tmp_dataset)
     data = conversation.temp_dataset.contents['X']
     regen = conversation.temp_dataset.contents['ids_to_regenerate']
+    if feature_name is None: # TODO: Accept feature name from user
+        feature_name = "Purpose"
 
     if question_id == 0:
-        explanation = explain_lime(conversation, data, f"ID {instance_id}", regen)
-        return explanation[0]
+        # Which attributes does the model use to make predictions?
+        return f"The model uses the following attributes to make predictions: {list(data.columns)}"
     if question_id == 1:
-        # How important is each attribute to the model's predictions?
-        explanation = measure_interaction_effects(conversation)
+        # Does the model include [feature X] when making the prediction?
+        explanation = get_feature_importance_by_feature_id(conversation, data, regen, 2)
         return explanation[0]
+    if question_id == 2:
+        # How important is each attribute to the model's predictions?
+        # Create full feature explanations
+        explanation = explain_feature_importances(conversation, data, f"ID {instance_id}", regen,
+                                                  return_full_summary=True)
+        return explanation[0]
+    if question_id == 3:
+        # How strong does [feature X] affect the prediction?
+        explanation = get_feature_importance_by_feature_id(conversation, data, regen, feature_name)
+        return explanation[0]
+
+    if question_id == 4:
+        # What are the most important attributes for this prediction?
+        explanation = explain_feature_importances(conversation, data, f"ID {instance_id}", regen,
+                                                  return_full_summary=False)
+        return explanation[0]
+    if question_id == 5:
+        # Why did the model give this particular prediction for this person?
+        explanation = explain_feature_importances(conversation, data, f"ID {instance_id}", regen,
+                                                  return_full_summary=False)
+        return explanation[0]
+    if question_id == 6:
+        # What attributes of this person led the model to make this prediction?
+        explanation = explain_feature_importances(conversation, data, f"ID {instance_id}", regen,
+                                                  return_full_summary=False)
+        return explanation[0]
+    if question_id == 7:
+        # What would happen to the prediction if we changed [feature] for this person?
+        explanation = explain_cfe_single_feature(conversation, data, f"ID {instance_id}", feature_name)
+        return explanation[0]
+    if question_id == 8:
+        # How should this person change to get a different prediction?
+        explanation = explain_cfe(conversation, data, f"ID {instance_id}", regen)
+        return explanation[0]
+    if question_id == 9:
+        # How should this attribute change to get a different prediction?
+        explanation = explain_cfe_single_feature(conversation, data, f"ID {instance_id}", feature_name)
+        return explanation[0]
+    if question_id == 10:
+        # Which changes to this person would still get the same prediction?
+        pass
+    if question_id == 11:
+        # Which maximum changes would not influence the class prediction?
+        pass
+    if question_id == 12:
+        # What attributes must be present or absent to guarantee this prediction?
+        pass
     else:
         return f"This is a mocked answer to your question with id {question_id}."

@@ -42,11 +42,16 @@ def explain_feature_importances(conversation, data, parse_op, regen, return_full
     return short_summary, 1
 
 
-def get_feature_importances(conversation, id, parse_op, regen, return_full_summary=False):
+def get_feature_importance_by_feature_id(conversation, data, regen, feature_name):
     """Get Lime or SHAP explanation, considering fidelity (mega explainer functionality)"""
     mega_explainer_exp = conversation.get_var('mega_explainer').contents
-    feature_importances = mega_explainer_exp.get_feature_importances(ids=[id])
-    return feature_importances, 1
+    feature_importances, scores = mega_explainer_exp.get_feature_importances(data=data, ids_to_regenerate=regen)
+    label = list(feature_importances.keys())[0]  # TODO: Currently only working for 1 instance in data.
+    # Get ranking of feature importance (position in feature_importances)
+    feature_importance_ranking = list(feature_importances[label].keys()).index(feature_name)
+    feature_importance_value = feature_importances[label][feature_name]
+    output_text = f"The feature {feature_name} is the {feature_importance_ranking}. important feature with a value of {feature_importance_value[0]}."
+    return output_text, 1
 
 
 def explain_cfe(conversation, data, parse_op, regen):

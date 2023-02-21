@@ -141,9 +141,10 @@ class Conversation:
             return self.get_var("questions")
         except KeyError:
             question_bank = pd.read_csv(self.question_bank_path, delimiter=";")["paraphrased"]
+            question_bank = question_bank.tolist()
             var = Variable(name='question_bank', contents=question_bank, kind='question_bank')
             self._store_var(var)
-            return var
+            return question_bank
 
 
     def add_dataset(self,

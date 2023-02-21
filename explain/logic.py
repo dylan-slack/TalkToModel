@@ -434,23 +434,19 @@ class ExplainBot:
             return ''
 
         app.logger.info(f'USER INPUT: {text}')
-
-        # TODO: Implement logic to handle user queries.
-
-        # Parse user input into text abiding by formal grammar
-        if "t5" not in self.decoding_model_name:
+        if False:  # "t5" not in self.decoding_model_name
             parse_tree, parsed_text = self.compute_parse_text(text)
         else:
             pass
             # parse_tree, parsed_text = self.compute_parse_text_t5(text) #We don't need text parsing for now.
 
         # Run the action in the conversation corresponding to the formal grammar
-        if "t5" not in self.decoding_model_name:
+        if False:  # "t5" not in self.decoding_model_name
             returned_item = run_action(
                 user_session_conversation, parse_tree, parsed_text)
         else:
             # TODO: Provide real question ID here
-            returned_item = run_action_by_id(user_session_conversation, 0)
+            returned_item = run_action_by_id(user_session_conversation, int(text), 993)
 
         username = user_session_conversation.username
 

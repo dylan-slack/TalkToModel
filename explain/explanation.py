@@ -7,6 +7,7 @@ import os
 import pickle as pkl
 from typing import Union
 
+import dill
 import pandas
 import pandas as pd
 from tqdm import tqdm
@@ -71,7 +72,10 @@ class Explanation:
     def _save_cache(self):
         """Saves the current self.cache."""
         with open(self.cache_loc, 'wb') as file:
-            pkl.dump(self.cache, file)
+            try:
+                pkl.dump(self.cache, file)
+            except AttributeError:
+                    dill.dump(self.cache, file)
 
     def _get_from_cache(self, ids: list[int], ids_to_regenerate: list[int] = None):
         if ids_to_regenerate is None:
@@ -152,6 +156,7 @@ class MegaExplainer(Explanation):
             cat_features:
             cache_location:
             class_names:
+            categorical_mapping: Mapping from column id in int to list of strings of column values.
         """
         super().__init__(cache_location, class_names)
         self.prediction_fn = prediction_fn
@@ -202,7 +207,7 @@ class MegaExplainer(Explanation):
             generated_explanations: A dictionary containing {id: explanation} pairs
         """
         generated_explanations = {}
-        np_data = data.to_numpy(dtype=object)
+        np_data = data.to_numpy()
         # Generate the lime explanations
         pbar = tqdm(range(np_data.shape[0]))
         for i in pbar:
@@ -283,7 +288,7 @@ class MegaExplainer(Explanation):
                     feature_value = feature_values[feature_imp].values[0]
                     column_id = self.data.columns.get_loc(feature_imp)
                     try:
-                        decoded_feature_value = self.categorical_mapping[str(column_id)][int(feature_value)]
+                        decoded_feature_value = self.categorical_mapping[column_id][int(feature_value)]
                     except KeyError:
                         decoded_feature_value = feature_value
                     sig_coefs.append([feature_imp + " = " + str(decoded_feature_value),

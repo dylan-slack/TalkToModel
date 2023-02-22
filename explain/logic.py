@@ -19,6 +19,7 @@ from explain.action import run_action, run_action_by_id
 from explain.conversation import Conversation
 from explain.decoder import Decoder
 from explain.explanation import MegaExplainer
+from explain.explanations.anchor_explainer import TabularAnchor
 from explain.explanations.dice_explainer import TabularDice
 from explain.parser import Parser, get_parse_tree
 from explain.prompts import Prompts
@@ -201,11 +202,22 @@ class ExplainBot:
                                       data=data)
         message = (f"...loaded {len(tabular_dice.cache)} dice tabular "
                    "explanations from cache!")
-        app.logger.info(message)
+        app.logger.info(message)"""
+
+        # Load anchor explanations
+        # categorical_names = create_feature_values_mapping_from_df(data, categorical_f)
+        tabular_anchor = TabularAnchor(model=model,
+                                       data=data,
+                                       categorical_names=self.categorical_mapping,
+                                       class_names=self.conversation.class_names,
+                                       feature_names=list(data.columns))
+        tabular_anchor.get_explanations(ids=list(data.index),
+                                        data=data)
 
         # Add all the explanations to the conversation
         self.conversation.add_var('mega_explainer', mega_explainer, 'explanation')
         self.conversation.add_var('tabular_dice', tabular_dice, 'explanation')
+        self.conversation.add_var('tabular_anchor', tabular_anchor, 'explanation')
 
     def load_data_instance(self, id=993):
         dataset_pd = self.conversation.get_var("dataset").contents['X']

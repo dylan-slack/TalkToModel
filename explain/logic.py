@@ -207,6 +207,18 @@ class ExplainBot:
         self.conversation.add_var('mega_explainer', mega_explainer, 'explanation')
         self.conversation.add_var('tabular_dice', tabular_dice, 'explanation')
 
+    def load_data_instance(self, id=993):
+        dataset_pd = self.conversation.get_var("dataset").contents['X']
+        # get row by id
+        current_instance = list(dataset_pd.loc[id].values)
+        instance_result_dict = {}
+        # map the int values to the categorical values from the categorical_mapping and add to instance result dict
+        for i, val in enumerate(current_instance):
+            if i in self.categorical_mapping:
+                instance_result_dict[dataset_pd.columns[i]] = self.categorical_mapping[i][val]
+        return instance_result_dict
+
+
     def load_model(self, filepath: str):
         """Loads a model.
 

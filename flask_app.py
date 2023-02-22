@@ -110,6 +110,22 @@ def sample_prompt():
     return prompt
 
 
+@bp.route("/get_questions", methods=['POST'])
+def get_questions():
+    """Load the questions."""
+    if request.method == "POST":
+        app.logger.info("generating the questions")
+        try:
+            data = json.loads(request.data)
+            user_text = data["userInput"] # Zahl
+            conversation = BOT.conversation
+            response = BOT.get_questions(user_text, conversation)
+        except Exception as ext:
+            app.logger.info(f"Traceback getting questions: {traceback.format_exc()}")
+            app.logger.info(f"Exception getting questions: {ext}")
+            response = "Sorry! I couldn't understand that. Could you please try to rephrase?"
+        return response
+
 @bp.route("/get_response", methods=['POST'])
 def get_bot_response():
     """Load the box response."""
@@ -117,7 +133,7 @@ def get_bot_response():
         app.logger.info("generating the bot response")
         try:
             data = json.loads(request.data)
-            user_text = data["userInput"]
+            user_text = data["userInput"] # Zahl
             conversation = BOT.conversation
             # TODO: Get question_id and feature_id from frontend (from user_text?)
             question_id = None

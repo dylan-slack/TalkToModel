@@ -155,6 +155,10 @@ def get_and_preprocess_german_short():
     y_values = x_values["Risk"]
     x_values = x_values.drop(["Risk"], axis=1)
     x_values = x_values.drop((["Unnamed: 0"]), axis=1)
+
+    # Bin Age into 4 categories
+    x_values['Age'] = pd.cut(x_values['Age'], bins=[18, 25, 35, 60, 120], labels=['student', 'young', 'adult', 'senior'])
+
     col_names = list(x_values.columns)
 
     # Transform target label to 0 and 1.
@@ -162,7 +166,7 @@ def get_and_preprocess_german_short():
 
     # Transform categorical values to int with LabelEncoder
     data_columns = list(x_values.columns)
-    categorical_col_names = ['Sex', 'Job', 'Housing', 'Saving accounts', 'Checking account', 'Purpose']
+    categorical_col_names = ['Age', 'Sex', 'Job', 'Housing', 'Saving accounts', 'Checking account', 'Purpose']
 
     categorical_col_ids = [data_columns.index(col) for col in categorical_col_names]
 

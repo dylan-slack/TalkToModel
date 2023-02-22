@@ -21,6 +21,7 @@ from data.processing_functions import get_and_preprocess_german_short
 german_data, categorical_mapping = get_and_preprocess_german_short()
 
 # savings_categories = [['NA', 'little', 'moderate', 'quite rich', 'rich']]
+age_categories = [[0, 1, 2, 3]]
 savings_categories = [[0, 1, 2, 3, 4]]
 # checking_categories = [['NA', 'little', 'moderate', 'rich']]
 checking_categories = [[0, 1, 2, 3]]
@@ -28,7 +29,7 @@ one_hot_col_names = ['Sex', 'Housing', 'Purpose']
 sex_categories = [list(np.sort(german_data['x_values']['Sex'].unique()))]
 housing_categories = [list(np.sort(german_data['x_values']['Housing'].unique()))]
 purpose_categories = [list(np.sort(german_data['x_values']['Purpose'].unique()))]
-standard_scaler_col_list = ['Age', 'Credit amount', 'Duration']
+standard_scaler_col_list = ['Credit amount', 'Duration']
 
 X_values = german_data["x_values"]
 y_values = german_data["y_values"]
@@ -64,6 +65,7 @@ preprocessor = ColumnTransformer(
         ('onehot_purpose', OneHotEncoder(categories=purpose_categories), [data_columns.index('Purpose')]),
         ('ordinal_saving', OrdinalEncoder(categories=savings_categories), [data_columns.index('Saving accounts')]),
         ('ordinal_checking', OrdinalEncoder(categories=checking_categories), [data_columns.index('Checking account')]),
+        ('ordinal_age', OrdinalEncoder(categories=age_categories), [data_columns.index('Age')]),
         ('scaler', StandardScaler(), [data_columns.index(col) for col in standard_scaler_col_list])
     ],
     remainder='drop'

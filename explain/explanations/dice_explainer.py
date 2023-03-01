@@ -214,3 +214,56 @@ class TabularDice(Explanation):
         output_string += "If you want some more options, just ask &#129502"
 
         return additional_options, output_string
+
+    def summarize_cfe(self,
+                      cfe: pd.DataFrame,
+                      data: pd.DataFrame):
+        """Summarizes explanations for a given counterfactual by dice tabular.
+
+        Arguments:
+            cfe: CounterfactualExample object.
+            data: pandas df containing data.
+            save_to_cache:
+        Returns:
+            summary: a string containing the summary.
+        """
+
+        if data.shape[0] > 1:
+            return ("", "I can only compute how to flip predictions for single instances at a time."
+                        " Please narrow down your selection to a single instance. For example, you"
+                        " could specify the id of the instance to want to figure out how to change.")
+
+        ids = list(data.index)
+        key = ids[0]
+
+        original_prediction = self.model.predict(data)[0]
+        original_label = self.get_label_text(original_prediction)
+
+        final_cfes = cfe.cf_examples_list[0].final_cfs_df
+        final_cfe_ids = list(final_cfes.index)
+
+        if self.temp_outcome_name in final_cfes.columns:
+            final_cfes.pop(self.temp_outcome_name)
+
+        new_predictions = self.model.predict(final_cfes)
+
+        original_instance = data.loc[[key]]
+
+        output_string = f"The original prediction is "
+        output_string += f"<em>{original_label}</em>. "
+        output_string += "Here is how you could switch the attribute values to flip the prediction."
+        output_string += "<br><br>"
+
+        output_string += "First, if you <em>"
+        transition_words = ["Further,", "Also,", "In addition,", "Furthermore,"]
+
+        for i, c_id in enumerate(final_cfe_ids):
+            # Stop the summary in case its getting too large
+            if i < self.num_in_short_summary:
+                if i != 0:
+                    output_string += f"{np.random.choice(transition_words)} if you <em>"
+                output_string += self.get_change_string(final_cfes.loc[[c_id]], original_instance)
+                new_prediction = self.get_label_text(new_predictions[i])
+                output_string += f"</em>, the model will predict {new_prediction}.<br><br>"
+
+        return output_string

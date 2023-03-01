@@ -117,7 +117,7 @@ def get_questions():
         app.logger.info("generating the questions")
         try:
             data = json.loads(request.data)
-            user_text = data["userInput"] # Zahl
+            user_text = data["userInput"]
             conversation = BOT.conversation
             response = BOT.get_questions(user_text, conversation)
         except Exception as ext:
@@ -133,7 +133,7 @@ def get_bot_response():
         app.logger.info("generating the bot response")
         try:
             data = json.loads(request.data)
-            user_text = data["userInput"] # Zahl
+            user_text = data["userInput"]
             conversation = BOT.conversation
             # TODO: Get question_id and feature_id from frontend (from user_text?)
             question_id = None

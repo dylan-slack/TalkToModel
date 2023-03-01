@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/styles/new.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="ttm-layout">
+    <div class="ttm-chat" style="grid-column: 1;">
+      <div class="ttm">
+        <header class="ttm-header">
+          <div class="ttm-header-title">
+            TalkToModel
+          </div>
+        </header>
+        <main class="ttm-chat">
+          <div class="msg left-msg">
+            <div class="msg-bubble">
+              <div class="msg-text">
+                Hello 😊, I'm a machine learning model trained to {{ datasetObjective }}.
+                <br><br>
+                Let's get started. Ask me something!
+              </div>
+            </div>
+          </div>
+          <div class="msg right-msg">
+            <div class="msg-bubble">
+              <div class="msg-text">
+                Hello 😊, I am stupiiiid
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="inputarea">
+      <form class="ttm-inputarea" style="display: grid;">
+        <div class="general-questions" style="grid-row: 1;">
+          <header class="ttm-header">
+            <p>Generelle Fragen</p>
+          </header>
+          <input type="button" value="Warum bist du so süß?">
+          <input type="button" value="Woher kriege ich diese Fragen?">
+          <input type="button" value="Was ist der Sinn der Welt?">
+        </div>
+        <div class="feature-questions" style="grid-row: 2;">
+          <hr style="border-top: 3px solid #bbb;">
+          <header class="ttm-header">
+            <p>Feature Fragen</p>
+          </header>
+          <input type="button" value="Warum sagt Feature ___, dass ich doof bin?">
+          <input type="button" value="Wie wichtig ist Feature ____?">
+          <input type="button" value="Was passiert, wenn Feature ____ ausgeschlossen wird??">
+        </div>
+        <div class="feature-questions-dropdown" style="grid-row: 3;">
+          <select name="feature-questions-dropdown" id="feature-questions-dropdown">
+            <option value="head_size">head_size</option>
+            <option value="league_of_legends_mmr">league_of_legends_mmr</option>
+            <option value="random_noise">random_noise</option>
+          </select>
+        </div>
+        <div class="submit-button" style="grid-row: 4;">
+          <hr style="border-top: 3px solid #bbb;">
+          <input type="submit" value="Frage stellen!" style="width: 80%;">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!-- Button handlers -->
+<script>
+  const buttons = document.querySelectorAll('input[type="button"]')
+
+  function setButtonActive() {
+    buttons.forEach(button => {
+      button.classList.remove('active')
+    })
+    this.classList.add('active')
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', setButtonActive)
+  })
+</script>

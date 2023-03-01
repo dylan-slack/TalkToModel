@@ -39,55 +39,34 @@
           Questions
         </div>
       </header>
-      <div class="grid-wrapper">
-        <main class="general-questions"></main>
-        <main class="feature-questions"></main>
-        <main class="feature-questions"></main>
-          <!--  -->
-          <div class="buttons" , id="generation-buttons">
-            <button id="idea-important" class="idea-button" onclick="sampleImportant()">important features</button>
-            <button id="idea-why" class="idea-button" onclick="sampleWhy()">explanations</button>
-            <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
-            <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">prediction likelihood</button>
-            <button id="idea-show" class="idea-button" onclick="sampleShow()">showing data</button>
-            <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system
-              capabilities</button>
-            <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
-            <button id="idea-whatif" class="idea-button" onclick="sampleWhatIf()">what if scenario</button>
-            <button id="idea-flip" class="idea-button" onclick="sampleFlip()">how to change a prediction</button>
-            <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">dataset
-              description</button>
-            <button id="idea-interaction" class="idea-button" onclick="sampleInteractions()">feature interaction
-              effects</button>
-            <button id="idea-interaction" class="idea-button" onclick="sampleMistakes()">mistakes</button>
-            <button id="idea-interaction" class="idea-button" onclick="sampleLabels()">data labels</button>
+      <div class="grid-wrapper" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; grid-auto-rows: minmax(100px, auto);">
+        <form class="ttm-inputarea">
+          <div class="general-questions" style="grid-column: 1 / 2; grid-row: 1;">
+            <input type="button" value="Warum bist du so süß?">
+            <input type="button" value="Woher kriege ich diese Fragen?">
+            <input type="button" value="Was ist der Sinn der Welt?">
           </div>
-          <hr class="solid" style="border-top: 3px solid #bbb; margin: 1rem 0 1rem 0;">
-          <div class="questions-dropdown" style="width:max-content; flex-wrap: wrap;">
-            <form class="ttm-inputarea">
-              <select>
-                <option value="1">Question 1, Dimiiii</option>
-                <option value="2">Question 2</option>
-                <option value="3">Question 3</option>
-                <option value="4">Question 4</option>
-                <option value="5">Question 5</option>
-              </select>
-              <button type="submit" class="ttm-send-btn">Send</button>
-            </form>
+          <div class="feature-questions" style="grid-column: 2 / 3; grid-row: 1;">
+            <input type="button" value="Warum sagt Feature ___, dass ich doof bin?">
+            <input type="button" value="Wie wichtig ist Feature ____?">
+            <input type="button" value="Was passiert, wenn Feature ____ ausgeschlossen wird??">
           </div>
-        </main>
+          <div class="feature-questions-dropdown" style="grid-column: 3; grid-row: 2;">
+            <select name="feature-questions-dropdown" id="feature-questions-dropdown">
+              <option value="head_size">head_size</option>
+              <option value="league_of_legends_mmr">league_of_legends_mmr</option>
+              <option value="random_noise">random_noise</option>
+          </div>
+          <div class="submit-button">
+            <input type="submit" value="Frage stellen!">
+          </div>
+        </form>
       </div>
     </section>
   </messagebody>
 </body>
 
 </html>
-
-<script>
-  $('.genOptions').click(function (e) {
-    $('.slideDown').slideToggle();
-  });
-</script>
 
 <script>
   function doSample(rawAction) {

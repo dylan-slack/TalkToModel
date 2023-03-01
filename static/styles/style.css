@@ -36,7 +36,6 @@ body {
 }
 
 messagebody {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 95vh;
@@ -109,8 +108,6 @@ parse {
 }
 
 .questions {
-  display: flex;
-  flex-flow: column wrap;
   justify-content: space-between;
   width: 100%;
   max-width: 500px;

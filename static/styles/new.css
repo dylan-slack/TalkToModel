@@ -84,6 +84,7 @@ body {
   border-radius: 5px;
   background: var(--questions-bg);
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 /* Style the buttons to appear below each other */

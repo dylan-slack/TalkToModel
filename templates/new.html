@@ -49,7 +49,7 @@
           <input type="button" value="Was ist der Sinn der Welt?">
         </div>
         <div class="feature-questions" style="grid-row: 2;">
-          <hr style="border-top: 3px solid #bbb;">
+          <hr style="border-top: 3px solid #bbb; margin: 20px;">
           <header class="ttm-header">
             <p>Feature Fragen</p>
           </header>
@@ -65,7 +65,7 @@
           </select>
         </div>
         <div class="submit-button" style="grid-row: 4;">
-          <hr style="border-top: 3px solid #bbb;">
+          <hr style="border-top: 3px solid #bbb; margin: 20px;">
           <input type="submit" value="Frage stellen!" style="width: 80%;">
         </div>
       </form>
@@ -85,6 +85,8 @@
     })
     this.classList.add('active')
   }
+
+  function submitQuestion(){}
 
   buttons.forEach(button => {
     button.addEventListener('click', setButtonActive)

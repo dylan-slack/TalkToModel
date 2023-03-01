@@ -71,15 +71,24 @@ def explain_cfe(conversation, data, parse_op, regen):
     return short_summary, 1
 
 
-def explain_cfe_single_feature(conversation, data, parse_op, feature_name):
+def explain_cfe_by_given_features(conversation,
+                                  data,
+                                  feature_names_list):
+    """Get CFE explanation when changing the features in the feature_names_list
+    Args:
+        conversation: Conversation object
+        data: Dataframe of data to explain
+        feature_names_list: List of feature names to change
+    """
     dice_tabular = conversation.get_var('tabular_dice').contents
-    out = dice_tabular.get_cfe_with_single_feature_change(data, parse_op, feature_name)
-    additional_options, short_summary = out
-    conversation.store_followup_desc(additional_options)
-    return short_summary, 1
+    cfes = dice_tabular.run_explanation(data, "opposite", feature_names_list)
+    for instance_id, cfe in cfes.items():
+        change_string = dice_tabular.summarize_cfe(cfe, data)
+    conversation.store_followup_desc(change_string)
+    return change_string, 1
 
 
-def explain_anchor(conversation, data, parse_op, regen):
+def explain_anchor_changeable_attributes_without_effect(conversation, data, parse_op, regen):
     """Get Anchor explanation"""
     anchor_exp = conversation.get_var('tabular_anchor').contents
     out = anchor_exp.summarize_explanations(data,

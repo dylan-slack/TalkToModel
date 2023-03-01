@@ -2,6 +2,7 @@
 from lime import lime_tabular
 import numpy as np
 import torch
+from lime.submodular_pick import SubmodularPick
 
 from explain.mega_explainer.base_explainer import BaseExplainer
 
@@ -84,3 +85,15 @@ class Lime(BaseExplainer):
             return torch.FloatTensor(att_arr), output.score
         else:
             raise NotImplementedError
+
+    def get_diverse_instances(self,
+                              data_x: np.ndarray,
+                              num_instances: int = 10) -> list[int]:
+        """
+        Get instance ids (int) by submodular pick, i.e. instances that are diverse and explain a classifier.
+        Args:
+            data_x: the data instances that are considered when selecting diverse instances as np.ndarray
+            num_instances: the number of instances to return
+        """
+        sp = SubmodularPick(self.explainer, data_x, self.model, num_exps_desired=num_instances)
+        return sp.V

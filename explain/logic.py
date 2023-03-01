@@ -19,7 +19,9 @@ from explain.action import run_action, run_action_by_id
 from explain.conversation import Conversation
 from explain.decoder import Decoder
 from explain.explanation import MegaExplainer
+from explain.explanations.anchor_explainer import TabularAnchor
 from explain.explanations.dice_explainer import TabularDice
+from explain.explanations.diverse_instances import DiverseInstances
 from explain.parser import Parser, get_parse_tree
 from explain.prompts import Prompts
 from explain.utils import read_and_format_data
@@ -203,21 +205,42 @@ class ExplainBot:
                    "explanations from cache!")
         app.logger.info(message)
 
+        # Load diverse instances (explanations)
+        diverse_instances_explainer = DiverseInstances(
+            lime_explainer=mega_explainer.mega_explainer.explanation_methods['lime_0.75'])
+        diverse_instance_ids = diverse_instances_explainer.get_diverse_instances(data=data[:300])
+        message = (f"...loaded {len(diverse_instance_ids)} diverse instance ids "
+                   "from cache!")
+        diverse_instances = [data.iloc[i] for i in diverse_instance_ids]  # list of data instances
+        app.logger.info(message)
+
+        # Load anchor explanations
+        # categorical_names = create_feature_values_mapping_from_df(data, categorical_f)
+        tabular_anchor = TabularAnchor(model=model,
+                                       data=data,
+                                       categorical_names=self.categorical_mapping,
+                                       class_names=self.conversation.class_names,
+                                       feature_names=list(data.columns))
+        tabular_anchor.get_explanations(ids=list(data.index),
+                                        data=data)
+
         # Add all the explanations to the conversation
         self.conversation.add_var('mega_explainer', mega_explainer, 'explanation')
         self.conversation.add_var('tabular_dice', tabular_dice, 'explanation')
+        self.conversation.add_var('tabular_anchor', tabular_anchor, 'explanation')
+        self.conversation.add_var('diverse_instances', diverse_instances, 'diverse_instances')
 
-    def load_data_instance(self, id=993):
+    def load_data_instances(self, ids=[993]):
         dataset_pd = self.conversation.get_var("dataset").contents['X']
-        # get row by id
-        current_instance = list(dataset_pd.loc[id].values)
-        instance_result_dict = {}
-        # map the int values to the categorical values from the categorical_mapping and add to instance result dict
-        for i, val in enumerate(current_instance):
-            if i in self.categorical_mapping:
-                instance_result_dict[dataset_pd.columns[i]] = self.categorical_mapping[i][val]
-        return instance_result_dict
-
+        instance_results = []
+        for id in ids:
+            current_instance = list(dataset_pd.loc[id].values)
+            instance_result_dict = {}
+            for i, val in enumerate(current_instance):
+                if i in self.categorical_mapping:
+                    instance_result_dict[dataset_pd.columns[i]] = self.categorical_mapping[i][val]
+            instance_results.append(instance_result_dict)
+        return instance_results
 
     def load_model(self, filepath: str):
         """Loads a model.

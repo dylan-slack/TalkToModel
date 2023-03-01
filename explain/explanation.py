@@ -275,13 +275,15 @@ class MegaExplainer(Explanation):
 
             if filtering_text is not None and len(filtering_text) > 0:
                 starter_text = f"For instances with <b>{filtering_text}</b> predicted <em>{label_name}</em>:"
+                # For Experiments where we show one person at a time, don't print this.
+                starter_text = ""
             else:
                 starter_text = f"For all the instances predicted <em>{label_name}</em>"
 
             full_print_out += starter_text
             shortened_output += starter_text
 
-            full_print_out += " the feature importances are:<br>"
+            full_print_out += "The following is a list starting with the most important attribute:<br>"
 
             for feature_imp in feature_importances[label]:
                 if feature_values is not None and self.categorical_mapping is not None:
@@ -335,9 +337,9 @@ class MegaExplainer(Explanation):
             full_print_out += "<br><br>"
             shortened_output += "<br><br>"
 
-        shortened_output += "I can provide a more comprehensive overview of how important"
+        """shortened_output += "I can provide a more comprehensive overview of how important"
         shortened_output += " different features in the data are for the model's predictions, just"
-        shortened_output += " ask for more description &#129502<br><br>"
+        shortened_output += " ask for more description &#129502<br><br>"""
 
         return full_print_out, shortened_output
 

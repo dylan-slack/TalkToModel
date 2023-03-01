@@ -1,5 +1,6 @@
 import warnings
 
+import gin
 import numpy as np
 import pandas as pd
 from anchor import anchor_tabular
@@ -9,6 +10,7 @@ from tqdm import tqdm
 from explain.explanation import Explanation
 
 
+@gin.configurable
 class TabularAnchor(Explanation):
     """This class generates ANCHOR explanations for tabular data."""
 

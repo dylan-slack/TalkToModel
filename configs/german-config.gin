@@ -45,7 +45,13 @@ MegaExplainer.cache_location = "./cache/german-mega-explainer-tabular-logistic-r
 MegaExplainer.use_selection = False
 
 # Tabular Dice Params
-TabularDice.cache_location = "./cache/german-dice-tabular-logistic-regression.pkl"
+TabularDice.cache_location = "./cache/german-dice-tabular.pkl"
+
+# Tabular Anchor Params
+TabularAnchor.cache_location = "./cache/german-anchor-tabular.pkl"
+
+# Diverse Instances
+DiverseInstances.cache_location = "./cache/german-diverse-instances.pkl"
 
 # Conversation params
 Conversation.class_names = {0: "bad credit risk", 1: "good credit risk"}

@@ -22,7 +22,8 @@ class TabularDice(Explanation):
                  num_in_short_summary: int = 3,
                  desired_class: str = "opposite",
                  cache_location: str = "./cache/dice-tabular.pkl",
-                 class_names: dict = None):
+                 class_names: dict = None,
+                 categorical_mapping: dict = None):
         """Init.
 
         Arguments:
@@ -43,7 +44,7 @@ class TabularDice(Explanation):
         self.desired_class = desired_class
         self.num_cfes_per_instance = num_cfes_per_instance
         self.num_in_short_summary = num_in_short_summary
-
+        self.categorical_mapping = categorical_mapping
         self.dice_model = dice_ml.Model(model=self.model, backend="sklearn")
 
         # Format data in dice accepted format
@@ -121,6 +122,7 @@ class TabularDice(Explanation):
 
         change_string = ""
         for feature in cfe_features:
+            feature_index = cfe_features.index(feature)
             orig_f = original_instance[feature].values[0]
             cfe_f = cfe[feature].values[0]
 
@@ -132,7 +134,16 @@ class TabularDice(Explanation):
                     inc_dec = "increase"
                 else:
                     inc_dec = "decrease"
-                change_string += f"{inc_dec} {feature} to {str(round(cfe_f, self.rounding_precision))}"
+                # Turn feature to categorical name if possible
+                if self.categorical_mapping is not None:
+                    try:
+                        cfe_f = self.categorical_mapping[feature_index][int(cfe_f)]
+                    except KeyError:
+                        pass  # feature is numeric and not in categorical mapping
+                # round cfe_f if it is float and turn to string to print
+                if isinstance(cfe_f, float):
+                    cfe_f = str(round(cfe_f, self.rounding_precision))
+                change_string += f"{inc_dec} {feature} to {cfe_f}"
                 change_string += " and "
         # Strip off last and
         change_string = change_string[:-5]

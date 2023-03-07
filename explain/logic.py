@@ -483,7 +483,8 @@ class ExplainBot:
                 user_session_conversation, parse_tree, parsed_text)
         else:
             # TODO: Provide real question ID here
-            returned_item = run_action_by_id(user_session_conversation, int(text), 993)
+            instance_id = self.conversation.get_var('diverse_instances').contents[0]["id"]
+            returned_item = run_action_by_id(user_session_conversation, int(text), instance_id)
 
         username = user_session_conversation.username
 

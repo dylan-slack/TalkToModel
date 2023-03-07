@@ -7,6 +7,8 @@ import json
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+import re as re
 
 # The number of segments to use for the images
 NSEGMENTS = 20
@@ -73,6 +75,7 @@ def get_and_preprocess_compas_data():
 def _save_column_id_to_value_index_mapping(data: np.ndarray,
                                            column_ids: [int]):
     """
+    Uses LabelEncoder on the data to save the mapping from column id to value index.
     Takes in a dataset in numpy and a list of column indices to create a nested dict from the column indices to
     indexed unique values in a column of the dataset. {col_id: {value_id: unique_value}}
     Needed for XAI methods that handle categorical features this way.
@@ -140,13 +143,9 @@ def get_and_preprocess_german():
 
 
 def get_and_preprocess_german_short():
-    """" Preprocess german_short with only 10 variables.
-    Parameters:
+    """Preprocess german_short with only 10 variables.
+    Returns: Pandas data frame x_values of processed data, np.ndarray y_values, and categorical_mapping {col_id: {value_id: unique_value}}
     ----------
-    params : Params
-    Returns:
-    ----------
-    Pandas data frame x_values of processed data, np.ndarray y_values, and list of column names
     """
     positive_outcome = 1
     negative_outcome = 0
@@ -157,7 +156,8 @@ def get_and_preprocess_german_short():
     x_values = x_values.drop((["Unnamed: 0"]), axis=1)
 
     # Bin Age into 4 categories
-    x_values['Age'] = pd.cut(x_values['Age'], bins=[18, 25, 35, 60, 120], labels=['student', 'young', 'adult', 'senior'])
+    x_values['Age'] = pd.cut(x_values['Age'], bins=[18, 25, 35, 60, 120],
+                             labels=['student', 'young', 'adult', 'senior'])
 
     col_names = list(x_values.columns)
 

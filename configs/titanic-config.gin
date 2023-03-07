@@ -1,0 +1,63 @@
+# ExplainBot Params
+# Name of the parsing model: {ucinlp/german-t5-small, ucinlp/german-t5-large}
+ExplainBot.parsing_model_name = "nearest-neighbor"
+
+# Set skip_prompts to true for quicker startup for finetuned models
+# make sure to set to false using few-shot models
+ExplainBot.skip_prompts = True
+
+ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
+ExplainBot.seed = 0
+
+ExplainBot.model_file_path = "./data/titanic_model_short_grad_tree.pkl"
+ExplainBot.background_dataset_file_path = "./data/titanic_train.csv"
+ExplainBot.dataset_file_path = "./data/titanic_test.csv"
+
+ExplainBot.name = "titanic"
+
+ExplainBot.dataset_index_column = 0
+ExplainBot.target_variable_name = "Survived"
+# ExplainBot.categorical_features = ["gender", "foreignworker", "single", "hastelephone", "checkingaccountbalancegreaterorequalto0", "checkingaccountbalancegreaterorequalthan200", "savingsaccountbalancegreaterorequalthan200", "savingsaccountbalancegreaterorequalthan500", "missedpayments", "nocurrentloan", "criticalaccountorloanselsewhere", "otherloansatbank", "otherloansatstore", "hascoapplicant", "hasguarantor", "ownshouse", "rentshouse", "unemployed", "yearsatcurrentjoblessthan1", "yearsatcurrentjobgreaterorequalthan4", "jobclassisskilled"]
+# ExplainBot.numerical_features = ["age", "loanduration", "loanamount", "yearsatcurrenthome", "loanrateaspercentofincome", "numberofotherloansatbank", "numberofliableindividuals", 'loanpurposebusiness', 'loanpurposeeducation', 'loanpurposeelectronics', 'loanpurposefurniture', 'loanpurposehomeappliances', 'loanpurposenewcar', 'loanpurposeother', 'loanpurposerepairs', 'loanpurposeretraining', 'loanpurposeusedcar']
+ExplainBot.categorical_features = ['Age', 'Sex', 'Embarked', 'Title', 'Fare']
+ExplainBot.numerical_features = ['SibSp', 'Parch']
+ExplainBot.remove_underscores = True
+ExplainBot.categorical_mapping_path = "./data/titanic_column_id_to_values_mapping.json"
+
+ExplainBot.prompt_metric = "cosine"
+ExplainBot.prompt_ordering = "ascending"
+
+# Prompt params
+Prompts.prompt_cache_size = 1_000_000
+Prompts.prompt_cache_location = "./cache/titanic-prompts.pkl"
+Prompts.max_values_per_feature = 2
+Prompts.sentence_transformer_model_name = "all-mpnet-base-v2"
+Prompts.prompt_folder = "./explain/prompts"
+
+Prompts.num_per_knn_prompt_template = 1
+Prompts.num_prompt_template = 7
+
+# Explanation Params
+Explanation.max_cache_size = 1_000_000
+
+# MegaExplainer Params
+MegaExplainer.cache_location = "./cache/titanic-mega-explainer-tabular-logistic-regression.pkl"
+MegaExplainer.use_selection = False
+
+# Tabular Dice Params
+TabularDice.cache_location = "./cache/titanic-dice-tabular.pkl"
+
+# Tabular Anchor Params
+TabularAnchor.cache_location = "./cache/titanic-anchor-tabular.pkl"
+
+# Diverse Instances
+DiverseInstances.cache_location = "./cache/titanic-diverse-instances.pkl"
+
+# Conversation params
+Conversation.class_names = {0: "died", 1: "survived"}
+Conversation.question_bank_path =  "./data/question_bank.csv"
+
+# Dataset description
+DatasetDescription.dataset_objective = "predict whether someone survived the titanic or not"
+DatasetDescription.dataset_description = "titanic dataset"
+DatasetDescription.model_description = "gradient boosted tree"

@@ -55,7 +55,13 @@ def get_feature_importance_by_feature_id(conversation,
     feature_importance_ranking = list(feature_importances[label].keys()).index(feature_name)
     feature_importance_value = feature_importances[label][feature_name]
     feature_importance_value = round(feature_importance_value[0], 3)
-    output_text = f"The feature <em>{feature_name}</em> is the <em>{feature_importance_ranking}</em>. important feature with a value of {str(feature_importance_value)}. "
+    feature_importance_ranking_name = feature_importance_ranking + 1
+    if feature_importance_ranking_name == 1:
+        feature_importance_ranking_name = 'most'
+    elif feature_importance_ranking_name == 2:
+        feature_importance_ranking_name = 'second most'
+
+    output_text = f"The feature <em>{feature_name}</em> is the <em>{feature_importance_ranking_name}</em>. important feature with a value of {str(feature_importance_value)}. "
     output_text += f"This means that if the feature didn't have the current value, the prediction probability would change by the given amount."
     return output_text, 1, feature_importance_value
 
@@ -84,8 +90,8 @@ def explain_cfe_by_given_features(conversation,
     cfes = dice_tabular.run_explanation(data, "opposite", feature_names_list)
     for instance_id, cfe in cfes.items():
         change_string = dice_tabular.summarize_cfe(cfe, data)
-    conversation.store_followup_desc(change_string)
-    return change_string, 1
+    conversation.store_followup_desc(change_string[0])
+    return change_string
 
 
 def explain_anchor_changeable_attributes_without_effect(conversation, data, parse_op, regen):

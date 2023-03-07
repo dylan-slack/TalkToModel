@@ -2,7 +2,7 @@ import os
 from typing import List
 import pickle as pkl
 import gin
-import numpy as np
+import pandas as pd
 
 
 def load_cache(cache_location: str):
@@ -33,13 +33,13 @@ class DiverseInstances:
         self.lime_explainer = lime_explainer
 
     def get_diverse_instances(self,
-                              data: np.ndarray,
+                              data: pd.DataFrame,
                               instance_count: int = 10,
                               save_to_cache=True) -> List[int]:
         """
         Returns diverse instances for the given data set.
         Args:
-            data: the data instance to explain of shape (num_samples, num_features)
+            data: pd.Dataframe the data instances to use to find diverse instances
             instance_count: number of diverse instances to return
             save_to_cache: whether to save the diverse instances to the cache
         Returns: List of diverse instance ids.
@@ -50,8 +50,11 @@ class DiverseInstances:
             return self.diverse_instances
 
         # Generate diverse instances
-        diverse_instances = self.lime_explainer.get_diverse_instances(data[:300].values, instance_count)
+        diverse_instances = self.lime_explainer.get_diverse_instances(data.values, instance_count)
+        # Get pandas index for the diverse instances
+        diverse_instances_pandas_indices = [data.index[i] for i in diverse_instances]
+
         if save_to_cache:
             with open(self.cache_location, 'wb') as file:
-                pkl.dump(diverse_instances, file)
-        return diverse_instances
+                pkl.dump(diverse_instances_pandas_indices, file)
+        return diverse_instances_pandas_indices

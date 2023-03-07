@@ -208,10 +208,10 @@ class ExplainBot:
         # Load diverse instances (explanations)
         diverse_instances_explainer = DiverseInstances(
             lime_explainer=mega_explainer.mega_explainer.explanation_methods['lime_0.75'])
-        diverse_instance_ids = diverse_instances_explainer.get_diverse_instances(data=data[:300])
+        diverse_instance_ids = diverse_instances_explainer.get_diverse_instances(data=data)
         message = (f"...loaded {len(diverse_instance_ids)} diverse instance ids "
                    "from cache!")
-        diverse_instances = [data.iloc[i] for i in diverse_instance_ids]  # list of data instances
+        diverse_instances = [{"id": i, "values": data.loc[i]} for i in diverse_instance_ids]  # list of data instances
         app.logger.info(message)
 
         # Load anchor explanations

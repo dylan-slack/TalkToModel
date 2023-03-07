@@ -181,6 +181,112 @@ def get_and_preprocess_german_short():
     return output, categorical_mapping
 
 
+def get_and_preprocess_titanic():
+    """Load and preprocess Titanic dataset
+    Returns: Pandas data frame x_values of processed data, np.ndarray y_values, and categorical_mapping {col_id: {value_id: unique_value}}
+    ----------
+    """
+    positive_outcome = 1
+    negative_outcome = 0
+
+    raw_data = pd.read_csv("titanic_raw.csv", dtype={'Age': np.float64})
+
+    # Split data in train and test
+    train, test = train_test_split(raw_data, test_size=0.2)
+    full_data = [train, test]
+
+    # With the number of siblings/spouse and the number of children/parents we can create new feature called Family Size.
+    for dataset in full_data:
+        dataset['FamilySize'] = dataset['SibSp'] + dataset['Parch'] + 1
+
+    # Fare also has some missing value and we will replace it with the median. then we categorize it into 4 ranges.
+    for dataset in full_data:
+        dataset['Fare'] = dataset['Fare'].fillna(train['Fare'].median())
+
+    # Age we have plenty of missing values in this feature. # generate random numbers between (mean - std) and
+    # (mean + std). then we categorize age into 5 range.
+    for dataset in full_data:
+        age_avg = dataset['Age'].mean()
+        age_std = dataset['Age'].std()
+        age_null_count = dataset['Age'].isnull().sum()
+
+        age_null_random_list = np.random.randint(age_avg - age_std, age_avg + age_std, size=age_null_count)
+        dataset['Age'][np.isnan(dataset['Age'])] = age_null_random_list
+        dataset['Age'] = dataset['Age'].astype(int)
+
+    # Name: inside this feature we can find the title of people.
+    def get_title(name):
+        title_search = re.search(' ([A-Za-z]+)\.', name)
+        # If the title exists, extract and return it.
+        if title_search:
+            return title_search.group(1)
+        return ""
+
+    # Fill embarked by mean values
+    for dataset in full_data:
+        dataset['Embarked'] = dataset['Embarked'].fillna('S')
+
+    for dataset in full_data:
+        dataset['Title'] = dataset['Name'].apply(get_title)
+        dataset['Title'] = dataset['Title'].replace(
+            ['Lady', 'Countess', 'Capt', 'Col', 'Don', 'Dr', 'Major', 'Rev', 'Sir', 'Jonkheer', 'Dona'], 'Rare')
+
+        dataset['Title'] = dataset['Title'].replace('Mlle', 'Miss')
+        dataset['Title'] = dataset['Title'].replace('Ms', 'Miss')
+        dataset['Title'] = dataset['Title'].replace('Mme', 'Mrs')
+
+    ### Data Cleaning ###
+    for dataset in full_data:
+        # Mapping Sex
+        dataset['Sex'] = dataset['Sex'].map({'female': 0, 'male': 1}).astype(int)
+
+        # Mapping titles
+        title_mapping = {"Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5}
+        dataset['Title'] = dataset['Title'].map(title_mapping)
+        dataset['Title'] = dataset['Title'].fillna(0)
+
+        # Mapping Embarked
+        dataset['Embarked'] = dataset['Embarked'].map({'S': 0, 'C': 1, 'Q': 2}).astype(int)
+
+        # Mapping Fare
+        dataset.loc[dataset['Fare'] <= 7.91, 'Fare'] = 0
+        dataset.loc[(dataset['Fare'] > 7.91) & (dataset['Fare'] <= 14.454), 'Fare'] = 1
+        dataset.loc[(dataset['Fare'] > 14.454) & (dataset['Fare'] <= 31), 'Fare'] = 2
+        dataset.loc[dataset['Fare'] > 31, 'Fare'] = 3
+        dataset['Fare'] = dataset['Fare'].astype(int)
+
+        # Mapping Age
+        dataset.loc[dataset['Age'] <= 16, 'Age'] = 0
+        dataset.loc[(dataset['Age'] > 16) & (dataset['Age'] <= 32), 'Age'] = 1
+        dataset.loc[(dataset['Age'] > 32) & (dataset['Age'] <= 48), 'Age'] = 2
+        dataset.loc[(dataset['Age'] > 48) & (dataset['Age'] <= 64), 'Age'] = 3
+        dataset.loc[dataset['Age'] > 64, 'Age'] = 4
+
+    # Feature selecion
+    drop_elements = ['PassengerId', 'Name', 'Ticket', 'Cabin', 'FamilySize']
+    train = train.drop(drop_elements, axis=1)
+    test = test.drop(drop_elements, axis=1)
+
+    mapping_dict = {train.columns.get_loc("Sex") - 1: ["female", "male"],  # -1 because label in on 0 index
+                    train.columns.get_loc("Embarked") - 1: ["S", "C", "Q"],
+                    train.columns.get_loc("Title") - 1: ["Mr", "Miss", "Mrs", "Master", "Rare"],
+                    train.columns.get_loc("Fare") - 1: ["0-7.91", "7.91-14.454", "14.454-31", "31+"],
+                    train.columns.get_loc("Age") - 1: ["0-16", "16-32", "32-48", "48-64", "64+"]}
+
+    # Save mapping dict to disk
+    with open("titanic_column_id_to_values_mapping.json", "w") as f:
+        json.dump(mapping_dict, f)
+    col_names = list(train.columns[1:])
+
+    output = {
+        "train": train,
+        "test": test,
+        "column_names": col_names
+    }
+
+    return output, mapping_dict
+
+
 def get_dataset_by_name(name):
     """Gets a data set by name.
 
@@ -193,6 +299,8 @@ def get_dataset_by_name(name):
         dataset = get_and_preprocess_compas_data()
     elif name == "german":
         dataset = get_and_preprocess_german()
+    elif name == "titanic":
+        dataset = get_and_preprocess_titanic()
     else:
         message = f"Unkown dataset {name}"
         raise NameError(message)

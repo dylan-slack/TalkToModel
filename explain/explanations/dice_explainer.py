@@ -240,6 +240,8 @@ class TabularDice(Explanation):
         original_label = self.get_label_text(original_prediction)
 
         final_cfes = cfe.cf_examples_list[0].final_cfs_df
+        if final_cfes is None:
+            return (f"I couldn't find any counterfactuals for this instance by changing the chosen feature "), 0
         final_cfe_ids = list(final_cfes.index)
 
         if self.temp_outcome_name in final_cfes.columns:
@@ -266,4 +268,4 @@ class TabularDice(Explanation):
                 new_prediction = self.get_label_text(new_predictions[i])
                 output_string += f"</em>, the model will predict {new_prediction}.<br><br>"
 
-        return output_string
+        return output_string, 1

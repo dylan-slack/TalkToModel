@@ -98,8 +98,7 @@ def run_action_by_id(conversation: Conversation,
     regen = conversation.temp_dataset.contents['ids_to_regenerate']
     instance_predicted_label = 0
     if feature_id is None:  # TODO: Accept feature name from user
-        feature_id = 8
-
+        feature_id = 1
     feature_name = data.columns[feature_id]
     parse_op = f"ID {instance_id}"
 
@@ -145,7 +144,11 @@ def run_action_by_id(conversation: Conversation,
     if question_id == 7:
         # What would happen to the prediction if we changed [feature] for this person?
         explanation = explain_cfe_by_given_features(conversation, data, [feature_name])
-        return explanation[0]
+        if explanation[1] == 0:
+            answer = explanation[0] + feature_name + "."
+        else:
+            answer = explanation[0]
+        return answer
     if question_id == 8:
         # How should this person change to get a different prediction?
         explanation = explain_cfe(conversation, data, parse_op, regen)

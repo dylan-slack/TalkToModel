@@ -198,7 +198,8 @@ class ExplainBot:
         tabular_dice = TabularDice(model=model,
                                    data=data,
                                    num_features=numeric_f,
-                                   class_names=self.conversation.class_names)
+                                   class_names=self.conversation.class_names,
+                                   categorical_mapping=self.categorical_mapping)
         tabular_dice.get_explanations(ids=list(data.index),
                                       data=data)
         message = (f"...loaded {len(tabular_dice.cache)} dice tabular "

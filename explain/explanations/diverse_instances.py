@@ -32,10 +32,10 @@ class DiverseInstances:
         self.cache_location = cache_location
         self.lime_explainer = lime_explainer
 
-    def get_diverse_instances(self,
-                              data: pd.DataFrame,
-                              instance_count: int = 10,
-                              save_to_cache=True) -> List[int]:
+    def get_diverse_instance_ids(self,
+                                 data: pd.DataFrame,
+                                 instance_count: int = 10,
+                                 save_to_cache=True) -> List[int]:
         """
         Returns diverse instances for the given data set.
         Args:
@@ -50,7 +50,7 @@ class DiverseInstances:
             return self.diverse_instances
 
         # Generate diverse instances
-        diverse_instances = self.lime_explainer.get_diverse_instances(data.values, instance_count)
+        diverse_instances = self.lime_explainer.get_diverse_instance_ids(data.values, instance_count)
         # Get pandas index for the diverse instances
         diverse_instances_pandas_indices = [data.index[i] for i in diverse_instances]
 

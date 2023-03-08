@@ -209,10 +209,11 @@ class ExplainBot:
         # Load diverse instances (explanations)
         diverse_instances_explainer = DiverseInstances(
             lime_explainer=mega_explainer.mega_explainer.explanation_methods['lime_0.75'])
-        diverse_instance_ids = diverse_instances_explainer.get_diverse_instances(data=data)
+        diverse_instance_ids = diverse_instances_explainer.get_diverse_instance_ids(data=data)
         message = (f"...loaded {len(diverse_instance_ids)} diverse instance ids "
                    "from cache!")
-        diverse_instances = [{"id": i, "values": data.loc[i]} for i in diverse_instance_ids]  # list of data instances
+        # Make new list of dicts {id: instance_dict} where instance_dict is a dict with column names as key and values as values.
+        diverse_instances = [{"id": i, "values": data.loc[i].to_dict()} for i in diverse_instance_ids]
         app.logger.info(message)
 
         # Load anchor explanations
@@ -229,6 +230,7 @@ class ExplainBot:
         self.conversation.add_var('mega_explainer', mega_explainer, 'explanation')
         self.conversation.add_var('tabular_dice', tabular_dice, 'explanation')
         self.conversation.add_var('tabular_anchor', tabular_anchor, 'explanation')
+        # list of dicts {id: instance_dict} where instance_dict is a dict with column names as key and values as values.
         self.conversation.add_var('diverse_instances', diverse_instances, 'diverse_instances')
 
     def load_data_instances(self, ids=[993]):

@@ -38,6 +38,21 @@
         </main>
       </div>
     </div>
+    <div class="ttm-datapoint">
+      <header class="ttm-header" style="margin-bottom: 1rem;">
+        <div class="ttm-header-title">
+          Datapoint
+        </div>
+      </header>
+      <main class="datapoint">
+        <p style="margin: 5px 10px;">Name: <span style="float: right;">First Last</span></p>
+        <p style="margin: 5px 10px;">Age: <span style="float: right;">25</span></p>
+        <p style="margin: 5px 10px;">SthSth: <span style="float: right;">SthSth</span></p>
+        <p style="margin: 5px 10px;">SthSth: <span style="float: right;">SthSth</span></p>
+        <p style="margin: 5px 10px;">SthSth: <span style="float: right;">SthSth</span></p>
+        <p style="margin: 5px 10px;">SthSth: <span style="float: right;">SthSth</span></p>
+      </main>
+    </div>
     <div class="inputarea">
       <form class="ttm-inputarea" style="display: grid;">
         <div class="general-questions" style="grid-row: 1;">
@@ -86,9 +101,17 @@
     this.classList.add('active')
   }
 
-  function submitQuestion(){}
+  function submitQuestion() { }
 
   buttons.forEach(button => {
     button.addEventListener('click', setButtonActive)
   })
+</script>
+
+<!-- Get patient data -->
+<script>
+  // Get data from backend
+  function getPatientData() {
+    const defaultData = {}
+  }
 </script>

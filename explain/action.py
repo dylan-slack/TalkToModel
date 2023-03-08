@@ -166,6 +166,7 @@ def run_action_by_id(conversation: Conversation,
         pass
     if question_id == 12:
         # What attributes must be present or absent to guarantee this prediction?
-        pass
+        explanation = explain_anchor_changeable_attributes_without_effect(conversation, data, parse_op, regen)
+        return explanation[0]
     else:
         return f"This is a mocked answer to your question with id {question_id}."

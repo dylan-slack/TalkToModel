@@ -166,3 +166,11 @@ body {
 .inputarea .active {
   background-color: darkblue !important;
 }
+
+#datapoint p {
+  margin: 5px 10px;
+}
+
+#datapoint p span {
+  float: right;
+}

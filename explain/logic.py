@@ -10,6 +10,7 @@ from random import seed as py_random_seed
 import secrets
 
 import numpy as np
+import pandas as pd
 import torch
 
 from flask import Flask
@@ -105,6 +106,8 @@ class ExplainBot:
         self.prompt_metric = prompt_metric
         self.prompt_ordering = prompt_ordering
         self.use_guided_decoding = use_guided_decoding
+        self.categorical_features = categorical_features
+        self.numerical_features = numerical_features
 
         # A variable used to help file uploads
         self.manual_var_filename = None
@@ -165,6 +168,19 @@ class ExplainBot:
     def init_loaded_var(self, name: bytes):
         """Inits a var from manual load."""
         self.manual_var_filename = name.decode("utf-8")
+
+    def get_questions_and_attributes(self):
+        """
+        Returns the questions and attributes for the current dataset.
+        """
+        question_pd = pd.read_csv(self.conversation.question_bank_path, delimiter=";")
+        feature_names = self.categorical_features + self.numerical_features
+        answer_dict = {
+            "general_questions": list(question_pd[question_pd["question_type"] == "general"]["paraphrased"]),
+            "feature_questions": list(question_pd[question_pd["question_type"] == "feature"]["paraphrased"]),
+            "feature_names": feature_names,
+        }
+        return answer_dict
 
     def load_explanations(self, background_dataset, categorical_mapping=None):
         """Loads the explanations.

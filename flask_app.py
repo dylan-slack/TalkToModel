@@ -61,6 +61,10 @@ def home():
     objective = BOT.conversation.describe.get_dataset_objective()
     return render_template("index.html", currentUserId="user", datasetObjective=objective)
 
+@bp.route('/get_datapoint')
+def get_datapoint():
+    return BOT.load_data_instances()
+
 
 @bp.route("/log_feedback", methods=['POST'])
 def log_feedback():

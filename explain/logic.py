@@ -225,7 +225,7 @@ class ExplainBot:
         # Load diverse instances (explanations)
         diverse_instances_explainer = DiverseInstances(
             lime_explainer=mega_explainer.mega_explainer.explanation_methods['lime_0.75'])
-        diverse_instance_ids = diverse_instances_explainer.get_diverse_instance_ids(data=data)
+        diverse_instance_ids = diverse_instances_explainer.get_instance_ids_to_show(data=data)
         message = (f"...loaded {len(diverse_instance_ids)} diverse instance ids "
                    "from cache!")
         # Make new list of dicts {id: instance_dict} where instance_dict is a dict with column names as key and values as values.

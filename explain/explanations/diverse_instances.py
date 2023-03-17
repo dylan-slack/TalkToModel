@@ -32,7 +32,7 @@ class DiverseInstances:
         self.cache_location = cache_location
         self.lime_explainer = lime_explainer
 
-    def get_diverse_instance_ids(self,
+    def get_instance_ids_to_show(self,
                                  data: pd.DataFrame,
                                  instance_count: int = 10,
                                  save_to_cache=True) -> List[int]:

@@ -86,9 +86,9 @@ class Lime(BaseExplainer):
         else:
             raise NotImplementedError
 
-    def get_diverse_instances(self,
-                              data_x: np.ndarray,
-                              num_instances: int = 10) -> list[int]:
+    def get_diverse_instance_ids(self,
+                                 data_x: np.ndarray,
+                                 num_instances: int = 10) -> list[int]:
         """
         Get instance ids (int) by submodular pick, i.e. instances that are diverse and explain a classifier.
         Args:

@@ -59,7 +59,7 @@ def home():
     """Load the explanation interface."""
     app.logger.info("Loaded Login")
     objective = BOT.conversation.describe.get_dataset_objective()
-    return render_template("index.html", currentUserId="user", datasetObjective=objective)
+    return render_template("new.html", currentUserId="user", datasetObjective=objective)
 
 @bp.route('/get_datapoint')
 def get_datapoint():

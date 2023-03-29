@@ -64,7 +64,6 @@ def home():
 @bp.route('/get_datapoint', methods=['GET'])
 def get_datapoint():
     data_instances = BOT.load_data_instances()
-    print(f'MICHI STYLE DEBUG: ${data_instances}')
     return BOT.load_data_instances()[0]
 
 
@@ -127,7 +126,6 @@ def get_questions():
             app.logger.info(f"Traceback getting questions: {traceback.format_exc()}")
             app.logger.info(f"Exception getting questions: {ext}")
             response = "Sorry! I couldn't understand that. Could you please try to rephrase?"
-        print(f'MICHI STYLE DEBUG: ${response}')
         return response
 
 @bp.route("/get_response", methods=['POST'])
@@ -137,6 +135,7 @@ def get_bot_response():
         app.logger.info("generating the bot response")
         try:
             data = json.loads(request.data)
+            print(f'MICHI STYLE DEBUG: ${data}')
             user_text = data["userInput"]
             conversation = BOT.conversation
             # TODO: Get question_id and feature_id from frontend (from user_text?)

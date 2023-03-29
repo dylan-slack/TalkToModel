@@ -43,13 +43,6 @@
               </div>
             </div>
           </div>
-          <div class="msg right-msg">
-            <div class="msg-bubble">
-              <div class="msg-text">
-                Hello 😊, I am stupiiiid
-              </div>
-            </div>
-          </div>
         </main>
       </div>
     </div>
@@ -59,18 +52,18 @@
           <header class="ttm-header">
             <p>Generelle Fragen</p>
           </header>
-          <input type="button" value="Warum bist du so süß?">
-          <input type="button" value="Woher kriege ich diese Fragen?">
-          <input type="button" value="Was ist der Sinn der Welt?">
+          <button value="Warum bist du so süß?">Warum bist du so süß?</button>
+          <button value="Woher kriege ich diese Fragen?">Woher kriege ich diese Fragen?</button>
+          <button value="Was ist der Sinn der Welt?">Was ist der Sinn der Welt?</button>
         </div>
         <hr style="border-top: 3px solid #bbb; margin: 20px;">
         <div class="feature-questions" style="grid-row: 2;">
           <header class="ttm-header">
             <p>Feature Fragen</p>
           </header>
-          <input type="button" value="Warum sagt Feature ___, dass ich doof bin?">
-          <input type="button" value="Wie wichtig ist Feature ____?">
-          <input type="button" value="Was passiert, wenn Feature ____ ausgeschlossen wird??">
+          <button value="Warum sagt Feature ___, dass ich doof bin?">Warum sagt Feature ___, dass ich doof bin?</button>
+          <button value="Wie wichtig ist Feature ____?">Wie wichtig ist Feature ____?</button>
+          <button value="Was passiert, wenn Feature ____ ausgeschlossen wird??">Was passiert, wenn Feature ____ ausgeschlossen wird??</button>
         </div>
         <div class="feature-questions-dropdown" style="grid-row: 3;">
           <select name="feature-questions-dropdown" id="feature-questions-dropdown">
@@ -112,20 +105,22 @@
 
         console.log(data)
 
+        // add general questions to list of questions
         const generalQuestionsElement = document.querySelector('.general-questions');
         let newGeneralQuestionsHtml = '<header class="ttm-header"><p>Generelle Fragen</p></header>';
 
         for (const key in data['general_questions']) {
-          newGeneralQuestionsHtml += `<input type="button" value="${data['general_questions'][key][1]}">`;
+          newGeneralQuestionsHtml += `<button type="button" data-value="${data['general_questions'][key]['id']}">${data['general_questions'][key]['question']}</button>`;
         }
 
         generalQuestionsElement.innerHTML = newGeneralQuestionsHtml;
 
+        // add feature questions to list of quetions
         const featureQuestionsElement = document.querySelector('.feature-questions');
         let newFeatureQuestionsHtml = '<header class="ttm-header"><p>Feature Fragen</p></header>';
 
         for (const key in data['feature_questions']) {
-          newFeatureQuestionsHtml += `<input type="button" value="${data['feature_questions'][key][1]}">`;
+          newFeatureQuestionsHtml += `<button type="button" data-value="${data['feature_questions'][key]['id']}">${data['feature_questions'][key]['question']}</button>`;
         }
 
         featureQuestionsElement.innerHTML = newFeatureQuestionsHtml;
@@ -135,7 +130,7 @@
         let newFeatureQuestionsDropdownHtml = '';
 
         for (const key in data['feature_names']) {
-          newFeatureQuestionsDropdownHtml += `<option value="${data['feature_names'][key][0]}">${data['feature_names'][key][1]}</option>`;
+          newFeatureQuestionsDropdownHtml += `<option value="${data['feature_names'][key]['id']}">${data['feature_names'][key]['feature_name']}</option>`;
         }
 
         featureQuestionsDropdownElement.innerHTML = newFeatureQuestionsDropdownHtml;
@@ -164,17 +159,21 @@
     // Call the fetchData function when the page loads
     fetchData().then(() => {
       // Button handlers
-      const buttons = document.querySelectorAll('input[type="button"]');
+      const buttons = document.querySelectorAll('button[type="button"]');
       const submitButton = document.querySelector('.submit-button input[type="submit"]');
 
       let activeQuestion = '';
+      let activeQuestionText = '';
+      let activeFeature = '';
+      let activeFeatureText = '';
 
       function setButtonActive() {
         buttons.forEach(button => {
           button.classList.remove('active');
         });
         this.classList.add('active');
-        activeQuestion = this.value;
+        activeQuestion = this.getAttribute('data-value');
+        activeQuestionText = this.innerText;
       }
 
       async function submitQuestion(e) {
@@ -183,9 +182,19 @@
         if (activeQuestion) {
           console.log('Submitting question:', activeQuestion);
 
+          // Get the selected feature
+          const featureQuestionsDropdown = document.getElementById('feature-questions-dropdown');
+          activeFeature = featureQuestionsDropdown.value;
+          activeFeatureText = featureQuestionsDropdown.options[featureQuestionsDropdown.selectedIndex].text;
+
           // Add the input question bubble to the chat
           const chatContainer = document.querySelector('.ttm-chat main');
-          const inputBubble = createChatBubble('right-msg', activeQuestion);
+
+          const textForChatWindow = activeQuestionText.replace(/\[feature X\]/, function(i, match ) {
+            return activeFeatureText;
+          })
+
+          const inputBubble = createChatBubble('right-msg', textForChatWindow);
           chatContainer.appendChild(inputBubble);
 
           // Simulate chatbot response
@@ -195,7 +204,8 @@
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              question: activeQuestion
+              question: activeQuestion,
+              feature: activeFeature
             })
           })
 

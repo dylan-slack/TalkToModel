@@ -100,7 +100,7 @@ body {
 }
 
 /* Style the buttons to appear below each other */
-.inputarea input[type=button] {
+.inputarea button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;

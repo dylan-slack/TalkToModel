@@ -61,9 +61,11 @@ def home():
     objective = BOT.conversation.describe.get_dataset_objective()
     return render_template("new.html", currentUserId="user", datasetObjective=objective)
 
-@bp.route('/get_datapoint')
+@bp.route('/get_datapoint', methods=['GET'])
 def get_datapoint():
-    return BOT.load_data_instances()
+    data_instances = BOT.load_data_instances()
+    print(f'MICHI STYLE DEBUG: ${data_instances}')
+    return BOT.load_data_instances()[0]
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -161,4 +163,4 @@ if __name__ != '__main__':
 if __name__ == "__main__":
     # clean up storage file on restart
     app.logger.info(f"Launching app from config: {args.config}")
-    app.run(debug=False, port=4455, host='0.0.0.0')
+    app.run(debug=True, port=4455, host='0.0.0.0')

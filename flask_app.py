@@ -122,14 +122,12 @@ def get_questions():
     if request.method == "POST":
         app.logger.info("generating the questions")
         try:
-            data = json.loads(request.data)
-            user_text = data["userInput"]
-            conversation = BOT.conversation
-            response = BOT.get_questions(user_text, conversation)
+            response = BOT.get_questions_and_attributes()
         except Exception as ext:
             app.logger.info(f"Traceback getting questions: {traceback.format_exc()}")
             app.logger.info(f"Exception getting questions: {ext}")
             response = "Sorry! I couldn't understand that. Could you please try to rephrase?"
+        print(f'MICHI STYLE DEBUG: ${response}')
         return response
 
 @bp.route("/get_response", methods=['POST'])

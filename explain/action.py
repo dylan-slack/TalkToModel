@@ -96,9 +96,6 @@ def run_action_by_id(conversation: Conversation,
     # Get tmp dataset to perform explanation on (here, single ID will be in tmp_dataset)
     data = conversation.temp_dataset.contents['X']
     regen = conversation.temp_dataset.contents['ids_to_regenerate']
-    instance_predicted_label = 0
-    if feature_id is None:  # TODO: Accept feature name from user
-        feature_id = 1
     feature_name = data.columns[feature_id]
     parse_op = f"ID {instance_id}"
 

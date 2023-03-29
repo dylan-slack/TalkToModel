@@ -520,3 +520,43 @@ class ExplainBot:
         final_result = returned_item + f"<>{response_id}"
 
         return final_result
+
+    def update_state_dy_id(self,
+                           question_id: int,
+                           user_session_conversation: Conversation,
+                           feature_id=None):
+        """The main experiment driver.
+
+                The function controls state updates of the conversation. It accepts the
+                user input as question_id and feature_id and returns the updates to the conversation.
+
+                Arguments:
+                    question_id: The question id from the user.
+                    feature_id: The feature id that the question is about.
+                Returns:
+                    output: The response to the user input.
+                """
+
+        if any([question_id is None]):
+            return ''
+
+        app.logger.info(f'USER INPUT: q_id:{question_id}, f_id:{feature_id}')
+        instance_id = self.conversation.get_var('diverse_instances').contents[0]["id"]  # TODO: Get current instance
+        returned_item = run_action_by_id(user_session_conversation, int(question_id), instance_id, feature_id)
+
+        username = user_session_conversation.username  # TODO: Check if needed?!
+
+        response_id = self.gen_almost_surely_unique_id()
+        """logging_info = self.build_logging_info(self.bot_name,
+                                               username,
+                                               response_id,
+                                               text,
+                                               parsed_text,
+                                               returned_item)"""  # TODO: Enable when logging works
+        # self.log(logging_info) # Logging dict currently off.
+        # Concatenate final response, parse, and conversation representation
+        # This is done so that we can split both the parse and final
+        # response, then present all the data
+        final_result = returned_item + f"<>{response_id}"
+
+        return final_result

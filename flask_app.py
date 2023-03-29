@@ -119,7 +119,10 @@ def get_bot_response():
             data = json.loads(request.data)
             user_text = data["userInput"]
             conversation = BOT.conversation
-            response = BOT.update_state(user_text, conversation)
+            # TODO: Get question_id and feature_id from frontend (from user_text?)
+            question_id = None
+            feature_id = None
+            response = BOT.update_state_dy_id(question_id, conversation, feature_id)
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")

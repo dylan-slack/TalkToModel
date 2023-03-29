@@ -64,7 +64,7 @@ def home():
 @bp.route('/get_datapoint', methods=['GET'])
 def get_datapoint():
     data_instances = BOT.load_data_instances()
-    return BOT.load_data_instances()[0]
+    return data_instances[0]
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -136,16 +136,15 @@ def get_bot_response():
         try:
             data = json.loads(request.data)
             print(f'MICHI STYLE DEBUG: ${data}')
-            user_text = data["userInput"]
             conversation = BOT.conversation
-            # TODO: Get question_id and feature_id from frontend (from user_text?)
-            question_id = None
-            feature_id = None
+            question_id = data["question"]
+            feature_id = data["feature"]
             response = BOT.update_state_dy_id(question_id, conversation, feature_id)
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
             response = "Sorry! I couldn't understand that. Could you please try to rephrase?"
+        print(f'MICHI STYLE DEBUG: ${response}')
         return response
 
 

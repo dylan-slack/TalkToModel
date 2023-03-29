@@ -176,9 +176,9 @@ class ExplainBot:
         question_pd = pd.read_csv(self.conversation.question_bank_path, delimiter=";")
         feature_names = self.categorical_features + self.numerical_features
         answer_dict = {
-            "general_questions": list(question_pd[question_pd["question_type"] == "general"]["paraphrased"]),
-            "feature_questions": list(question_pd[question_pd["question_type"] == "feature"]["paraphrased"]),
-            "feature_names": feature_names,
+            "general_questions": list(question_pd[question_pd["question_type"] == "general"][["q_id", "paraphrased"]].values),
+            "feature_questions": list(question_pd[question_pd["question_type"] == "feature"][["q_id", "paraphrased"]].values),
+            "feature_names": [[feature_id, feature_name]for feature_id, feature_name in enumerate(feature_names)],
         }
         return answer_dict
 

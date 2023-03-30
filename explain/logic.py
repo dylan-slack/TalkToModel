@@ -524,7 +524,7 @@ class ExplainBot:
     def update_state_dy_id(self,
                            question_id: int,
                            user_session_conversation: Conversation,
-                           feature_id=None):
+                           feature_id:int =None):
         """The main experiment driver.
 
                 The function controls state updates of the conversation. It accepts the
@@ -542,7 +542,7 @@ class ExplainBot:
 
         app.logger.info(f'USER INPUT: q_id:{question_id}, f_id:{feature_id}')
         instance_id = self.conversation.get_var('diverse_instances').contents[0]["id"]  # TODO: Get current instance
-        returned_item = run_action_by_id(user_session_conversation, int(question_id), instance_id, feature_id)
+        returned_item = run_action_by_id(user_session_conversation, int(question_id), instance_id, int(feature_id))
 
         username = user_session_conversation.username  # TODO: Check if needed?!
 

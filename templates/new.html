@@ -209,9 +209,11 @@
             })
           })
 
+          result = await chatbotResponse.text()
+
           // Add the response bubble to the chat after a delay
           setTimeout(() => {
-            const responseBubble = createChatBubble('left-msg', chatbotResponse);
+            const responseBubble = createChatBubble('left-msg', result);
             chatContainer.appendChild(responseBubble);
           }, 1000); // 1-second delay to simulate chatbot response time
 

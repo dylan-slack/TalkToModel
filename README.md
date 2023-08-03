@@ -28,7 +28,7 @@ author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Sing
 journal = {TSRML @ NeurIPS},
 title = {TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations},
 year = {2022}
-}
+}](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdylan-slack%2FTalkToModel)
 ```
 
 [UPDATE] This work won an honorable mention outstanding paper at the TSRML Workshop at NeurIPS 🎉
@@ -205,7 +205,7 @@ author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Sing
 journal = {TSRML @ NeurIPS},
 title = {TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations},
 year = {2022}
-}
+}](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdylan-slack%2FTalkToModel)
 ```
 
 ## Contact 

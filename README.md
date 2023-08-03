@@ -23,12 +23,21 @@ Welcome to the [TalkToModel paper](https://arxiv.org/abs/2207.04154) page! The g
 If you found this work useful, please cite us! 
 
 ```bibtex
-@article{Slack_TalkToModel_Understanding_Machine_2022,
-author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
-journal = {TSRML @ NeurIPS},
-title = {TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations},
-year = {2022}
-}](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdylan-slack%2FTalkToModel)
+@Article{Slack2023,
+author={Slack, Dylan
+and Krishna, Satyapriya
+and Lakkaraju, Himabindu
+and Singh, Sameer},
+title={Explaining machine learning models with interactive natural language conversations using TalkToModel},
+journal={Nature Machine Intelligence},
+year={2023},
+month={Jul},
+day={27},
+abstract={Practitioners increasingly use machine learning (ML) models, yet models have become more complex and harder to understand. To understand complex models, researchers have proposed techniques to explain model predictions. However, practitioners struggle to use explainability methods because they do not know which explanation to choose and how to interpret the explanation. Here we address the challenge of using explainability methods by proposing TalkToModel: an interactive dialogue system that explains ML models through natural language conversations. TalkToModel consists of three components: an adaptive dialogue engine that interprets natural language and generates meaningful responses; an execution component that constructs the explanations used in the conversation; and a conversational interface. In real-world evaluations, 73{\%} of healthcare workers agreed they would use TalkToModel over existing systems for understanding a disease prediction model, and 85{\%} of ML professionals agreed TalkToModel was easier to use, demonstrating that TalkToModel is highly effective for model explainability.},
+issn={2522-5839},
+doi={10.1038/s42256-023-00692-8},
+url={https://doi.org/10.1038/s42256-023-00692-8}
+}
 ```
 
 [UPDATE] This work won an honorable mention outstanding paper at the TSRML Workshop at NeurIPS 🎉
@@ -200,12 +209,21 @@ You can run the tests by running `pytest` from the base directory.
 Cite us 🫶
 
 ```bibtex
-@article{Slack_TalkToModel_Understanding_Machine_2022,
-author = {Slack, Dylan and Krishna, Satyapriya and Lakkaraju, Himabindu and Singh, Sameer},
-journal = {TSRML @ NeurIPS},
-title = {TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations},
-year = {2022}
-}](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdylan-slack%2FTalkToModel)
+@Article{Slack2023,
+author={Slack, Dylan
+and Krishna, Satyapriya
+and Lakkaraju, Himabindu
+and Singh, Sameer},
+title={Explaining machine learning models with interactive natural language conversations using TalkToModel},
+journal={Nature Machine Intelligence},
+year={2023},
+month={Jul},
+day={27},
+abstract={Practitioners increasingly use machine learning (ML) models, yet models have become more complex and harder to understand. To understand complex models, researchers have proposed techniques to explain model predictions. However, practitioners struggle to use explainability methods because they do not know which explanation to choose and how to interpret the explanation. Here we address the challenge of using explainability methods by proposing TalkToModel: an interactive dialogue system that explains ML models through natural language conversations. TalkToModel consists of three components: an adaptive dialogue engine that interprets natural language and generates meaningful responses; an execution component that constructs the explanations used in the conversation; and a conversational interface. In real-world evaluations, 73{\%} of healthcare workers agreed they would use TalkToModel over existing systems for understanding a disease prediction model, and 85{\%} of ML professionals agreed TalkToModel was easier to use, demonstrating that TalkToModel is highly effective for model explainability.},
+issn={2522-5839},
+doi={10.1038/s42256-023-00692-8},
+url={https://doi.org/10.1038/s42256-023-00692-8}
+}
 ```
 
 ## Contact 
